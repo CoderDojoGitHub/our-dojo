@@ -4,6 +4,7 @@ ruby "1.9.3"
 
 gem "rails"
 gem "jquery-rails"
+gem "dotenv"
 
 group :assets do
   gem "coffee-rails"
