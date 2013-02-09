@@ -2,7 +2,7 @@
 
 set +e
 
-bundle install --binstubs --path vendor/bundle "$@"
+bundle install --binstubs --local --path vendor/bundle "$@"
 
 echo "==> Copying example .env file..."
 cp -n .env.example .env
