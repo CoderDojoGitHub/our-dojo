@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bundle install --binstubs --local --path vendor/bundle "$@"

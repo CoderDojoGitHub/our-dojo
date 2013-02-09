@@ -13,3 +13,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+config/database.yml
+
+bin
+vendor/gems
+vendor/bundle
+
+.rbenv-version
+/public/assets
