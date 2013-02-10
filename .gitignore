@@ -22,3 +22,4 @@ vendor/bundle
 
 .rbenv-version
 /public/assets
+.env
