@@ -10,7 +10,7 @@ Bootstrap the app.
 script/bootstrap
 ```
 
-Now configure .env with oauth app client id/secret.
+Fire up the web server.
 
 ```
 script/server
