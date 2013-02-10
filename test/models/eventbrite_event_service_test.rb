@@ -8,7 +8,7 @@ describe EventbriteEventService do
     @event = create_event(title: @title, start_time: @start_time)
     @eventbrite_event_service = EventbriteEventService.new(@event)
     @eventbrite_event_id = 1234
-    @fake_eventbrite_client = FakeEventbriteClient.new(@eventbrite_event_id)
+    @fake_eventbrite_client = FakeEventbriteClient.new(id: @eventbrite_event_id)
   end
 
   describe "#schedule" do
