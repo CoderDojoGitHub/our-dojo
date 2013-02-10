@@ -4,6 +4,9 @@
 
 class Event < ActiveRecord::Base
 
+  DefaultEventLengthInHours = 2
+  DefaultEventCapacity = 20
+
   # Public: Event::States keys/values for the Event state machine.
   #
   # Returns a Hash.
@@ -17,7 +20,8 @@ class Event < ActiveRecord::Base
 
   # Internal: Set attributes as accessible. Protects all attributes not
   # specifically designated here.
-  attr_accessible :title, :start_time, :end_time, :state, :scheduled_at, :invites_sent_at, :opened_registration_at
+  attr_accessible :title, :start_time, :end_time, :state, :scheduled_at,
+                  :invites_sent_at, :opened_registration_at, :eventbrite_event_id
 
   # Internal: Validations for attributes.
   validates_presence_of :title, :start_time
@@ -56,12 +60,17 @@ class Event < ActiveRecord::Base
     end
   end
 
+  # Public: end_time or start_time + DefaultEventLengthInHours.
+  def end_time
+    read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
+  end
+
   # Internal: The event service to use for scheduling, sending invites, and
   # to open registration.
   #
   # Returns an EventbriteEventService.
   def event_service
-    @event_service ||= EventService.new(self)
+    @event_service ||= EventbriteEventService.new(self)
   end
 
   # Internal: Schedule the event using the event service.

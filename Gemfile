@@ -5,6 +5,7 @@ ruby "1.9.3"
 gem "rails"
 gem "jquery-rails"
 gem "dotenv"
+gem "eventbrite-client"
 gem "state_machine"
 
 group :assets do
