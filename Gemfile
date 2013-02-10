@@ -7,6 +7,7 @@ gem "jquery-rails"
 gem "dotenv"
 gem "eventbrite-client"
 gem "state_machine"
+gem "pg"
 
 group :assets do
   gem "coffee-rails"
