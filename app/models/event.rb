@@ -17,10 +17,10 @@ class Event < ActiveRecord::Base
 
   # Internal: Set attributes as accessible. Protects all attributes not
   # specifically designated here.
-  attr_accessible :name, :start_time, :end_time, :state, :eventbrite_event_created_at, :invites_sent_at, :opened_registration_at
+  attr_accessible :title, :start_time, :end_time, :state, :scheduled_at, :invites_sent_at, :opened_registration_at
 
   # Internal: Validations for attributes.
-  validates_presence_of :name, :start_time, :end_time
+  validates_presence_of :title, :start_time
 
   state_machine :state, initial: :draft do
 
@@ -33,21 +33,21 @@ class Event < ActiveRecord::Base
     event :schedule_event do
       transition draft: :event_created
     end
-    before_transition on: :schedule_event, do: :create_eventbrite_event
-    after_transition  on: :schedule_event, do: lambda {|event| event.update_attributes(eventbrite_event_created_at: Time.now) }
+    before_transition on: :schedule_event, do: :schedule_event_with_event_service
+    after_transition  on: :schedule_event, do: lambda {|event| event.update_attributes(scheduled_at: Time.now) }
 
     # Public: Send invites to recent attendies.
     event :send_invites do
       transition event_created: :invites_sent
     end
-    before_transition on: :send_invites, do: :send_eventbrite_invites
+    before_transition on: :send_invites, do: :send_invites_with_event_service
     after_transition  on: :send_invites, do: lambda {|event| event.update_attributes(invites_sent_at: Time.now) }
 
     # Public: Open registration to the public.
     event :open_registration do
       transition invites_sent: :registration_opened
     end
-    before_transition on: :open_registration, do: :open_eventbrite_registration
+    before_transition on: :open_registration, do: :open_registration_with_event_service
     after_transition  on: :open_registration, do: lambda {|event| event.update_attributes(opened_registration_at: Time.now) }
 
     # Public: Complete the event.
@@ -56,23 +56,32 @@ class Event < ActiveRecord::Base
     end
   end
 
-  # Internal: Create the event on Eventbrite.
-  def create_eventbrite_event
-    Rails.logger.info "Eventbrite event created."
+  # Internal: The event service to use for scheduling, sending invites, and
+  # to open registration.
+  #
+  # Returns an EventbriteEventService.
+  def event_service
+    @event_service ||= EventService.new(self)
   end
 
-  # Internal: Send invites on Eventbrite.
-  def send_eventbrite_invites
-    Rails.logger.info "Eventbrite invites sent."
+  # Internal: Schedule the event using the event service.
+  #
+  # Returns a Boolean.
+  def schedule_event_with_event_service
+    event_service.schedule
   end
 
-  # Internal: Open registration on Eventbrite.
-  def open_eventbrite_registration
-    Rails.logger.info "Eventbrite registration opened."
+  # Internal: Send invites using the event service.
+  #
+  # Returns a Boolean.
+  def send_invites_with_event_service
+    event_service.send_invites
   end
 
-  # Public: Party event for testing in the console.
-  def self.party
-    new(name: "Party!", start_time: 24.hours.from_now, end_time: 26.hours.from_now)
+  # Internal: Open registration using the event service.
+  #
+  # Returns a Boolean.
+  def open_registration_with_event_service
+    event_service.open_registration
   end
 end

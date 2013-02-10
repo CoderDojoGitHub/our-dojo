@@ -17,3 +17,21 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+def build_event(attributes=nil)
+  attributes = attributes || {}
+  Event.new(party_event_attributes.merge(attributes))
+end
+
+def create_event(attributes=nil)
+  event = build_event(attributes)
+  event.save
+  event
+end
+
+def party_event_attributes
+  {
+    title: "Party!",
+    start_time: 24.hours.from_now,
+  }
+end

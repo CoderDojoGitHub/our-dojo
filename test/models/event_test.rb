@@ -2,18 +2,18 @@ require "minitest_helper"
 
 describe Event do
   before do
-    @event = Event.party
+    @event = create_event
   end
 
   describe "State transitions" do
     it "transitions" do
       # Event#schedule_event
-      assert_nil @event.eventbrite_event_created_at
+      assert_nil @event.scheduled_at
       @event.draft?.must_equal true
       @event.event_created?.must_equal false
       @event.schedule_event
       @event.draft?.must_equal false
-      refute_nil @event.eventbrite_event_created_at
+      refute_nil @event.scheduled_at
 
       # Event#send_invites
       assert_nil @event.invites_sent_at

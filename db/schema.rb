@@ -14,15 +14,16 @@
 ActiveRecord::Schema.define(:version => 20130210032508) do
 
   create_table "events", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "state",                       :default => 0
-    t.datetime "eventbrite_event_created_at"
+    t.integer  "state",                  :default => 0
+    t.datetime "scheduled_at"
     t.datetime "invites_sent_at"
     t.datetime "opened_registration_at"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.integer  "eventbrite_event_id"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
 end
