@@ -1,0 +1,20 @@
+@import "compass/css3";
+
+body {
+  padding: 20px;
+}
+
+.test {
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  @include border-radius(4px);
+  background-color: #ddd;
+  display: inline-block;
+  padding: 10px;
+}
+
+.move {
+  top: 400px;
+  left: 400px;
+}
