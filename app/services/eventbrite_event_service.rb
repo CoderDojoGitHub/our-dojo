@@ -35,8 +35,8 @@ class EventbriteEventService < EventService
   def eventbrite_event_attributes
     {
       title: event.title,
-      start_date: event.start_time.strftime("%Y-%m-%d %H:%M:%S"),
-      end_date: event.end_time.strftime("%Y-%m-%d %H:%M:%S"),
+      start_date: EventbriteHelper.formatted_datetime(event.start_time),
+      end_date: EventbriteHelper.formatted_datetime(event.end_time),
       privacy: 1,
       status: "draft",
       venue_id: ENV["EVENTBRITE_VENUE_ID"],

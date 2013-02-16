@@ -18,8 +18,8 @@ describe EventbriteEventService do
       @eventbrite_event_service.stub :eventbrite, eventbrite_client_mock do
         eventbrite_client_mock.expect(:event_new, @fake_eventbrite_client.event_new, [{
           title: @title,
-          start_date: @start_time.strftime("%Y-%m-%d %H:%M:%S"),
-          end_date: (@start_time + Event::DefaultEventLengthInHours.hours).strftime("%Y-%m-%d %H:%M:%S"),
+          start_date: EventbriteHelper.formatted_datetime(@start_time),
+          end_date: EventbriteHelper.formatted_datetime(@start_time + Event::DefaultEventLengthInHours.hours),
           privacy: 1,
           status: "draft",
           venue_id: ENV["EVENTBRITE_VENUE_ID"],
