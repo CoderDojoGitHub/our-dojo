@@ -65,6 +65,10 @@ class Event < ActiveRecord::Base
     read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
   end
 
+  def previous_event
+    self.class.where("start_time < ?", self.start_time).last
+  end
+
   # Internal: The event service to use for scheduling, sending invites, and
   # to open registration.
   #

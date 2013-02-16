@@ -60,4 +60,14 @@ describe Event do
       end
     end
   end
+
+  describe "#previous_event" do
+    it "returns previous event" do
+      oldest = create_event(title: "oldest", start_time: 2.days.ago)
+      previous = create_event(title: "previous", start_time: 1.days.ago)
+      current = create_event(title: "current")
+
+      current.previous_event.must_equal previous
+    end
+  end
 end
