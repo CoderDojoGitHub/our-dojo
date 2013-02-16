@@ -5,6 +5,7 @@
 class Event < ActiveRecord::Base
 
   DefaultEventLengthInHours = 2
+  OpenTicketsBeforeEventInDays = 7
   DefaultEventCapacity = 20
 
   # Public: Event::States keys/values for the Event state machine.
