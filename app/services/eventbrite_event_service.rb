@@ -50,9 +50,10 @@ class EventbriteEventService < EventService
   #
   # Returns a TrueClass or FalseClass.
   def open_registration
-    # Does this need to be more than a state change? If tickets are already
-    # set to go on sale on a certain date I'm not sure we need to.
-    true
+    eventbrite.event_update({
+      id: event.eventbrite_event_id,
+      privacy: 1,
+    })
   end
 
   # Internal: Eventbrite client.

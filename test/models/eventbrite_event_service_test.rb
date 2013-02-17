@@ -101,4 +101,20 @@ describe EventbriteEventService do
       end
     end
   end
+
+  describe "#open_registration" do
+    it "sets the Eventbrite event to public" do
+      eventbrite_client_mock = MiniTest::Mock.new
+      @event.update_attributes(eventbrite_event_id: @eventbrite_event_id)
+
+      @eventbrite_event_service.stub :eventbrite, eventbrite_client_mock do
+        eventbrite_client_mock.expect(:event_update, @fake_eventbrite_client.event_update, [{
+          id: @eventbrite_event_id,
+          privacy: 1,
+        }])
+
+        @eventbrite_event_service.open_registration
+      end
+    end
+  end
 end
