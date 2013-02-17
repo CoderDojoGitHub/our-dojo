@@ -6,6 +6,9 @@ gem "rails"
 gem "jquery-rails"
 gem "dotenv"
 gem "omniauth-github-team-member"
+gem "eventbrite-client"
+gem "state_machine"
+gem "pg"
 
 group :assets do
   gem "coffee-rails"
@@ -14,6 +17,7 @@ group :assets do
   gem "uglifier"
 end
 
-group :development do
+group :development, :test do
   gem "sqlite3"
+  gem "minitest-rails"
 end

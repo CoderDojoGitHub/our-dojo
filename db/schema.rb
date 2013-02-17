@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130209222735) do
+ActiveRecord::Schema.define(:version => 20130210032508) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "state",                  :default => 0
+    t.datetime "scheduled_at"
+    t.datetime "invites_sent_at"
+    t.datetime "opened_registration_at"
+    t.integer  "eventbrite_event_id"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name",                                 :null => false
