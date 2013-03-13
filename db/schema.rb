@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20130210032508) do
     t.datetime "scheduled_at"
     t.datetime "invites_sent_at"
     t.datetime "opened_registration_at"
-    t.integer  "eventbrite_event_id"
+    t.string   "eventbrite_event_id"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end
