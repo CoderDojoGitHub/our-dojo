@@ -4,6 +4,7 @@
 class EventbriteEventService < EventService
   # Public: Schedules the event.
   def schedule
+    return if previous_event.blank?
     copy_event
     update_event
     update_ticket
