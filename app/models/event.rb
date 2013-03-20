@@ -75,8 +75,8 @@ class Event < ActiveRecord::Base
     read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
   end
 
-  def previous_event
-    self.class.where("start_time < ?", self.start_time).last
+  def previous_event_with_eventbrite_event_id
+    self.class.where("start_time < ?", self.start_time).where("eventbrite_event_id IS NOT NULL").last
   end
 
   # Internal: The event service to use for scheduling, sending invites, and

@@ -67,7 +67,7 @@ class EventbriteEventService < EventService
   #
   # Returns an Event.
   def previous_event
-    event.previous_event
+    event.previous_event_with_eventbrite_event_id
   end
 
   # Internal: Eventbrite ticket id.

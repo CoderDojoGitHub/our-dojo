@@ -61,13 +61,14 @@ describe Event do
     end
   end
 
-  describe "#previous_event" do
-    it "returns previous event" do
-      oldest = create_event(title: "oldest", start_time: 2.days.ago)
+  describe "#previous_event_with_eventbrite_event_id" do
+    it "returns previous event with eventbrite event id" do
+      oldest = create_event(title: "oldest", start_time: 3.days.ago)
+      with_eventbrite_event_id = create_event(title: "with eventbrite event id", start_time: 2.days.ago, eventbrite_event_id: "1234")
       previous = create_event(title: "previous", start_time: 1.days.ago)
       current = create_event(title: "current")
 
-      current.previous_event.must_equal previous
+      current.previous_event_with_eventbrite_event_id.must_equal with_eventbrite_event_id
     end
   end
 end
