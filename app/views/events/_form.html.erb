@@ -13,6 +13,9 @@
 
   <p><%= f.label :title %><%= f.text_field :title %></p>
   <p><%= f.label :start_date, "Event date" %><%= f.text_field :start_date %></p>
+  <% if @event.persisted? %>
+    <p><%= f.label :eventbrite_event_id, "Eventbrite event id" %><%= f.text_field :eventbrite_event_id %></p>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
