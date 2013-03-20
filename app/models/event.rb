@@ -21,11 +21,20 @@ class Event < ActiveRecord::Base
 
   # Internal: Set attributes as accessible. Protects all attributes not
   # specifically designated here.
-  attr_accessible :title, :start_time, :end_time, :state, :scheduled_at,
+  attr_accessible :title, :start_time, :start_date, :end_time, :state, :scheduled_at,
                   :invites_sent_at, :opened_registration_at, :eventbrite_event_id
 
   # Internal: Validations for attributes.
   validates_presence_of :title, :start_time
+
+  def start_date=(start_date)
+    self.start_time = Time.parse("#{start_date} 12:00:00")
+  end
+
+  def start_date
+    return if start_time.blank?
+    start_time.strftime("%Y-%m-%d")
+  end
 
   state_machine :state, initial: :draft do
 

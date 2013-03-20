@@ -1,5 +1,5 @@
 <h1><%= @event.title %></h1>
-<p>Start time: <%= @event.start_time.to_s %></p>
-<p>End time: <%= @event.end_time.to_s %></p>
+<p>Start time: <%= @event.start_time.localtime %></p>
+<p>End time: <%= @event.end_time.localtime %></p>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
