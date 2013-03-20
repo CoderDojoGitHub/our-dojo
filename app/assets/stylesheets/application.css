@@ -10,5 +10,7 @@
  *
  *= require jquery.ui.all
  *= require_self
- *= require_tree .
+ *= require screen
+ *= require font-face
+ *= require base
  */

@@ -1,0 +1,111 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  background-image: url('../assets/cardboard_@2X.png');
+  background-size: 600px 600px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "ProximaNovaRegular", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+  font-style: normal;
+  color: #2A2A2F;
+  text-shadow: 0 1px 1px rgba(255,255,255,.1);
+}
+
+h1, h2, h3, h4 {
+  font-family: "ProximaNovaBold";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: #2A2A2F;
+}
+
+p {
+  font-family: "ProximaNovaRegular";
+  font-size: 14px;
+  color: #333;
+  line-height: 1.65;
+  text-shadow: 0 1px 1px rgba(255,255,255,.12);
+}
+
+strong {
+  font-family: "ProximaNovaBold";
+  font-weight: normal;
+  font-style: italic;
+}
+
+a {
+  font-family: "MenschBold";
+  color: blue;
+  text-decoration: none;
+  outline: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+#wrapper {
+  background-image: -webkit-gradient(circle cover, from(rgba(123,89,61,.38)), to(rgba(116,81,50,.6) 100%));
+  background-image: -webkit-radial-gradient(circle cover, rgba(123,89,61,.38), rgba(116,81,50,.6) 100%);
+  background-image: -moz-radial-gradient(circle cover, rgba(123,89,61,.38), rgba(116,81,50,.6) 100%);
+  background-image: -ms-linear-gradient(circle cover, rgba(123,89,61,.38), rgba(116,81,50,.6) 100%);
+  background-image: -o-linear-gradient(circle cover, rgba(123,89,61,.38), rgba(116,81,50,.6) 100%);
+  padding-top: 50px;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  height: 1000px;
+}
+
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.events {
+  li {
+    border-bottom: 3px solid rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+  }
+}
+
+/* Float class selectors and clearfix */
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
