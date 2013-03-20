@@ -4,6 +4,7 @@ ruby "1.9.3"
 
 gem "rails"
 gem "jquery-rails"
+gem "jquery-ui-rails"
 gem "dotenv"
 gem "omniauth-github-team-member"
 gem "eventbrite-client"
