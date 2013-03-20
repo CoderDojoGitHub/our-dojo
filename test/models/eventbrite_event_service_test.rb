@@ -3,7 +3,7 @@ require "fake_eventbrite_client"
 
 describe EventbriteEventService do
   before do
-    @previous_eventbrite_event_id = 4321
+    @previous_eventbrite_event_id = "4321"
     @previous_event = create_event(title: "previous", start_time: 1.day.ago, eventbrite_event_id: @previous_eventbrite_event_id)
 
     @title = "Birthday party!"
@@ -11,7 +11,7 @@ describe EventbriteEventService do
     @event = create_event(title: @title, start_time: @start_time)
 
     @eventbrite_event_service = EventbriteEventService.new(@event)
-    @eventbrite_event_id = 1234
+    @eventbrite_event_id = "1234"
     @fake_eventbrite_client = FakeEventbriteClient.new(id: @eventbrite_event_id)
   end
 
