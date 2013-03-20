@@ -87,6 +87,8 @@ class Event < ActiveRecord::Base
     @event_service ||= EventbriteEventService.new(self)
   end
 
+  attr_writer :event_service
+
   # Internal: Schedule the event using the event service.
   #
   # Returns a Boolean.
