@@ -3,7 +3,5 @@ CoderdojoWebapp::Application.routes.draw do
   match "/logout"                           => "sessions#logout"
   match "/auth/failure"                     => "sessions#failure"
 
-  resources :events
-
-  root to: "events#index"
+  root to: "home#index"
 end
