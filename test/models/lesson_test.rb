@@ -1,11 +1,11 @@
 require "minitest_helper"
 
 describe Lesson do
-  before do
-    @lesson = Lesson.new
-  end
-
   it "must be valid" do
-    @lesson.valid?.must_equal true
+    assert Lesson.make.valid?
+    refute Lesson.make(title: nil).valid?
+    refute Lesson.make(title: "").valid?
+    refute Lesson.make(repository: nil).valid?
+    refute Lesson.make(repository: "").valid?
   end
 end
