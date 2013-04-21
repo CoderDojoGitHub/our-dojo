@@ -1,0 +1,42 @@
+// Application scss.
+
+body {
+  background: url(../images/gray_jean.png);
+  color: #333;
+  font-size: 110%;
+}
+
+.organization-blurb {
+  background: rgba(0,0,0,0.1);
+}
+
+.upcoming-event {
+  background: rgba(255,255,255,0.5);
+  padding-bottom: 20px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .summary {
+    margin-bottom: 10px;
+  }
+}
+
+.cover-art {
+  position: relative;
+  display: inline-block;
+
+  .date {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 150%;
+    padding: 5% 20px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.newsletter {
+  background: rgba(0,0,0,0.1);
+}
