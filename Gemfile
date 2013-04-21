@@ -23,4 +23,6 @@ group :development, :test do
   gem "minitest-rails"
   gem "guard-minitest"
   gem "minitest-capybara"
+  gem "machinist"
+  gem "faker"
 end
