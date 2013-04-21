@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :scheduled_at
       t.datetime :invites_sent_at
       t.datetime :opened_registration_at
-      t.string :eventbrite_event_id
 
       t.timestamps
     end
