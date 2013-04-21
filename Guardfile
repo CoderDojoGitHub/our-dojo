@@ -21,5 +21,5 @@ guard "minitest", guard_options do
   watch(%r|^app/models/(.*)\.rb|)      { |m| "test/unit/test_#{m[1]}.rb" }
 
   # Custom
-  watch(%r|^test/acceptance/test_(.*)\.rb|)    { "test" }
+  watch(%r|^app/views/(.*)/(.*)\.html\.erb|) { |m| "test/acceptance/test_#{m[1]}_#{m[2]}.rb" }
 end
