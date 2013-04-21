@@ -3,7 +3,6 @@ require "minitest_helper"
 describe Event do
   before do
     @event = create_event
-    @event.event_service = EventService.new(@event)
   end
 
   describe "State transitions" do
@@ -56,17 +55,6 @@ describe Event do
         event = Event.new(start_time: start_time)
         event.end_time.must_equal start_time + Event::DefaultEventLengthInHours.hours
       end
-    end
-  end
-
-  describe "#previous_event_with_eventbrite_event_id" do
-    it "returns previous event with eventbrite event id" do
-      oldest = create_event(title: "oldest", start_time: 3.days.ago)
-      with_eventbrite_event_id = create_event(title: "with eventbrite event id", start_time: 2.days.ago, eventbrite_event_id: "1234")
-      previous = create_event(title: "previous", start_time: 1.days.ago)
-      current = create_event(title: "current")
-
-      current.previous_event_with_eventbrite_event_id.must_equal with_eventbrite_event_id
     end
   end
 end

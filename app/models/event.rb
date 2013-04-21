@@ -47,21 +47,18 @@ class Event < ActiveRecord::Base
     event :schedule_event do
       transition draft: :event_created
     end
-    before_transition on: :schedule_event, do: :schedule_event_with_event_service
     after_transition  on: :schedule_event, do: lambda {|event| event.update_attributes(scheduled_at: Time.now) }
 
     # Public: Send invites to recent attendies.
     event :send_invites do
       transition event_created: :invites_sent
     end
-    before_transition on: :send_invites, do: :send_invites_with_event_service
     after_transition  on: :send_invites, do: lambda {|event| event.update_attributes(invites_sent_at: Time.now) }
 
     # Public: Open registration to the public.
     event :open_registration do
       transition invites_sent: :registration_opened
     end
-    before_transition on: :open_registration, do: :open_registration_with_event_service
     after_transition  on: :open_registration, do: lambda {|event| event.update_attributes(opened_registration_at: Time.now) }
 
     # Public: Complete the event.
@@ -73,40 +70,5 @@ class Event < ActiveRecord::Base
   # Public: end_time or start_time + DefaultEventLengthInHours.
   def end_time
     read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
-  end
-
-  def previous_event_with_eventbrite_event_id
-    self.class.where("start_time < ?", self.start_time).where("eventbrite_event_id IS NOT NULL").last
-  end
-
-  # Internal: The event service to use for scheduling, sending invites, and
-  # to open registration.
-  #
-  # Returns an EventbriteEventService.
-  def event_service
-    @event_service ||= EventbriteEventService.new(self)
-  end
-
-  attr_writer :event_service
-
-  # Internal: Schedule the event using the event service.
-  #
-  # Returns a Boolean.
-  def schedule_event_with_event_service
-    event_service.schedule
-  end
-
-  # Internal: Send invites using the event service.
-  #
-  # Returns a Boolean.
-  def send_invites_with_event_service
-    event_service.send_invites
-  end
-
-  # Internal: Open registration using the event service.
-  #
-  # Returns a Boolean.
-  def open_registration_with_event_service
-    event_service.open_registration
   end
 end
