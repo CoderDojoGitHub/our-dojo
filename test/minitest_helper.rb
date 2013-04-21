@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 
 require "minitest/autorun"
 require "minitest/rails"
+require "capybara/rails"
 
 # Add `gem "minitest/rails/capybara"` to the test group of your Gemfile
 # and uncomment the following if you want Capybara feature tests
@@ -16,6 +17,11 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+
+class AcceptanceTest < MiniTest::Spec
+  include Capybara::RSpecMatchers
+  include Capybara::DSL
 end
 
 def build_event(attributes=nil)
