@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class HomeTest < AcceptanceTest
+class HomeIndexTest < AcceptanceTest
   it "renders the homepage" do
     visit "/"
     must_have_content "CoderDojo - San Francisco"
