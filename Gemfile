@@ -21,4 +21,5 @@ end
 group :development, :test do
   gem "sqlite3"
   gem "minitest-rails"
+  gem "guard-minitest"
 end
