@@ -2,18 +2,15 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 
 require "minitest/autorun"
+require "minitest/pride"
 require "minitest/rails"
 require "capybara/rails"
 require "webmock/minitest"
 require "mocha/setup"
 require "blueprints"
+require "database_cleaner"
 
-# Add `gem "minitest/rails/capybara"` to the test group of your Gemfile
-# and uncomment the following if you want Capybara feature tests
-# require "minitest/rails/capybara"
-
-# Uncomment if you want awesome colorful output
-require "minitest/pride"
+DatabaseCleaner.strategy = :truncation
 
 class ActiveSupport::TestCase; end
 

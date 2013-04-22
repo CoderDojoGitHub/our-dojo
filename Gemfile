@@ -32,4 +32,5 @@ group :test do
   gem "webmock"
   gem "vcr"
   gem "mocha", require: false
+  gem "database_cleaner"
 end
