@@ -3,7 +3,7 @@ CoderdojoWebapp::Application.routes.draw do
   match "/logout"                           => "sessions#logout"
   match "/auth/failure"                     => "sessions#failure"
 
-  resources :lessons, only: [:index]
+  resources :lessons, only: [:index, :show]
 
   root to: "home#index"
 end
