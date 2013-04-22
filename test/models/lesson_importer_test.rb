@@ -29,5 +29,15 @@ describe LessonImporter do
         assert_equal 1, Lesson.count
       end
     end
+
+    it "only returns lessons that were imported" do
+      VCR.use_cassette "coderdojosf/Particles/lesson.json import twice" do
+        organization = Organization.new("coderdojosf")
+        importer = LessonImporter.new(organization)
+
+        Lesson.any_instance.stubs(:changed?).returns(false)
+        assert_equal [], importer.import
+      end
+    end
   end
 end

@@ -17,7 +17,7 @@ class LessonImporter
       lesson = Lesson.find_or_initialize_by_repository(lesson_repository.name)
       lesson.title = lesson_attributes["title"]
       lesson.summary = lesson_attributes["summary"]
-      lesson.save
+      lesson.save if lesson.changed?
     end
   end
 
