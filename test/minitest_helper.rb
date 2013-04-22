@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "minitest/autorun"
 require "minitest/rails"
 require "capybara/rails"
+require "webmock/minitest"
 require "blueprints"
 
 # Add `gem "minitest/rails/capybara"` to the test group of your Gemfile
@@ -14,6 +15,11 @@ require "blueprints"
 require "minitest/pride"
 
 class ActiveSupport::TestCase; end
+
+VCR.config do |c|
+  c.cassette_library_dir = "test/fixtures"
+  c.stub_with :webmock
+end
 
 class AcceptanceTest < MiniTest::Spec
   include Capybara::RSpecMatchers
