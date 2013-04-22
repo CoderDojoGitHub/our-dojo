@@ -22,7 +22,7 @@ class Event < ActiveRecord::Base
   # Internal: Set attributes as accessible. Protects all attributes not
   # specifically designated here.
   attr_accessible :title, :start_time, :start_date, :end_time, :state, :scheduled_at,
-                  :invites_sent_at, :opened_registration_at, :eventbrite_event_id
+                  :invites_sent_at, :opened_registration_at
 
   # Internal: Validations for attributes.
   validates_presence_of :title, :start_time
