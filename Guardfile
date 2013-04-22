@@ -23,4 +23,5 @@ guard "minitest", guard_options do
   # Custom
   watch(%r|^app/views/(.*)/(.*)\.html\.erb|) { |m| "test/acceptance/#{m[1]}/#{m[2]}_test.rb" }
   watch(%r|^app/controllers/(.*)_controller\.rb|) { |m| "test/acceptance/#{m[1]}" }
+  watch(%r|^config/routes\.rb|) { "test" }
 end
