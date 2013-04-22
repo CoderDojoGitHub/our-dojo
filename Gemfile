@@ -31,4 +31,5 @@ group :test do
   gem "faker"
   gem "webmock"
   gem "vcr"
+  gem "mocha", require: false
 end
