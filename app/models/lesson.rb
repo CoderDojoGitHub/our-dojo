@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
-  attr_accessible :events_attributes, :repository, :summary, :title
+  attr_accessible :author_github_username, :events_attributes,
+                  :repository, :summary, :title
 
   has_many :events
 
