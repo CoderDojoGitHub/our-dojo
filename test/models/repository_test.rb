@@ -32,4 +32,13 @@ describe Repository do
       end
     end
   end
+
+  describe "#lesson" do
+    it "returns parsed lesson.json hash" do
+      VCR.use_cassette "coderdojosf/Particles/lesson.json" do
+        lesson = Repository.new("coderdojosf", "Particles").lesson
+        assert "Animations in JavaScript", lesson["title"]
+      end
+    end
+  end
 end

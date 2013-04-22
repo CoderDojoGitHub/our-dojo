@@ -16,6 +16,13 @@ class Repository
     GitHubApi.code(lesson_json_api_path) == 200
   end
 
+  # Public: Return parsed lesson.json.
+  #
+  # Returns a Hash.
+  def lesson
+    GitHubApi.parsed_response(lesson_json_api_path)
+  end
+
   # Internal: GitHub API path to lesson.json for repository.
   #
   # Returns a String.
