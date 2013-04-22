@@ -8,4 +8,11 @@ describe Lesson do
     refute Lesson.make(repository: nil).valid?
     refute Lesson.make(repository: "").valid?
   end
+
+  describe "#events" do
+    it "returns hash of events" do
+      events = [{foo: "bar"}]
+      assert_equal events, Lesson.new(title: "stuff", repository: "stuff", events: events).events
+    end
+  end
 end

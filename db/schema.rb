@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130421211727) do
     t.string   "title",      :null => false
     t.text     "summary",    :null => false
     t.string   "repository", :null => false
+    t.text     "events"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

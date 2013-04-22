@@ -4,6 +4,7 @@ class CreateLessons < ActiveRecord::Migration
       t.string  :title,       null: false
       t.text    :summary,     null: false
       t.string  :repository,  null: false
+      t.text    :events
 
       t.timestamps
     end
