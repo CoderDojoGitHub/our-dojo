@@ -10,7 +10,7 @@ gem "omniauth-github-team-member"
 gem "eventbrite-client"
 gem "state_machine"
 gem "pg"
-gem "octokit"
+gem "httparty"
 
 group :assets do
   gem "coffee-rails"
