@@ -5,7 +5,9 @@
 class Event < ActiveRecord::Base
   DefaultEventLengthInHours = 2
 
-  attr_accessible :start_time, :end_time, :slug
+  attr_accessible :start_time, :end_time, :slug, :teacher_github_username
+
+  validates_presence_of :start_time, :slug, :teacher_github_username
 
   # Public: end_time or start_time + DefaultEventLengthInHours.
   #
