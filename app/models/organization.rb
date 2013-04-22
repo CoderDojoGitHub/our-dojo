@@ -13,7 +13,7 @@ class Organization
   #
   # Returns an Array.
   def repositories
-    data = GitHubApi.parsed_response("users/coderdojosf/repos")
+    data = GitHubApi.api_call("users/coderdojosf/repos")
     data.map {|attributes| Repository.new(username, attributes["name"]) }
   end
 

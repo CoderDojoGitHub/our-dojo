@@ -20,7 +20,7 @@ class Repository
   #
   # Returns a Hash.
   def lesson
-    GitHubApi.parsed_response(lesson_json_api_path)
+    GitHubApi.api_call(lesson_json_api_path)
   end
 
   # Internal: GitHub API path to lesson.json for repository.

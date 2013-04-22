@@ -4,7 +4,7 @@ class GitHubApi
   # path - path to resource in the API.
   #
   # Returns an Array or Hash.
-  def self.parsed_response(path)
+  def self.api_call(path)
     response = HTTParty.get("#{base_url}/#{path}")
     ActiveSupport::JSON.decode(response.body)
   end

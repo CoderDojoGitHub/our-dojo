@@ -5,6 +5,7 @@ require "minitest/autorun"
 require "minitest/rails"
 require "capybara/rails"
 require "webmock/minitest"
+require "mocha/setup"
 require "blueprints"
 
 # Add `gem "minitest/rails/capybara"` to the test group of your Gemfile
