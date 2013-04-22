@@ -14,7 +14,7 @@ Example lesson.json:
       location: "GitHub 548 4th St San Francisco CA 94107",
       date: "Sat Apr 20 2013 10:00:00 GMT-0700 (PDT)",
       length_in_hours: 2,
-      teachers_github_username: "jonmagic"
+      teacher_github_username: "jonmagic"
     }
   ]
 }
