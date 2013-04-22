@@ -26,4 +26,5 @@ group :development, :test do
   gem "minitest-capybara"
   gem "machinist"
   gem "faker"
+  gem "webmock"
 end
