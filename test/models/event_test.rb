@@ -2,7 +2,7 @@ require "minitest_helper"
 
 describe Event do
   before do
-    @event = create_event
+    @event = Event.make
   end
 
   describe "State transitions" do
