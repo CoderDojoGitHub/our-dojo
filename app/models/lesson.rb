@@ -1,7 +1,9 @@
 class Lesson < ActiveRecord::Base
-  attr_accessible :repository, :summary, :title, :events
+  attr_accessible :events_attributes, :repository, :summary, :title
+
+  has_many :events
 
   validates_presence_of :repository, :title
 
-  serialize :events
+  serialize :events_attributes
 end

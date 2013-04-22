@@ -13,29 +13,30 @@ class EventImporter
   # Returns an Array.
   def import
     lessons.map do |lesson|
-      process_events(lesson, lesson.events)
+      process_events(lesson, lesson.events_attributes)
     end.flatten.compact
   end
 
   # Internal: Process events.
   #
   # Returns an Array.
-  def process_events(lesson, events)
-    return if events.blank?
+  def process_events(lesson, events_attributes)
+    return if events_attributes.blank?
 
-    lesson.events.map do |event_attributes|
-      process_event(event_attributes, lesson.repository)
+    events_attributes.map do |event_attributes|
+      process_event(event_attributes, lesson.repository, lesson.id)
     end
   end
 
   # Internal: Find and update or create event.
   #
   # Returns an Event or NilClass.
-  def process_event(event_attributes, repository)
+  def process_event(event_attributes, repository, lesson_id)
     start_time = Time.parse(event_attributes["date"])
     event_date = start_time.strftime("%Y%m%d")
     event_slug = "#{repository}-#{event_date}"
     event = Event.find_or_initialize_by_slug(event_slug)
+    event.lesson_id = lesson_id
     event.start_time = start_time
     event.teacher_github_username = event_attributes["teacher_github_username"]
 

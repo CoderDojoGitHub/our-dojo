@@ -3,7 +3,7 @@ require "minitest_helper"
 describe EventImporter do
   describe "#import" do
     it "creates events from lesson events array" do
-      lessons = [Lesson.make]
+      lessons = [Lesson.make!]
       importer = EventImporter.new(lessons)
 
       assert_equal 0, Event.count
@@ -21,7 +21,7 @@ describe EventImporter do
     end
 
     it "handles lessons without events" do
-      lessons = [Lesson.make, Lesson.make(events: nil)]
+      lessons = [Lesson.make, Lesson.make(events_attributes: nil)]
       importer = EventImporter.new(lessons)
       assert 1, importer.import.length
     end

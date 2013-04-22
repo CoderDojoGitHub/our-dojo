@@ -5,7 +5,7 @@ Lesson.blueprint do
   title { "Lesson #{sn}" }
   summary { "Learn crazy awesome #{sn} when you use #{sn}."}
   repository { "lesson-#{sn}" }
-  events {
+  events_attributes {
     [
       {
         "location" => "GitHub 548 4th St San Francisco CA 94107",
@@ -18,6 +18,7 @@ Lesson.blueprint do
 end
 
 Event.blueprint do
+  lesson
   title { "Event #{sn}" }
-  start_time { 3.weeks.from_now }
+  start_time { 1.weeks.from_now }
 end

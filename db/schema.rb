@@ -18,17 +18,18 @@ ActiveRecord::Schema.define(:version => 20130421211727) do
     t.datetime "end_time"
     t.string   "teacher_github_username", :null => false
     t.string   "slug",                    :null => false
+    t.string   "lesson_id",               :null => false
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
 
   create_table "lessons", :force => true do |t|
-    t.string   "title",      :null => false
-    t.text     "summary",    :null => false
-    t.string   "repository", :null => false
-    t.text     "events"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title",             :null => false
+    t.text     "summary",           :null => false
+    t.string   "repository",        :null => false
+    t.text     "events_attributes"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -11,8 +11,8 @@ describe Lesson do
 
   describe "#events" do
     it "returns hash of events" do
-      events = [{foo: "bar"}]
-      assert_equal events, Lesson.new(events: events).events
+      events_attributes = [{foo: "bar"}]
+      assert_equal events_attributes, Lesson.new(events_attributes: events_attributes).events_attributes
     end
   end
 end
