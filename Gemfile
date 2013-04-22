@@ -31,4 +31,5 @@ group :test do
   gem "machinist"
   gem "faker"
   gem "webmock"
+  gem "vcr"
 end
