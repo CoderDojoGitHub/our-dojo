@@ -16,9 +16,9 @@ require "minitest/pride"
 
 class ActiveSupport::TestCase; end
 
-VCR.config do |c|
+VCR.configure do |c|
   c.cassette_library_dir = "test/fixtures"
-  c.stub_with :webmock
+  c.hook_into :webmock
 end
 
 class AcceptanceTest < MiniTest::Spec
