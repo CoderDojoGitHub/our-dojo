@@ -12,7 +12,15 @@ require "database_cleaner"
 
 DatabaseCleaner.strategy = :truncation
 
-class ActiveSupport::TestCase; end
+class ActiveSupport::TestCase
+  before :each do
+    DatabaseCleaner.start
+  end
+
+  after :each do
+    DatabaseCleaner.clean
+  end
+end
 
 VCR.configure do |c|
   c.cassette_library_dir = "test/fixtures"

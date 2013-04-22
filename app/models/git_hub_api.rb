@@ -19,6 +19,24 @@ class GitHubApi
     response.code
   end
 
+  # Public: Get parsed file contents from the GitHub API.
+  #
+  # path - path to resource in the API.
+  #
+  # Returns an Array or Hash.
+  def self.parsed_file_contents(path)
+    response = HTTParty.get("#{base_url}/#{path}", {
+      query: {},
+      headers: {
+        "accept" => "application/vnd.github-blob.raw"
+      }
+    })
+    # ActiveSupport::JSON.decode(response.body)
+    # FIX: Don't use YAML.load here. Only used because
+    # ActiveSupport::JSON was choking.
+    YAML.load(response.body)
+  end
+
   # Internal: Base url to GitHub API.
   #
   # Returns a String.

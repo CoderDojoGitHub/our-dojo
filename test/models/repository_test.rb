@@ -28,14 +28,14 @@ describe Repository do
 
     it "returns false if lesson.json does not exist for repository" do
       VCR.use_cassette "coderdojosf/event-app/lesson.json" do
-        refute Repository.new("coderdojosf", "Bubbles").lesson?
+        refute Repository.new("coderdojosf", "event-app").lesson?
       end
     end
   end
 
   describe "#lesson" do
     it "returns parsed lesson.json hash" do
-      VCR.use_cassette "coderdojosf/Particles/lesson.json" do
+      VCR.use_cassette "coderdojosf/Particles/lesson.json parsed file contents" do
         lesson = Repository.new("coderdojosf", "Particles").lesson
         assert "Animations in JavaScript", lesson["title"]
       end

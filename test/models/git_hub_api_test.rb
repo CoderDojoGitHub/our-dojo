@@ -21,7 +21,7 @@ describe GitHubApi do
 
   describe ".parsed_file_contents" do
     it "returns Hash of parsed file contents" do
-      VCR.use_cassette "coderdojosf/Particles/lesson.json file contents" do
+      VCR.use_cassette "coderdojosf/Particles/lesson.json parsed file contents" do
         lesson_attributes = GitHubApi.parsed_file_contents("repos/coderdojosf/Particles/contents/lesson.json")
         assert_equal "Animations in Javascript", lesson_attributes["title"]
         assert_equal "Build animations in the web browser using javascript and the D3.js library.", lesson_attributes["summary"]

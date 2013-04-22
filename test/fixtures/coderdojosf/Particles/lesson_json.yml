@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 22 Apr 2013 18:36:44 GMT
+      - Mon, 22 Apr 2013 19:44:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -25,7 +25,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '57'
+      - '15'
       Vary:
       - Accept
       - Accept-Encoding
@@ -51,5 +51,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"sha":"2134c439788af2f02441d5ed64408d1099c7c823","size":384,"name":"lesson.json","path":"lesson.json","type":"file","url":"https://api.github.com/repos/CoderDojoSF/Particles/contents/lesson.json","git_url":"https://api.github.com/repos/CoderDojoSF/Particles/git/blobs/2134c439788af2f02441d5ed64408d1099c7c823","html_url":"https://github.com/CoderDojoSF/Particles/blob/master/lesson.json","_links":{"self":"https://api.github.com/repos/CoderDojoSF/Particles/contents/lesson.json","git":"https://api.github.com/repos/CoderDojoSF/Particles/git/blobs/2134c439788af2f02441d5ed64408d1099c7c823","html":"https://github.com/CoderDojoSF/Particles/blob/master/lesson.json"},"content":"ewogIHRpdGxlOiAiQW5pbWF0aW9ucyBpbiBKYXZhc2NyaXB0IiwKICBzdW1t\nYXJ5OiAiQnVpbGQgYW5pbWF0aW9ucyBpbiB0aGUgd2ViIGJyb3dzZXIgdXNp\nbmcgamF2YXNjcmlwdCBhbmQgdGhlIEQzLmpzIGxpYnJhcnkuIiwKICBhdXRo\nb3JfZ2l0aHViX3VzZXJuYW1lOiAiS2FydGlrVGFsd2FyIiwKICBldmVudHM6\nIFsKICAgIHsKICAgICAgbG9jYXRpb246ICJHaXRIdWIgNTQ4IDR0aCBTdCBT\nYW4gRnJhbmNpc2NvIENBIDk0MTA3IiwKICAgICAgZGF0ZTogIlNhdCBGZWIg\nMTYgMjAxMyAxMjowMDowMCBHTVQtMDcwMCAoUERUKSIsCiAgICAgIGxlbmd0\naF9pbl9ob3VyczogMiwKICAgICAgdGVhY2hlcl9naXRodWJfdXNlcm5hbWU6\nICJqb25tYWdpYyIKICAgIH0KICBdCn0K\n","encoding":"base64"}'
     http_version: 
-  recorded_at: Mon, 22 Apr 2013 18:36:45 GMT
+  recorded_at: Mon, 22 Apr 2013 19:44:08 GMT
 recorded_with: VCR 2.4.0
