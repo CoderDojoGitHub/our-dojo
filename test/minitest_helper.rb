@@ -13,14 +13,28 @@ require "blueprints"
 # Uncomment if you want awesome colorful output
 require "minitest/pride"
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  fixtures :all
-
-  # Add more helper methods to be used by all tests here...
-end
+class ActiveSupport::TestCase; end
 
 class AcceptanceTest < MiniTest::Spec
   include Capybara::RSpecMatchers
   include Capybara::DSL
+end
+
+# Public: Load fixture file from fixtures directory.
+#
+# name - Filename without extension.
+# extension - File extension name, defaults to json.
+#
+# Returns a String.
+def fixture(name, extension="json")
+  File.read(Rails.root.join("test", "fixtures", "#{name}.#{extension}"))
+end
+
+# Public: Return a hash or array built from json fixture.
+#
+# name - Filename without extension.
+#
+# Returns a Hash or Array.
+def json_fixture(name)
+  YAML.load(fixture(name))
 end
