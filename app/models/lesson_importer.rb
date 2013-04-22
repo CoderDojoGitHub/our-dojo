@@ -21,6 +21,9 @@ class LessonImporter
     end
   end
 
+  # Public: Grab the lesson_repositories from the organization.
+  #
+  # Returns an Array.
   def lesson_repositories
     @lesson_repositories ||= organization.lesson_repositories
   end
