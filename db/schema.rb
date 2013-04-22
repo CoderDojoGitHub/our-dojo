@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(:version => 20130421211727) do
   create_table "users", :force => true do |t|
     t.string   "name",                                 :null => false
     t.string   "email",                :default => "", :null => false
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
     t.integer  "github_id"
     t.string   "github_identifier"
     t.string   "authentication_token"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   add_index "users", ["github_id"], :name => "index_users_on_github_id", :unique => true
