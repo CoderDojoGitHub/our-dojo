@@ -236,6 +236,7 @@ DEPENDENCIES
   octokit
   omniauth-github-team-member
   pg
+  pry
   rails
   sass-rails
   sqlite3
