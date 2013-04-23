@@ -20,32 +20,28 @@ Example lesson.json:
 }
 ```
 
-There will only be three views initially.
-
-A root (homepage) view:
-
-* Information about why the lessons and events exist and the organization or people behind them.
-* A preview of the next event if one exists, or a preview of the last lesson if an upcoming event does not exist.
-* Link to lesson archives.
-* Signup form to subscribe to an upcoming event newsletter.
-
-A lesson view:
-
-* Event information if an upcoming event exists for this lesson.
-* Lesson title, summary, link to the lesson, link to other resources, and a cover art image.
-* Signup form to attend if there is an upcoming event and registration is open.
-* Information about the teacher.
-
-An archives view:
-
-* Listing of all existing lessons with the cover art, title, summary, and link to the lesson view.
-
 ## Getting Started
 
-Clone the repository and then:
+Make sure you are using Ruby 1.9.3. Then you can clone the repository and run script/bootstrap:
 
 ```
 script/bootstrap
+```
+
+Now set GITHUB_ORGANIZATION in .env to the GitHub organization the app should look at for lesson repositories. Make sure to uncomment GITHUB_ORGANIZATION as well.
+
+```
+=======
+# Set environment variables in here.
+#
+# For development see https://github.com/organizations/CoderDojoSF/settings/applications/34817
+#
+# Example:
+#
+# GITHUB_CLIENT_ID=1234567890
+# GITHUB_CLIENT_SECRET=1234567890
+# GITHUB_TEAM_ID=1234567890
+GITHUB_ORGANIZATION=coderdojosf
 ```
 
 Fire up the web server.
@@ -55,6 +51,16 @@ script/server
 ```
 
 View in your browser at [http://localhost:3000](http://localhost:3000)
+
+## Testing
+
+We use guard to watch the project and automatically run tests when files change.
+
+```bash
+guard
+```
+
+Once you start guard press enter to run all of the tests.
 
 ## Deploying
 
