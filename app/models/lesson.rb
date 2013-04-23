@@ -14,4 +14,11 @@ class Lesson < ActiveRecord::Base
   def upcoming_event
     events.where("start_time > ?", Time.now).order("start_time ASC").first
   end
+
+  # Public: Most recent lesson.
+  #
+  # Returns a Lesson.
+  def self.most_recent
+    order("created_at DESC").first
+  end
 end

@@ -32,4 +32,14 @@ describe Lesson do
       assert_equal event, lesson.upcoming_event
     end
   end
+
+  describe "#most_recent" do
+    it "returns most recent lesson" do
+      Lesson.make!(created_at: 3.days.ago)
+      lesson = Lesson.make!(created_at: 1.days.ago)
+      Lesson.make!(created_at: 2.days.ago)
+
+      assert_equal lesson, Lesson.most_recent
+    end
+  end
 end
