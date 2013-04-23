@@ -3,15 +3,39 @@
 # transition from a draft to completed.
 
 class Event < ActiveRecord::Base
+  # Public: Default class duration in hours.
   DefaultEventLengthInHours = 2
 
-  attr_accessible  :end_time, :lesson_id, :location, :slug, :start_time, :teacher_github_username
-
+  # Public: The lesson this event is for.
+  # column :lesson_id
+  validates :lesson_id, presence: true
   belongs_to :lesson
 
-  validates_presence_of :lesson_id, :location, :start_time, :slug, :teacher_github_username
+  # Public: Event slug.
+  # column :slug
+  validates :slug, presence: true
+  attr_accessible :slug
 
-  # Public: end_time or start_time + DefaultEventLengthInHours.
+  # Public: Location of the event.
+  # column :location
+  validates :location, presence: true
+  attr_accessible :location
+
+  # Public: The start time for the event.
+  # column :start_time
+  validates :start_time, presence: true
+  attr_accessible :start_time
+
+  # Public: The end time for the event.
+  # column :end_time
+  attr_accessible :end_time
+
+  # Public: The GitHub username of the event teacher.
+  # column :teacher_github_username
+  validates :teacher_github_username, presence: true
+  attr_accessible :teacher_github_username
+
+  # Public: Returns end_time or start_time + DefaultEventLengthInHours.
   #
   # Returns a Time.
   def end_time
