@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421211727) do
+ActiveRecord::Schema.define(:version => 20130423152643) do
 
   create_table "events", :force => true do |t|
     t.datetime "start_time",              :null => false
     t.datetime "end_time"
     t.string   "teacher_github_username", :null => false
-    t.string   "slug",                    :null => false
     t.string   "lesson_id",               :null => false
     t.string   "location",                :null => false
     t.datetime "created_at",              :null => false
@@ -32,6 +31,24 @@ ActiveRecord::Schema.define(:version => 20130421211727) do
     t.text     "events_attributes"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+  end
+
+  create_table "registrants", :force => true do |t|
+    t.string   "email"
+    t.integer  "number_of_students"
+    t.integer  "event_id"
+    t.string   "reference_token"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "temporary_registrants", :force => true do |t|
+    t.string   "email"
+    t.integer  "number_of_students"
+    t.integer  "event_id"
+    t.string   "reference_token"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -11,11 +11,6 @@ class Event < ActiveRecord::Base
   validates :lesson_id, presence: true
   belongs_to :lesson
 
-  # Public: Event slug.
-  # column :slug
-  validates :slug, presence: true
-  attr_accessible :slug
-
   # Public: Location of the event.
   # column :location
   validates :location, presence: true

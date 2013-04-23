@@ -34,8 +34,7 @@ class EventImporter
   def process_event(event_attributes, repository, lesson_id)
     start_time = Time.parse(event_attributes["date"])
     event_date = start_time.strftime("%Y%m%d")
-    event_slug = "#{repository.parameterize}-#{event_date}"
-    event = Event.find_or_initialize_by_slug(event_slug)
+    event = Event.find_or_initialize_by_lesson_id_and_start_time(lesson_id, start_time)
     event.lesson_id = lesson_id
     event.location = event_attributes["location"]
     event.start_time = start_time

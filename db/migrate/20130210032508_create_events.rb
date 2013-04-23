@@ -4,7 +4,6 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime  :start_time,  null: false
       t.datetime  :end_time
       t.string    :teacher_github_username, null: false
-      t.string    :slug,        null: false
       t.string    :lesson_id,   null: false
       t.string    :location,    null: false
 
