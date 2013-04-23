@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<%= render partial: "lessons/lesson", object: @lesson %>
+<%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
 
 <%= render partial: "shared/past_lessons" %>
 
