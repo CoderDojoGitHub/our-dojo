@@ -17,4 +17,11 @@ class Event < ActiveRecord::Base
   def end_time
     read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
   end
+
+  # Public: Upcoming event if one exists.
+  #
+  # Returns an Event or NilClass.
+  def self.upcoming
+    where("start_time > ?", Time.now).order("start_time ASC").first
+  end
 end
