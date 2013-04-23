@@ -15,4 +15,21 @@ describe Lesson do
       assert_equal events_attributes, Lesson.new(events_attributes: events_attributes).events_attributes
     end
   end
+
+  describe "#upcoming_event" do
+    it "returns nil if there is no upcoming event" do
+      lesson = Lesson.make!(events_attributes: nil)
+
+      assert_nil lesson.upcoming_event
+    end
+
+    it "returns upcoming event if it exists" do
+      lesson = Lesson.make!
+      Event.make!(lesson: lesson, start_time: 3.days.from_now)
+      event = Event.make!(lesson: lesson, start_time: 1.days.from_now)
+      Event.make!(lesson: lesson, start_time: 2.day.from_now)
+
+      assert_equal event, lesson.upcoming_event
+    end
+  end
 end
