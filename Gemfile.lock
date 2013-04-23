@@ -185,6 +185,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    simple_uuid (0.3.0)
     slop (3.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -232,6 +233,7 @@ DEPENDENCIES
   pry
   rails (= 3.2.13)
   sass-rails
+  simple_uuid
   sqlite3
   state_machine
   uglifier

@@ -10,6 +10,7 @@ gem "omniauth-github-team-member"
 gem "state_machine"
 gem "pg"
 gem "httparty"
+gem "simple_uuid"
 
 group :assets do
   gem "coffee-rails"
