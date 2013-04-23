@@ -2,21 +2,25 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 
 require "minitest/autorun"
-require "minitest/pride"
 require "minitest/rails"
+require "minitest/pride"
 require "capybara/rails"
 require "webmock/minitest"
 require "mocha/setup"
 require "blueprints"
 require "database_cleaner"
 
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :deletion
 
-class ActiveSupport::TestCase
-  self.use_transactional_fixtures = false
+class MiniTest::Spec
+  # Add methods to be used by all specs here
 
-  setup do
-    DatabaseCleaner.clean_with :deletion
+  before do
+    DatabaseCleaner.start
+  end
+
+  after do
+    DatabaseCleaner.clean
   end
 end
 
