@@ -23,10 +23,12 @@ describe LessonImporter do
         organization = Organization.new("coderdojosf")
         importer = LessonImporter.new(organization)
 
-        importer.import
+        first_import = importer.import
         assert_equal 1, Lesson.count
-        importer.import
+        assert first_import.first.is_a?(Lesson)
+        second_import = importer.import
         assert_equal 1, Lesson.count
+        assert second_import.empty?
       end
     end
 

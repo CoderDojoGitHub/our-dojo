@@ -12,15 +12,18 @@ class LessonImporter
   #
   # Returns an Array.
   def import
-    lesson_repositories.select do |lesson_repository|
+    lesson_repositories.map do |lesson_repository|
       lesson_attributes = lesson_repository.lesson
       lesson = Lesson.find_or_initialize_by_repository(lesson_repository.name)
       lesson.title = lesson_attributes["title"]
       lesson.summary = lesson_attributes["summary"]
       lesson.author_github_username = lesson_attributes["author_github_username"]
       lesson.events_attributes = lesson_attributes["events"]
-      lesson.save if lesson.changed?
-    end
+      if lesson.changed?
+        lesson.save
+        lesson
+      end
+    end.compact
   end
 
   # Public: Grab the lesson_repositories from the organization.
