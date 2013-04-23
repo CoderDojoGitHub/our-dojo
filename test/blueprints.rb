@@ -19,7 +19,8 @@ Lesson.blueprint do
 end
 
 Event.blueprint do
-  lesson
-  title { "Event #{sn}" }
+  lesson { Lesson.make! }
   start_time { 1.weeks.from_now }
+  slug { "repo-#{sn}" }
+  teacher_github_username { "user-#{sn}" }
 end
