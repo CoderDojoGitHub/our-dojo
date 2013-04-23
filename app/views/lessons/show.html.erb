@@ -1,13 +1,3 @@
-<div class="upcoming-event row">
-  <div class="small-12 large-5 columns">
-    <a href="#" class="cover-art">
-      <img src="/assets/animations_in_javascript.jpg">
-    </a>
-  </div>
-  <div class="small-12 large-7 columns">
-    <h3>
-      <a href="#"><%= @lesson.title %></a>
-    </h3>
-    <p class="summary"><%= @lesson.summary %></p>
-  </div>
-</div>
+<%= render partial: "lesson", object: @lesson %>
+
+<%= render partial: "shared/past_lessons" %>
