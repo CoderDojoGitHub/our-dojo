@@ -31,7 +31,7 @@ describe LessonImporter do
     end
 
     it "only returns lessons that were imported" do
-      VCR.use_cassette "coderdojosf/Particles/lesson.json import twice" do
+      VCR.use_cassette "coderdojosf/Particles/lesson.json import twice again" do
         organization = Organization.new("coderdojosf")
         importer = LessonImporter.new(organization)
 

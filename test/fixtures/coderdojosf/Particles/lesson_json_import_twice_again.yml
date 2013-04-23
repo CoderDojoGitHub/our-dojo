@@ -18,7 +18,7 @@ http_interactions:
         R2l0SHViLmNvbQ==
       !binary "RGF0ZQ==":
       - !binary |-
-        VHVlLCAyMyBBcHIgMjAxMyAxNDo1Mjo1MCBHTVQ=
+        VHVlLCAyMyBBcHIgMjAxMyAxNDo1Mjo1OSBHTVQ=
       !binary "Q29udGVudC1UeXBl":
       - !binary |-
         YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
@@ -33,7 +33,7 @@ http_interactions:
         NjA=
       !binary "WC1SYXRlbGltaXQtUmVtYWluaW5n":
       - !binary |-
-        Mzg=
+        MTY=
       !binary "VmFyeQ==":
       - !binary |-
         QWNjZXB0
@@ -2140,7 +2140,7 @@ http_interactions:
         Im1hc3Rlcl9icmFuY2giOiJtYXN0ZXIiLCJkZWZhdWx0X2JyYW5jaCI6Im1h
         c3RlciJ9XQ==
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:51 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:00 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/bubbles/contents/lesson.json
@@ -2156,7 +2156,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:51 GMT
+      - Tue, 23 Apr 2013 14:53:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2166,7 +2166,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '37'
+      - '15'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2183,7 +2183,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:52 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:01 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/coderdojosf.github.io/contents/lesson.json
@@ -2199,7 +2199,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:51 GMT
+      - Tue, 23 Apr 2013 14:53:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2209,7 +2209,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '36'
+      - '14'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2226,7 +2226,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:52 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:01 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/connect-four/contents/lesson.json
@@ -2242,7 +2242,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:52 GMT
+      - Tue, 23 Apr 2013 14:53:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2252,7 +2252,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '35'
+      - '13'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2269,7 +2269,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:53 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:01 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/dojochat/contents/lesson.json
@@ -2285,7 +2285,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:52 GMT
+      - Tue, 23 Apr 2013 14:53:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2295,7 +2295,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '34'
+      - '12'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2312,7 +2312,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:53 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:02 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/dojocon-2013-talk/contents/lesson.json
@@ -2328,7 +2328,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:53 GMT
+      - Tue, 23 Apr 2013 14:53:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2338,7 +2338,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '33'
+      - '11'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2355,7 +2355,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:53 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:02 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/event-app/contents/lesson.json
@@ -2371,7 +2371,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:53 GMT
+      - Tue, 23 Apr 2013 14:53:02 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2381,7 +2381,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '32'
+      - '10'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2398,7 +2398,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:54 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:03 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/galaga/contents/lesson.json
@@ -2414,7 +2414,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:53 GMT
+      - Tue, 23 Apr 2013 14:53:02 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2424,7 +2424,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '31'
+      - '9'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2441,7 +2441,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:54 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:03 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/general-discussion/contents/lesson.json
@@ -2457,7 +2457,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:54 GMT
+      - Tue, 23 Apr 2013 14:53:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2467,7 +2467,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '30'
+      - '8'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2484,7 +2484,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:54 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:03 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/git-and-github/contents/lesson.json
@@ -2500,7 +2500,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:54 GMT
+      - Tue, 23 Apr 2013 14:53:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2510,7 +2510,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '29'
+      - '7'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2527,7 +2527,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:55 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:04 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/graphics-and-animations/contents/lesson.json
@@ -2543,7 +2543,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:54 GMT
+      - Tue, 23 Apr 2013 14:53:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2553,7 +2553,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '28'
+      - '6'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2570,7 +2570,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:55 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:04 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/intro-to-html-css/contents/lesson.json
@@ -2586,7 +2586,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:55 GMT
+      - Tue, 23 Apr 2013 14:53:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2596,7 +2596,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '27'
+      - '5'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2613,7 +2613,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:55 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:05 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/KhanAcademy-Animation/contents/lesson.json
@@ -2629,7 +2629,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:55 GMT
+      - Tue, 23 Apr 2013 14:53:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2639,7 +2639,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '26'
+      - '4'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2656,7 +2656,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:56 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:05 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/Lesson-Plans/contents/lesson.json
@@ -2672,7 +2672,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:56 GMT
+      - Tue, 23 Apr 2013 14:53:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2682,7 +2682,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '25'
+      - '3'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2699,7 +2699,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:56 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:05 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/LessonTemplate/contents/lesson.json
@@ -2715,7 +2715,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:56 GMT
+      - Tue, 23 Apr 2013 14:53:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2725,7 +2725,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '24'
+      - '2'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2742,7 +2742,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:57 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:06 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/memory/contents/lesson.json
@@ -2758,7 +2758,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:56 GMT
+      - Tue, 23 Apr 2013 14:53:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2768,7 +2768,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '23'
+      - '1'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2785,7 +2785,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:57 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:06 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/networking/contents/lesson.json
@@ -2801,7 +2801,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:57 GMT
+      - Tue, 23 Apr 2013 14:53:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2811,7 +2811,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '22'
+      - '0'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2828,7 +2828,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:57 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:07 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/paint/contents/lesson.json
@@ -2844,7 +2844,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:57 GMT
+      - Tue, 23 Apr 2013 14:53:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -2854,7 +2854,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '21'
+      - '0'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
@@ -2871,7 +2871,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"message":"Not Found"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:58 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:07 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/Particles/contents/lesson.json
@@ -2881,38 +2881,29 @@ http_interactions:
     headers: {}
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:57 GMT
+      - Tue, 23 Apr 2013 14:53:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
       - keep-alive
       Status:
-      - 200 OK
+      - 403 Forbidden
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '20'
-      Vary:
-      - Accept
-      - Accept-Encoding
-      Cache-Control:
-      - public, max-age=60, s-maxage=60
-      Last-Modified:
-      - Mon, 22 Apr 2013 18:36:03 GMT
-      Etag:
-      - ! '"a88acb59636f5f25f1b1e2ed9ecc2663"'
+      - '0'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
       - nosniff
       Content-Length:
-      - '1228'
+      - '53'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Expose-Headers:
@@ -2921,9 +2912,9 @@ http_interactions:
       - ! '*'
     body:
       encoding: US-ASCII
-      string: ! '{"sha":"2134c439788af2f02441d5ed64408d1099c7c823","size":384,"name":"lesson.json","path":"lesson.json","type":"file","url":"https://api.github.com/repos/CoderDojoSF/Particles/contents/lesson.json","git_url":"https://api.github.com/repos/CoderDojoSF/Particles/git/blobs/2134c439788af2f02441d5ed64408d1099c7c823","html_url":"https://github.com/CoderDojoSF/Particles/blob/master/lesson.json","_links":{"self":"https://api.github.com/repos/CoderDojoSF/Particles/contents/lesson.json","git":"https://api.github.com/repos/CoderDojoSF/Particles/git/blobs/2134c439788af2f02441d5ed64408d1099c7c823","html":"https://github.com/CoderDojoSF/Particles/blob/master/lesson.json"},"content":"ewogIHRpdGxlOiAiQW5pbWF0aW9ucyBpbiBKYXZhc2NyaXB0IiwKICBzdW1t\nYXJ5OiAiQnVpbGQgYW5pbWF0aW9ucyBpbiB0aGUgd2ViIGJyb3dzZXIgdXNp\nbmcgamF2YXNjcmlwdCBhbmQgdGhlIEQzLmpzIGxpYnJhcnkuIiwKICBhdXRo\nb3JfZ2l0aHViX3VzZXJuYW1lOiAiS2FydGlrVGFsd2FyIiwKICBldmVudHM6\nIFsKICAgIHsKICAgICAgbG9jYXRpb246ICJHaXRIdWIgNTQ4IDR0aCBTdCBT\nYW4gRnJhbmNpc2NvIENBIDk0MTA3IiwKICAgICAgZGF0ZTogIlNhdCBGZWIg\nMTYgMjAxMyAxMjowMDowMCBHTVQtMDcwMCAoUERUKSIsCiAgICAgIGxlbmd0\naF9pbl9ob3VyczogMiwKICAgICAgdGVhY2hlcl9naXRodWJfdXNlcm5hbWU6\nICJqb25tYWdpYyIKICAgIH0KICBdCn0K\n","encoding":"base64"}'
+      string: ! '{"message":"API Rate Limit Exceeded for 76.14.16.91"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:58 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:07 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/coderdojosf/tic-tac-toe/contents/lesson.json
@@ -2933,29 +2924,29 @@ http_interactions:
     headers: {}
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 403
+      message: Forbidden
     headers:
       Server:
       - GitHub.com
       Date:
-      - Tue, 23 Apr 2013 14:52:58 GMT
+      - Tue, 23 Apr 2013 14:53:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
       - keep-alive
       Status:
-      - 404 Not Found
+      - 403 Forbidden
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '19'
+      - '0'
       X-Github-Media-Type:
       - github.beta; format=json
       X-Content-Type-Options:
       - nosniff
       Content-Length:
-      - '23'
+      - '53'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Expose-Headers:
@@ -2964,125 +2955,7 @@ http_interactions:
       - ! '*'
     body:
       encoding: US-ASCII
-      string: ! '{"message":"Not Found"}'
+      string: ! '{"message":"API Rate Limit Exceeded for 76.14.16.91"}'
     http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:58 GMT
-- request:
-    method: get
-    uri: https://api.github.com/repos/coderdojosf/Particles/contents/lesson.json?
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.github-blob.raw
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - GitHub.com
-      Date:
-      - Tue, 23 Apr 2013 14:52:58 GMT
-      Content-Type:
-      - application/vnd.github-blob.raw; charset=utf-8
-      Connection:
-      - keep-alive
-      Status:
-      - 200 OK
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '18'
-      Vary:
-      - Accept
-      - Accept-Encoding
-      Cache-Control:
-      - public, max-age=60, s-maxage=60
-      Last-Modified:
-      - Mon, 22 Apr 2013 18:36:03 GMT
-      Etag:
-      - ! '"f70f2187692cfebceadb84aa3627bdd7"'
-      X-Github-Media-Type:
-      - github.beta; param=raw
-      X-Content-Type-Options:
-      - nosniff
-      Content-Length:
-      - '384'
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Expose-Headers:
-      - Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-OAuth-Scopes, X-Accepted-OAuth-Scopes
-      Access-Control-Allow-Origin:
-      - ! '*'
-    body:
-      encoding: US-ASCII
-      string: ! "{\n  title: \"Animations in Javascript\",\n  summary: \"Build animations
-        in the web browser using javascript and the D3.js library.\",\n  author_github_username:
-        \"KartikTalwar\",\n  events: [\n    {\n      location: \"GitHub 548 4th St
-        San Francisco CA 94107\",\n      date: \"Sat Feb 16 2013 12:00:00 GMT-0700
-        (PDT)\",\n      length_in_hours: 2,\n      teacher_github_username: \"jonmagic\"\n
-        \   }\n  ]\n}\n"
-    http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:59 GMT
-- request:
-    method: get
-    uri: https://api.github.com/repos/coderdojosf/Particles/contents/lesson.json?
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.github-blob.raw
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - GitHub.com
-      Date:
-      - Tue, 23 Apr 2013 14:52:59 GMT
-      Content-Type:
-      - application/vnd.github-blob.raw; charset=utf-8
-      Connection:
-      - keep-alive
-      Status:
-      - 200 OK
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '17'
-      Vary:
-      - Accept
-      - Accept-Encoding
-      Cache-Control:
-      - public, max-age=60, s-maxage=60
-      Last-Modified:
-      - Mon, 22 Apr 2013 18:36:03 GMT
-      Etag:
-      - ! '"f70f2187692cfebceadb84aa3627bdd7"'
-      X-Github-Media-Type:
-      - github.beta; param=raw
-      X-Content-Type-Options:
-      - nosniff
-      Content-Length:
-      - '384'
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Expose-Headers:
-      - Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-OAuth-Scopes, X-Accepted-OAuth-Scopes
-      Access-Control-Allow-Origin:
-      - ! '*'
-    body:
-      encoding: US-ASCII
-      string: ! "{\n  title: \"Animations in Javascript\",\n  summary: \"Build animations
-        in the web browser using javascript and the D3.js library.\",\n  author_github_username:
-        \"KartikTalwar\",\n  events: [\n    {\n      location: \"GitHub 548 4th St
-        San Francisco CA 94107\",\n      date: \"Sat Feb 16 2013 12:00:00 GMT-0700
-        (PDT)\",\n      length_in_hours: 2,\n      teacher_github_username: \"jonmagic\"\n
-        \   }\n  ]\n}\n"
-    http_version: 
-  recorded_at: Tue, 23 Apr 2013 14:52:59 GMT
+  recorded_at: Tue, 23 Apr 2013 14:53:08 GMT
 recorded_with: VCR 2.4.0
