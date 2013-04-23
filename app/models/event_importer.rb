@@ -37,6 +37,7 @@ class EventImporter
     event_slug = "#{repository.parameterize}-#{event_date}"
     event = Event.find_or_initialize_by_slug(event_slug)
     event.lesson_id = lesson_id
+    event.location = event_attributes["location"]
     event.start_time = start_time
     event.teacher_github_username = event_attributes["teacher_github_username"]
 

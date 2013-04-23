@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130421211727) do
     t.string   "teacher_github_username", :null => false
     t.string   "slug",                    :null => false
     t.string   "lesson_id",               :null => false
+    t.string   "location",                :null => false
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end

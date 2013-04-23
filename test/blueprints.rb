@@ -20,6 +20,7 @@ end
 
 Event.blueprint do
   lesson { Lesson.make! }
+  location { "GitHub 548 4th St San Francisco CA 94107" }
   start_time { 1.weeks.from_now }
   slug { "repo-#{sn}" }
   teacher_github_username { "user-#{sn}" }
