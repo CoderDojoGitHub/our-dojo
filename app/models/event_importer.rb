@@ -1,4 +1,5 @@
 class EventImporter
+  # Public: Lessons passed in during initialization.
   attr_reader :lessons
 
   # Public: Called by .new while instantiating the object.
