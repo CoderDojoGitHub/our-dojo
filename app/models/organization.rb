@@ -1,4 +1,5 @@
 class Organization
+  # Public: GitHub username passed in during initialization.
   attr_reader :username
 
   # Public: Called by .new while instantiating the object.
