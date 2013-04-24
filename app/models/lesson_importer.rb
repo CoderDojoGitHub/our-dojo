@@ -1,4 +1,5 @@
 class LessonImporter
+  # Public: Organization passed in during initialization.
   attr_reader :organization
 
   # Public: Called by .new while instantiating the object.
