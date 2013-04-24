@@ -35,20 +35,25 @@ ActiveRecord::Schema.define(:version => 20130423152643) do
 
   create_table "registrants", :force => true do |t|
     t.string   "email"
-    t.integer  "number_of_students"
-    t.integer  "event_id"
-    t.string   "reference_token"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "temporary_registrants", :force => true do |t|
-    t.string   "email"
-    t.integer  "number_of_students"
-    t.integer  "event_id"
-    t.string   "reference_token"
+  create_table "registrations", :force => true do |t|
+    t.integer  "registrant_id",             :null => false
+    t.integer  "number_of_students",        :null => false
+    t.integer  "event_id",                  :null => false
+    t.string   "reference_token",           :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "temporary_registration_at", :null => false
+  end
+
+  create_table "temporary_registrations", :force => true do |t|
+    t.integer  "registrant_id",      :null => false
+    t.integer  "number_of_students", :null => false
+    t.integer  "event_id",           :null => false
+    t.string   "reference_token",    :null => false
     t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|

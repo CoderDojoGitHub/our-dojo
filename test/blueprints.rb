@@ -24,3 +24,21 @@ Event.blueprint do
   start_time { 1.weeks.from_now }
   teacher_github_username { "user-#{sn}" }
 end
+
+Registrant.blueprint do
+  email { "registrant-#{sn}@foo.com" }
+end
+
+TemporaryRegistration.blueprint do
+  registrant { Registrant.make! }
+  event { Event.make! }
+  number_of_students { 1 }
+end
+
+Registration.blueprint do
+  registrant { Registrant.make! }
+  event { Event.make! }
+  number_of_students { 1 }
+  reference_token { SimpleUUID::UUID.new.to_guid.gsub("-", "") }
+  temporary_registration_at { 10.minutes.ago }
+end
