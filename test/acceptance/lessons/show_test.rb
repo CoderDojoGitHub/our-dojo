@@ -13,10 +13,10 @@ class LessonsIndexTest < AcceptanceTest
   describe "Register for event" do
     describe "on success" do
       it "flashes Please check your email to confirm your registration" do
-        lesson = Lesson.make!(title: "Data Types")
-        Event.make!(lesson: lesson)
+        DatabaseCleaner.clean_with :deletion
+        event = Event.make!
 
-        visit "/lessons/#{lesson.id}"
+        visit "/lessons/#{event.lesson.id}"
         fill_in :email, with: "jonmagic@gmail.com"
         click_button "Register"
 
