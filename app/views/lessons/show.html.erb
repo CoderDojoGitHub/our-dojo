@@ -1,3 +1,29 @@
 <%= render partial: "lesson", object: @lesson %>
 
+<div class="row">
+  <div class="small-12 large-12 columns">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+  </div>
+
+  <%= form_tag register_path do %>
+    <div class="small-12 large-3 columns">
+      <%= label_tag :number_of_students %>
+      <%= select_tag :number_of_students, options_for_select([1, 2, 3, 4]) %>
+    </div>
+    <div class="small-12 large-6 columns">
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
+    <div class="small-12 large-3 columns">
+      <%= submit_tag "Register" %>
+    </div>
+  <% end %>
+</div>
+
+
 <%= render partial: "shared/past_lessons" %>

@@ -8,7 +8,9 @@ class Registrar
   #
   # Returns a TemporaryRegistration.
   def self.register(event, email, number_of_students)
-    registrant = Registrant.find_or_create_by_email!(email)
+    registrant = Registrant.find_or_create_by_email(email)
+    return registrant unless registrant.persisted?
+
     temporary_registration = TemporaryRegistration.
       find_or_initialize_by_event_id_and_registrant_id(event.id, registrant.id)
 
