@@ -1,12 +1,30 @@
 class Lesson < ActiveRecord::Base
-  attr_accessible :author_github_username, :events_attributes,
-                  :repository, :summary, :title
+  # Public: Title of the lesson. The title must be present to save the record.
+  # column :title
+  validates :title, presence: true
+  attr_accessible :title
 
-  has_many :events
+  # Public: Summary of the lesson plan.
+  # column :summary
+  attr_accessible :summary
 
-  validates_presence_of :repository, :title
+  # Public: The lesson authors github username.
+  # column :author_github_username
+  attr_accessible :author_github_username
 
+  # Public: The repository name where the lesson is stored. The repository
+  # must be present to save the record.
+  # column :repository
+  validates :repository, presence: true
+  attr_accessible :repository
+
+  # Public: A serialized array of event hashes with their attributes.
+  # column :events_attributes
+  attr_accessible :events_attributes
   serialize :events_attributes
+
+  # Public: The lesson may have many events.
+  has_many :events
 
   # Public: Get upcoming event for lesson.
   #
