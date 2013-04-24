@@ -1,11 +1,16 @@
 class Repository
-  attr_reader :name, :organization_name
+  # Public: GitHub organization username passed in during initialization.
+  attr_reader :username
+
+  # Public: Lesson repository name passed in during initialization.
+  attr_reader :name
 
   # Public: Called by .new while instantiating the object.
   #
-  # attributes - repository attributes.
-  def initialize(organization_name, name)
-    @organization_name = organization_name
+  # username - GitHub organization username.
+  # name - Lesson repository name.
+  def initialize(username, name)
+    @username = username
     @name = name
   end
 
@@ -27,6 +32,6 @@ class Repository
   #
   # Returns a String.
   def lesson_json_api_path
-    "repos/#{organization_name}/#{name}/contents/lesson.json"
+    "repos/#{username}/#{name}/contents/lesson.json"
   end
 end

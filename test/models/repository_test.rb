@@ -2,7 +2,7 @@ require "minitest_helper"
 
 describe Repository do
   describe "#initialize" do
-    it "requires organization_name and name" do
+    it "requires username and name" do
       proc { Repository.new }.must_raise(ArgumentError)
     end
   end
@@ -13,9 +13,9 @@ describe Repository do
     end
   end
 
-  describe "#organization_name" do
+  describe "#username" do
     it "returns the name" do
-      assert_equal "acme", Repository.new("acme", "Bubbles").organization_name
+      assert_equal "acme", Repository.new("acme", "Bubbles").username
     end
   end
 
