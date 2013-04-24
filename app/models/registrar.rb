@@ -13,7 +13,8 @@ class Registrar
       find_or_initialize_by_event_id_and_registrant_id(event.id, registrant.id)
 
     temporary_registration.number_of_students = number_of_students
-    temporary_registration if temporary_registration.save
+    temporary_registration.save
+    temporary_registration
   end
 
   # Public: Creates a registration from the temporary registration and
@@ -35,7 +36,8 @@ class Registrar
 
     if registration.save
       temporary_registration.destroy
-      registration
     end
+
+    registration
   end
 end
