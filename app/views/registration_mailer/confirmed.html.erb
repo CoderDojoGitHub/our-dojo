@@ -1,0 +1,6 @@
+Your registration for the Coder Dojo event on <%= @event.start_time.strftime("%A, %B %-d") %> at <%= @event.start_time.strftime("%l:%M%p") %> has been confirmed!
+
+Location: GitHub
+<%= @event.location %>
+
+View the lesson <%= lesson_url(@event.lesson) %>
