@@ -42,6 +42,13 @@ class Event < ActiveRecord::Base
   # Public: Subscribers to this event.
   has_many :event_subscribers
 
+  # Public: Subscribers to this event that have not been sent a message.
+  #
+  # Returns an Array.
+  def subscribers_to_notify
+    event_subscribers.where(sent_at: nil)
+  end
+
   # Public: Returns end_time or start_time + DefaultEventLengthInHours.
   #
   # Returns a Time.

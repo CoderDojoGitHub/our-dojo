@@ -1,6 +1,16 @@
 require "minitest_helper"
 
 describe Event do
+  describe "subscribers_to_notfiy" do
+    it "only returns event_subscribers where sent_at is nil" do
+      event = Event.make!
+      subscriber1 = EventSubscriber.make!(event: event, sent_at: Time.now)
+      subscriber2 = EventSubscriber.make!(event: event)
+
+      assert_equal [subscriber2], event.subscribers_to_notify
+    end
+  end
+
   describe "#end_time" do
     it "defaults to DefaultEventLengthInHours after start_time" do
       start_time = Time.now

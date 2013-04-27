@@ -41,6 +41,6 @@ class EventNotifier
   #
   # Returns an Array.
   def subscribers
-    event.event_subscribers
+    event.subscribers_to_notify
   end
 end

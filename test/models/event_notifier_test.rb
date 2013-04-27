@@ -60,7 +60,7 @@ describe EventNotifier do
       event = stub
       subscribers = []
 
-      event.expects(:event_subscribers).returns(subscribers)
+      event.expects(:subscribers_to_notify).returns(subscribers)
       assert_equal subscribers, EventNotifier.new(event).subscribers
     end
   end
