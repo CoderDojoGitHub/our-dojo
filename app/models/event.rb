@@ -6,6 +6,12 @@ class Event < ActiveRecord::Base
   # Public: Default class duration in hours.
   DefaultEventLengthInHours = 2
 
+  # Public: Number of days before the event that registration opens.
+  DaysToOpenRegistrationBeforeEvent = 7
+
+  # Public: The number of students per class.
+  DefaultClassSize = 20
+
   # Public: The lesson this event is for.
   # column :lesson_id
   validates :lesson_id, presence: true
@@ -30,6 +36,9 @@ class Event < ActiveRecord::Base
   validates :teacher_github_username, presence: true
   attr_accessible :teacher_github_username
 
+  # Public: Registrations for this event.
+  has_many :registrations
+
   # Public: Returns end_time or start_time + DefaultEventLengthInHours.
   #
   # Returns a Time.
@@ -42,5 +51,39 @@ class Event < ActiveRecord::Base
   # Returns an Event or NilClass.
   def self.upcoming
     where("start_time > ?", Time.now).order("start_time ASC").first
+  end
+
+  # Public: Is registration open for this event?
+  #
+  # Returns a TrueClass or FalseClass.
+  def open_for_registration?
+    return false if completed?
+    return false unless registration_date_passed?
+    return false unless space_available?
+    true
+  end
+
+  # Public: Has the date for this event already passed?
+  #
+  # Returns a TrueClass or FalseClass.
+  def completed?
+    start_time < Time.now
+  end
+
+  # Public: Is it close enough to the event for registration to be open?
+  #
+  # Returns a TrueClass or FalseClass.
+  def registration_date_passed?
+    start_time - DaysToOpenRegistrationBeforeEvent.days < Time.now
+  end
+
+  # Public: Is there space available in the class?
+  #
+  # Returns a TrueClass or FalseClass.
+  def space_available?
+    total_students = registrations.
+      inject(0) {|total, registration| total + registration.number_of_students }
+
+    total_students < DefaultClassSize
   end
 end

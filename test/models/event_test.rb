@@ -21,4 +21,65 @@ describe Event do
       assert_equal event, Event.upcoming
     end
   end
+
+  describe "#open_for_registration?" do
+    it "returns false if event completed" do
+      refute Event.make(start_time: 4.days.ago).open_for_registration?
+    end
+
+    it "returns false unless event registration has passed" do
+      refute Event.make(start_time: 8.days.from_now).open_for_registration?
+    end
+
+    it "returns false unless event has space available" do
+      registration = Registration.make!(number_of_students: 20)
+      refute registration.event.open_for_registration?
+    end
+
+    it "returns true" do
+      assert Event.make(start_time: 4.days.from_now).open_for_registration?
+    end
+  end
+
+  describe "#completed?" do
+    it "returns false for future event" do
+      refute Event.make(start_time: 1.day.from_now).completed?
+    end
+
+    it "returns true for past event" do
+      assert Event.make(start_time: 1.day.ago).completed?
+    end
+  end
+
+  describe "#registration_date_passed?" do
+    it "returns false for event 8 days in the future" do
+      refute Event.make(start_time: 8.day.from_now).registration_date_passed?
+    end
+
+    it "returns true for event 6 days in the future" do
+      assert Event.make(start_time: 6.day.from_now).registration_date_passed?
+    end
+  end
+
+  describe "#space_available?" do
+    it "returns false if class is full" do
+      event = Event.make!
+
+      4.times do
+        Registration.make!(event: event, number_of_students: 5)
+      end
+
+      refute event.space_available?
+    end
+
+    it "returns true if class has space available" do
+      event = Event.make!
+
+      3.times do
+        Registration.make!(event: event, number_of_students: 5)
+      end
+
+      assert event.space_available?
+    end
+  end
 end
