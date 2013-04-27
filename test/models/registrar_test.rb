@@ -10,7 +10,7 @@ describe Registrar do
       temporary_registration = Registrar.register(event, "foo@bar.com", 2)
       assert_equal 1, Registrant.count
       assert_equal 1, TemporaryRegistration.count
-      assert temporary_registration.is_a?(TemporaryRegistration)
+      assert_equal TemporaryRegistration, temporary_registration.class
     end
 
     it "does not duplicate registrant" do
@@ -40,7 +40,7 @@ describe Registrar do
       assert_equal 0, Registration.count
       registration = Registrar.confirm_registration(temporary_registration)
       assert_equal 1, Registration.count
-      assert registration.is_a?(Registration)
+      assert_equal Registration, registration.class
     end
 
     it "removes temporary registration" do

@@ -17,7 +17,7 @@ describe Organization do
     it "returns array of organizations repositores on GitHub" do
       VCR.use_cassette "coderdojosf/repositories" do
         repositories = Organization.new("coderdojosf").repositories
-        assert repositories.is_a?(Array)
+        assert_equal Array, repositories.class
         refute repositories.empty?
       end
     end
@@ -27,7 +27,7 @@ describe Organization do
     it "returns array of lesson repositories which contains 'Particles'" do
       VCR.use_cassette "coderdojosf/lesson_repositories" do
         lesson_repositories = Organization.new("coderdojosf").lesson_repositories
-        assert lesson_repositories.is_a?(Array)
+        assert_equal Array, lesson_repositories.class
         assert lesson_repositories.select {|repository| repository.name == "Particles" }.present?
       end
     end

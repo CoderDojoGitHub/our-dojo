@@ -25,7 +25,7 @@ describe LessonImporter do
 
         first_import = importer.import
         assert_equal 1, Lesson.count
-        assert first_import.first.is_a?(Lesson)
+        assert_equal Lesson, first_import.first.class
         second_import = importer.import
         assert_equal 1, Lesson.count
         assert second_import.empty?
