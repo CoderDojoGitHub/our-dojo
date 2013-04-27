@@ -10,18 +10,36 @@
     <% end %>
   </div>
 
-  <%= form_tag register_path do %>
-    <div class="small-12 large-3 columns">
-      <%= label_tag :number_of_students %>
-      <%= select_tag :number_of_students, options_for_select([1, 2, 3, 4]) %>
-    </div>
-    <div class="small-12 large-6 columns">
-      <%= label_tag :email %>
-      <%= text_field_tag :email %>
-    </div>
-    <div class="small-12 large-3 columns">
-      <%= submit_tag "Register" %>
-    </div>
+  <% if @lesson.upcoming_event.present? %>
+    <% if @lesson.upcoming_event.open_for_registration? %>
+      <h3>Register for event</h3>
+
+      <%= form_tag register_path do %>
+        <div class="small-12 large-3 columns">
+          <%= label_tag :number_of_students %>
+          <%= select_tag :number_of_students, options_for_select([1, 2, 3, 4]) %>
+        </div>
+        <div class="small-12 large-6 columns">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="small-12 large-3 columns">
+          <%= submit_tag "Register" %>
+        </div>
+      <% end %>
+    <% else %>
+      <h3>Notify me when registration opens</h3>
+
+      <%= form_tag subscribe_to_event_path(@lesson.upcoming_event) do %>
+        <div class="small-12 large-6 columns">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="small-12 large-6 columns">
+          <%= submit_tag "Notify me" %>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 
