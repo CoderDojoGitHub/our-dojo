@@ -14,5 +14,5 @@ class EventSubscriber < ActiveRecord::Base
 
   # Public: Time that the email was sent to the subscriber.
   # column :sent_at
-  attr_readonly :sent_at
+  attr_accessible :sent_at
 end
