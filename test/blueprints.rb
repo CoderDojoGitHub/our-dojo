@@ -42,3 +42,8 @@ Registration.blueprint do
   reference_token { SimpleUUID::UUID.new.to_guid.gsub("-", "") }
   temporary_registration_at { 10.minutes.ago }
 end
+
+EventSubscriber.blueprint do
+  email { "registrant-#{sn}@foo.com" }
+  event { Event.make! }
+end
