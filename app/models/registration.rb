@@ -1,12 +1,16 @@
+# A Registration represents a single reservation for an Event for a Registrant.
+# It belongs to an Event and a Registrant and also stores the number of students
+# being registered.
 class Registration < ActiveRecord::Base
+
   # Public: The event being registered for.
   # column :event_id
   validates :event_id, presence: true
   attr_accessible :event, :event_id
   belongs_to :event
 
-  # Public: String email of the registrant.
-  # column :email
+  # Public: Registrant this registration belongs to.
+  # column :registrant_id
   validates :registrant_id, presence: true
   attr_accessible :registrant, :registrant_id
   belongs_to :registrant
