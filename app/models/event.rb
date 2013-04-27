@@ -39,6 +39,9 @@ class Event < ActiveRecord::Base
   # Public: Registrations for this event.
   has_many :registrations
 
+  # Public: Subscribers to this event.
+  has_many :event_subscribers
+
   # Public: Returns end_time or start_time + DefaultEventLengthInHours.
   #
   # Returns a Time.
