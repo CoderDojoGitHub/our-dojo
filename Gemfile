@@ -34,4 +34,5 @@ group :test do
   gem "vcr"
   gem "mocha", require: false
   gem "database_cleaner"
+  gem "terminal-notifier-guard"
 end
