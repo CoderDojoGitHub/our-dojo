@@ -10,10 +10,7 @@ gem "omniauth-github-team-member"
 gem "state_machine"
 gem "httparty"
 gem "simple_uuid"
-
-group :production do
-  gem "mysql2"
-end
+gem "mysql2"
 
 group :assets do
   gem "coffee-rails"
