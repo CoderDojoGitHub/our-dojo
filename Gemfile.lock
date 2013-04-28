@@ -22,10 +22,6 @@ GEM
       activesupport (= 3.2.13)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-mysql-adapter (0.0.1)
-      activerecord (>= 3.2.9)
-      activesupport (>= 3.2.9)
-      mysql (>= 2.9.0)
     activeresource (3.2.13)
       activemodel (= 3.2.13)
       activesupport (= 3.2.13)
@@ -124,7 +120,7 @@ GEM
     multi_json (1.7.2)
     multi_xml (0.5.3)
     multipart-post (1.1.5)
-    mysql (2.9.1)
+    mysql2 (0.3.11)
     nokogiri (1.5.6)
     oauth2 (0.8.0)
       faraday (~> 0.8)
@@ -220,7 +216,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-mysql-adapter
   coffee-rails
   compass-rails
   database_cleaner
@@ -234,6 +229,7 @@ DEPENDENCIES
   minitest-capybara
   minitest-rails
   mocha
+  mysql2
   omniauth-github-team-member
   pry
   rails (= 3.2.13)

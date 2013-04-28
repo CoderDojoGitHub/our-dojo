@@ -12,7 +12,7 @@ gem "httparty"
 gem "simple_uuid"
 
 group :production do
-  gem "activerecord-mysql-adapter"
+  gem "mysql2"
 end
 
 group :assets do
