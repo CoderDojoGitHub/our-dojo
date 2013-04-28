@@ -8,9 +8,12 @@ gem "jquery-ui-rails"
 gem "dotenv"
 gem "omniauth-github-team-member"
 gem "state_machine"
-gem "pg"
 gem "httparty"
 gem "simple_uuid"
+
+group :production do
+  gem "activerecord-mysql-adapter"
+end
 
 group :assets do
   gem "coffee-rails"
