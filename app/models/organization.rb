@@ -15,8 +15,6 @@ class Organization
   # Returns an Array.
   def repositories
     data = GitHubApi.api_call("users/#{username}/repos")
-    return unless data.is_a?(Array)
-
     data.map {|attributes| Repository.new(username, attributes["name"]) }
   end
 

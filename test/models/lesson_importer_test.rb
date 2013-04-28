@@ -9,7 +9,7 @@ describe LessonImporter do
 
         assert_equal 0, Lesson.count
         importer.import
-        assert_equal 1, Lesson.count
+        assert_equal 2, Lesson.count
 
         lesson = Lesson.first
         assert_equal "Animations in Javascript", lesson.title
@@ -24,10 +24,10 @@ describe LessonImporter do
         importer = LessonImporter.new(organization)
 
         first_import = importer.import
-        assert_equal 1, Lesson.count
+        assert_equal 2, Lesson.count
         assert_equal Lesson, first_import.first.class
         second_import = importer.import
-        assert_equal 1, Lesson.count
+        assert_equal 2, Lesson.count
         assert second_import.empty?
       end
     end
