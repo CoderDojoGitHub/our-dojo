@@ -20,12 +20,14 @@ class Registrar
   end
 
   # Public: Creates a registration from the temporary registration and
-  # then removes the temporary registration.
+  # then removes the temporary registration. Returns early if class is full.
   #
   # temporary_registration - TemporaryRegistration to be confirmed.
   #
-  # Returns a Registration.
+  # Returns a Registration or NilClass.
   def self.confirm_registration(temporary_registration)
+    return unless temporary_registration.event.space_available?
+
     registration = Registration.
       find_or_initialize_by_reference_token(temporary_registration.reference_token)
 

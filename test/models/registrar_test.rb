@@ -44,6 +44,18 @@ describe Registrar do
     end
 
     it "removes temporary registration" do
+      temporary_registration = TemporaryRegistration.make!
+      Registrar.confirm_registration(temporary_registration)
+
+      assert_raises(ActiveRecord::RecordNotFound) { temporary_registration.reload }
+    end
+
+    it "returns early if class is full" do
+      temporary_registration = TemporaryRegistration.make!
+      event = temporary_registration.event
+      event.stubs(:space_available? => false)
+      assert_nil Registrar.confirm_registration(temporary_registration)
+      assert temporary_registration.persisted?
     end
   end
 end
