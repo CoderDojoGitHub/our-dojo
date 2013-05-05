@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class LessonsIndexTest < AcceptanceTest
+class LessonsShowTest < AcceptanceTest
   it "renders lesson" do
     lesson = Lesson.make!(title: "Data Types")
 
