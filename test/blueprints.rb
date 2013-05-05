@@ -4,6 +4,7 @@ require "faker"
 Lesson.blueprint do
   title { "Lesson #{sn}" }
   summary { "Learn crazy awesome #{sn} when you use #{sn}."}
+  image_url { "/assets/image_#{sn}.jpg" }
   repository { "lesson-#{sn}" }
   author_github_username { "jonmagic" }
   events_attributes {

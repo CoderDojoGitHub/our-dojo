@@ -10,7 +10,7 @@
       <% if lesson.upcoming_event.present? %>
         <div class="date"><%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></div>
       <% end %>
-      <img src="/assets/animations_in_javascript.jpg">
+      <%= image_tag lesson.image_url, width: 400, height: 400 %>
     </a>
   </div>
   <div class="small-12 large-7 columns">
