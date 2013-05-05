@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424161958) do
+ActiveRecord::Schema.define(:version => 20130505154215) do
 
   create_table "event_subscribers", :force => true do |t|
     t.string   "email"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20130424161958) do
     t.string   "reference_token",    :null => false
     t.datetime "created_at",         :null => false
   end
+
+  add_index "temporary_registrations", ["reference_token"], :name => "index_temporary_registrations_on_reference_token", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name",                                 :null => false
