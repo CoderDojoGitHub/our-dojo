@@ -1,0 +1,51 @@
+<%= render partial: "lesson", object: @lesson %>
+
+<div class="row">
+  <div class="small-12 large-12 columns">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+  </div>
+
+  <% if @lesson.upcoming_event.present? %>
+    <% if @lesson.upcoming_event.registration_date_still_in_the_future? %>
+      <h3>Notify me when registration opens</h3>
+
+      <%= form_tag subscribe_to_event_path(@lesson.upcoming_event) do %>
+        <div class="small-12 large-6 columns">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="small-12 large-6 columns">
+          <%= submit_tag "Notify me" %>
+        </div>
+      <% end %>
+    <% elsif @lesson.upcoming_event.open_for_registration? %>
+      <h3>Register for event</h3>
+
+      <%= form_tag register_path do %>
+        <div class="small-12 large-3 columns">
+          <%= label_tag :number_of_students %>
+          <%= select_tag :number_of_students, options_for_select([1, 2, 3, 4]) %>
+        </div>
+        <div class="small-12 large-6 columns">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="small-12 large-3 columns">
+          <%= submit_tag "Register" %>
+        </div>
+      <% end %>
+    <% else %>
+      <h3>Registration has closed</h3>
+
+      <p>The class is full.</p>
+    <% end %>
+  <% end %>
+</div>
+
+
+<%= render partial: "shared/past_lessons" %>

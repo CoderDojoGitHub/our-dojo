@@ -5,3 +5,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 CoderdojoWebapp::Application.load_tasks
+
+require File.expand_path('../lib/tasks/hourly', __FILE__)

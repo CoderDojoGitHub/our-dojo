@@ -1,0 +1,11 @@
+<div class="organization-blurb row">
+  <div class="small-12 large-12 columns">
+    <p>
+      CoderDojo is a free coding class, held every other Saturday at the GitHub San Francisco office, for kids ages 6–18 years old. We teach all kinds of topics like building websites, video games, chat apps, drawing apps, and many others. Sessions last about two hours and have a short lunch break in the middle. If you would like more information about the CoderDojo organization, or to find one in your area, head over to <a href="http://www.coderdojo.com">http://www.coderdojo.com</a>.
+    </p>
+  </div>
+</div>
+
+<%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
+
+<%= render partial: "shared/past_lessons" %>

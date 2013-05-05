@@ -3,110 +3,104 @@
 # transition from a draft to completed.
 
 class Event < ActiveRecord::Base
-
+  # Public: Default class duration in hours.
   DefaultEventLengthInHours = 2
-  OpenTicketsBeforeEventInDays = 7
-  DefaultEventCapacity = 20
 
-  # Public: Event::States keys/values for the Event state machine.
+  # Public: Number of days before the event that registration opens.
+  DaysToOpenRegistrationBeforeEvent = 7
+
+  # Public: The number of students per class.
+  DefaultClassSize = 20
+
+  # Public: The lesson this event is for.
+  # column :lesson_id
+  validates :lesson_id, presence: true
+  belongs_to :lesson
+
+  # Public: Location of the event.
+  # column :location
+  validates :location, presence: true
+  attr_accessible :location
+
+  # Public: The start time for the event.
+  # column :start_time
+  validates :start_time, presence: true
+  attr_accessible :start_time
+
+  # Public: The end time for the event.
+  # column :end_time
+  attr_accessible :end_time
+
+  # Public: The GitHub username of the event teacher.
+  # column :teacher_github_username
+  validates :teacher_github_username, presence: true
+  attr_accessible :teacher_github_username
+
+  # Public: Registrations for this event.
+  has_many :registrations
+
+  # Public: Subscribers to this event.
+  has_many :event_subscribers
+
+  # Public: Subscribers to this event that have not been sent a message.
   #
-  # Returns a Hash.
-  States = {
-    draft: 0,
-    event_created: 1,
-    invites_sent: 2,
-    registration_opened: 3,
-    completed: 4,
-  }
-
-  # Internal: Set attributes as accessible. Protects all attributes not
-  # specifically designated here.
-  attr_accessible :title, :start_time, :start_date, :end_time, :state, :scheduled_at,
-                  :invites_sent_at, :opened_registration_at, :eventbrite_event_id
-
-  # Internal: Validations for attributes.
-  validates_presence_of :title, :start_time
-
-  def start_date=(start_date)
-    self.start_time = Time.parse("#{start_date} 12:00:00")
+  # Returns an Array.
+  def subscribers_to_notify
+    event_subscribers.where(sent_at: nil)
   end
 
-  def start_date
-    return if start_time.blank?
-    start_time.strftime("%Y-%m-%d")
-  end
-
-  state_machine :state, initial: :draft do
-
-    # Create states based on the Event::States constant.
-    States.each do |name, value|
-      state name, value: value
-    end
-
-    # Public: Schedule the event.
-    event :schedule_event do
-      transition draft: :event_created
-    end
-    before_transition on: :schedule_event, do: :schedule_event_with_event_service
-    after_transition  on: :schedule_event, do: lambda {|event| event.update_attributes(scheduled_at: Time.now) }
-
-    # Public: Send invites to recent attendies.
-    event :send_invites do
-      transition event_created: :invites_sent
-    end
-    before_transition on: :send_invites, do: :send_invites_with_event_service
-    after_transition  on: :send_invites, do: lambda {|event| event.update_attributes(invites_sent_at: Time.now) }
-
-    # Public: Open registration to the public.
-    event :open_registration do
-      transition invites_sent: :registration_opened
-    end
-    before_transition on: :open_registration, do: :open_registration_with_event_service
-    after_transition  on: :open_registration, do: lambda {|event| event.update_attributes(opened_registration_at: Time.now) }
-
-    # Public: Complete the event.
-    event :complete do
-      transition registration_opened: :completed
-    end
-  end
-
-  # Public: end_time or start_time + DefaultEventLengthInHours.
+  # Public: Returns end_time or start_time + DefaultEventLengthInHours.
+  #
+  # Returns a Time.
   def end_time
     read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
   end
 
-  def previous_event_with_eventbrite_event_id
-    self.class.where("start_time < ?", self.start_time).where("eventbrite_event_id IS NOT NULL").last
+  # Public: Upcoming event if one exists.
+  #
+  # Returns an Event or NilClass.
+  def self.upcoming
+    where("start_time > ?", Time.now).order("start_time ASC").first
   end
 
-  # Internal: The event service to use for scheduling, sending invites, and
-  # to open registration.
+  # Public: Is registration open for this event?
   #
-  # Returns an EventbriteEventService.
-  def event_service
-    @event_service ||= EventbriteEventService.new(self)
+  # Returns a TrueClass or FalseClass.
+  def open_for_registration?
+    return false if completed?
+    return false unless registration_date_passed?
+    return false unless space_available?
+    true
   end
 
-  attr_writer :event_service
-
-  # Internal: Schedule the event using the event service.
+  # Public: Has the date for this event already passed?
   #
-  # Returns a Boolean.
-  def schedule_event_with_event_service
-    event_service.schedule
+  # Returns a TrueClass or FalseClass.
+  def completed?
+    start_time < Time.now
   end
 
-  # Internal: Send invites using the event service.
+  # Public: Is it close enough to the event for registration to be open?
   #
-  # Returns a Boolean.
-  def send_invites_with_event_service
-    event_service.send_invites
+  # Returns a TrueClass or FalseClass.
+  def registration_date_passed?
+    start_time - DaysToOpenRegistrationBeforeEvent.days < Time.now
   end
 
-  # Internal: Open registration using the event service.
+  # Public: Is the registration date still in the future?
   #
-  # Returns a Boolean.
-  def open_registration_with_event_service
-    event_service.open_registration
+  # Returns a TrueClass or FalseClass.
+  def registration_date_still_in_the_future?
+    !registration_date_passed?
+  end
+
+  # Public: Is there space available in the class?
+  #
+  # Returns a TrueClass or FalseClass.
+  def space_available?
+    total_students = registrations.
+      inject(0) {|total, registration| total + registration.number_of_students }
+
+    total_students < DefaultClassSize
   end
 end
