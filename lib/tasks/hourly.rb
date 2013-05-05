@@ -1,4 +1,5 @@
 namespace :registration do
+  desc "Send event notifications to subscribers."
   task send_notifications: :environment do
     if event = Event.upcoming
       if event.open_for_registration?
@@ -19,6 +20,7 @@ namespace :registration do
 end
 
 namespace :import do
+  desc "Import lessons and events."
   task lessons_and_events: :environment do
     Import.lessons_and_events
   end
