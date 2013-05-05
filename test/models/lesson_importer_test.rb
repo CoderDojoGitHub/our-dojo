@@ -12,9 +12,9 @@ describe LessonImporter do
         assert_equal 2, Lesson.count
 
         lesson = Lesson.first
-        assert_equal "Animations in Javascript", lesson.title
-        assert_equal "Build animations in the web browser using javascript and the D3.js library.", lesson.summary
-        assert_equal "Particles", lesson.repository
+        assert_equal "Around the World", lesson.title
+        assert_equal "An introduction to CSS3 animation effects", lesson.summary
+        assert_equal "AroundTheWorld", lesson.repository
       end
     end
 
