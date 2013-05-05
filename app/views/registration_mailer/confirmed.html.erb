@@ -1,6 +1,7 @@
-Your registration for the Coder Dojo event on <%= @event.start_time.strftime("%A, %B %-d") %> at <%= @event.start_time.strftime("%l:%M%p") %> has been confirmed!
+<p>Your registration for the Coder Dojo event on <%= @event.start_time.strftime("%A, %B %-d") %> at <%= @event.start_time.strftime("%l:%M%p") %> has been confirmed!</p>
 
-Location: GitHub
-<%= @event.location %>
+<h3>Location: GitHub</h3>
 
-View the lesson <%= lesson_url(@event.lesson) %>
+<p><%= @event.location %></p>
+
+<p><%= link_to "View the lesson.", lesson_url(@event.lesson) %></p>

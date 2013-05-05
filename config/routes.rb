@@ -9,5 +9,9 @@ CoderdojoWebapp::Application.routes.draw do
   post "/register/:id",   to: "registrations#register", as: :register
   get  "/confirm/:id",    to: "registrations#confirm",  as: :confirm
 
+  if Rails.env.development?
+    mount MailPreview => "mail_view"
+  end
+
   root to: "home#index"
 end
