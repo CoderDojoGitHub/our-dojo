@@ -30,7 +30,8 @@ class EventNotifier
       message = RegistrationMailer.open(event.id, subscriber.id)
       message.deliver
 
-      subscriber.update_attributes(sent_at: Time.now)
+      subscriber.sent_at = Time.now
+      subscriber.save
       @delivered_to_subscribers << subscriber
     end
 

@@ -5,7 +5,12 @@ class SubscriptionsController < ApplicationController
   def event
     event = Event.find(params[:id])
 
-    if EventSubscriber.create(event: event, email: params[:email])
+    subscriber = EventSubscriber.create do |s|
+      s.event = event
+      s.email = params[:email]
+    end
+
+    if subscriber.persisted?
       flash[:notice] = "You will receive an email when registration opens for this event."
     else
       flash[:error] = "We were unable to subscribe #{params[:email]} for this event."
