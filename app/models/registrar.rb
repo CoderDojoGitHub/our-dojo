@@ -29,12 +29,10 @@ class Registrar
     registration = Registration.
       find_or_initialize_by_reference_token(temporary_registration.reference_token)
 
-    registration.assign_attributes({
-      event_id: temporary_registration.event_id,
-      registrant_id: temporary_registration.registrant_id,
-      number_of_students: temporary_registration.number_of_students,
-      temporary_registration_at: temporary_registration.created_at
-    })
+    registration.event_id = temporary_registration.event_id
+    registration.registrant_id = temporary_registration.registrant_id
+    registration.number_of_students = temporary_registration.number_of_students
+    registration.temporary_registration_at = temporary_registration.created_at
 
     if registration.save
       temporary_registration.destroy
