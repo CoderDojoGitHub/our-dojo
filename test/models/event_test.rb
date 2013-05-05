@@ -71,6 +71,22 @@ describe Event do
     end
   end
 
+  describe "#registration_date_still_in_the_future?" do
+    it "returns false if class has room" do
+      event = Event.make!
+      event.stubs(:registration_date_passed? => true)
+
+      refute event.registration_date_still_in_the_future?
+    end
+
+    it "returns true if class is full" do
+      event = Event.make!
+      event.stubs(:registration_date_passed? => false)
+
+      assert event.registration_date_still_in_the_future?
+    end
+  end
+
   describe "#space_available?" do
     it "returns false if class is full" do
       event = Event.make!

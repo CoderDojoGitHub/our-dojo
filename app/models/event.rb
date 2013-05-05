@@ -87,6 +87,13 @@ class Event < ActiveRecord::Base
     start_time - DaysToOpenRegistrationBeforeEvent.days < Time.now
   end
 
+  # Public: Is the registration date still in the future?
+  #
+  # Returns a TrueClass or FalseClass.
+  def registration_date_still_in_the_future?
+    !registration_date_passed?
+  end
+
   # Public: Is there space available in the class?
   #
   # Returns a TrueClass or FalseClass.

@@ -29,8 +29,8 @@ class LessonsIndexTest < AcceptanceTest
     end
   end
 
-  describe "after registration has opened" do
-    describe "Register for event" do
+  describe "after registration date has past" do
+    describe "class has space available" do
       describe "on success" do
         it "creates temporary registration and flashes message" do
           DatabaseCleaner.clean_with :deletion
@@ -46,6 +46,17 @@ class LessonsIndexTest < AcceptanceTest
           must_have_content "Please check your email to confirm your registration."
           assert_equal 1, TemporaryRegistration.count
         end
+      end
+    end
+
+    describe "class is full" do
+      it "renders class is full message" do
+        event = Event.make!
+        Registration.make!(event: event, number_of_students: 20)
+
+        visit "/lessons/#{event.lesson.id}"
+        must_have_content "Registration has closed"
+        must_have_content "The class is full."
       end
     end
   end

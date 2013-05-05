@@ -11,7 +11,19 @@
   </div>
 
   <% if @lesson.upcoming_event.present? %>
-    <% if @lesson.upcoming_event.open_for_registration? %>
+    <% if @lesson.upcoming_event.registration_date_still_in_the_future? %>
+      <h3>Notify me when registration opens</h3>
+
+      <%= form_tag subscribe_to_event_path(@lesson.upcoming_event) do %>
+        <div class="small-12 large-6 columns">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="small-12 large-6 columns">
+          <%= submit_tag "Notify me" %>
+        </div>
+      <% end %>
+    <% elsif @lesson.upcoming_event.open_for_registration? %>
       <h3>Register for event</h3>
 
       <%= form_tag register_path do %>
@@ -28,17 +40,9 @@
         </div>
       <% end %>
     <% else %>
-      <h3>Notify me when registration opens</h3>
+      <h3>Registration has closed</h3>
 
-      <%= form_tag subscribe_to_event_path(@lesson.upcoming_event) do %>
-        <div class="small-12 large-6 columns">
-          <%= label_tag :email %>
-          <%= text_field_tag :email %>
-        </div>
-        <div class="small-12 large-6 columns">
-          <%= submit_tag "Notify me" %>
-        </div>
-      <% end %>
+      <p>The class is full.</p>
     <% end %>
   <% end %>
 </div>
