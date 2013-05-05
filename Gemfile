@@ -11,6 +11,7 @@ gem "state_machine"
 gem "httparty"
 gem "simple_uuid"
 gem "mysql2"
+gem "mail_view"
 
 group :assets do
   gem "coffee-rails"
