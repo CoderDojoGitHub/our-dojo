@@ -18,15 +18,29 @@ class RegistrationMailer < ActionMailer::Base
          to: event_subscriber.email
   end
 
-  # Public: Registration confimred email.
+  # Public: Confirm registration email.
   #
   # event_id - Id of the Event.
   # registration_id - Id of the Registration.
   #
   # Returns a Mail::Message.
-  def confirmed(event_id, registration_id)
-    @event = Event.find(event_id)
+  def confirm(temporary_registration_id)
+    @temporary_registration = TemporaryRegistration.find(temporary_registration_id)
+    @event = @temporary_registration.event
+
+    mail subject: "[CoderDojo - San Francisco] Please confirm your registration.",
+         to: @temporary_registration.registrant.email
+  end
+
+  # Public: Registration confirmed email.
+  #
+  # event_id - Id of the Event.
+  # registration_id - Id of the Registration.
+  #
+  # Returns a Mail::Message.
+  def confirmed(registration_id)
     registration = Registration.find(registration_id)
+    @event = registration.event
 
     mail subject: "[CoderDojo - San Francisco] Your reservation is confirmed!",
          to: registration.registrant.email

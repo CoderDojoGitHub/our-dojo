@@ -9,9 +9,16 @@ class MailPreview < MailView
     mail
   end
 
+  # Public: Renders RegistrationMailer#confirm in hte browser
+  def registration_confirm
+    mail = RegistrationMailer.confirm(temporary_registration)
+    destroy_fixtures
+    mail
+  end
+
   # Public: Renders RegistrationMailer#confirmed in the browser.
   def registration_confirmed
-    mail = RegistrationMailer.confirmed(event.id, registration.id)
+    mail = RegistrationMailer.confirmed(registration.id)
     destroy_fixtures
     mail
   end
@@ -41,15 +48,22 @@ class MailPreview < MailView
   #
   # Returns a Registration.
   def registration
-    @registration ||=
-      event.registrations.first || Registration.make!(event: event)
+    @registration ||= Registration.make!(event: event)
+  end
+
+  # Internal: Registration from a blueprint.
+  #
+  # Returns a Registration.
+  def temporary_registration
+    @temporary_registration ||= TemporaryRegistration.make!(event: event)
   end
 
   # Internal: Destroys all AR objects created during preview.
   def destroy_fixtures
-    registration.destroy     if defined?(@registration)
-    event_subscriber.destroy if defined?(@event_subscriber)
-    event.destroy            if defined?(@event)
-    lesson.destroy           if defined?(@lesson)
+    temporary_registration.destroy if defined?(@temporary_registration)
+    registration.destroy           if defined?(@registration)
+    event_subscriber.destroy       if defined?(@event_subscriber)
+    event.destroy                  if defined?(@event)
+    lesson.destroy                 if defined?(@lesson)
   end
 end
