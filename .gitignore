@@ -26,3 +26,5 @@ vendor/bundle
 .env
 
 .ruby-version
+
+*.sqlite3-journal
