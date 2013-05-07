@@ -1,0 +1,9 @@
+Registration has opened for the Coder Dojo San Francisco event on <%= @event.start_time.strftime("%A, %B %-d") %>.
+
+Lesson: <%= @event.lesson.title %>
+
+<%= @event.lesson.summary %>
+
+The event starts at <%= @event.start_time.strftime("%l:%M%p") %> and ends at <%= @event.end_time.strftime("%l:%M%p") %>
+
+Register for this event <%= lesson_url(@event.lesson) %>

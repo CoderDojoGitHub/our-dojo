@@ -1,0 +1,3 @@
+Please confirm registration for the Coder Dojo event on <%= @event.start_time.strftime("%A, %B %-d") %> at <%= @event.start_time.strftime("%l:%M%p") %>.
+
+Confirm your registration <%= confirm_url(@temporary_registration.reference_token) %>

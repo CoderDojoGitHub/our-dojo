@@ -24,3 +24,7 @@ vendor/bundle
 .rbenv-version
 /public/assets
 .env
+
+.ruby-version
+
+*.sqlite3-journal

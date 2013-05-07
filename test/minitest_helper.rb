@@ -1,37 +1,54 @@
 ENV["RAILS_ENV"] = "test"
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path("../../config/environment", __FILE__)
 
 require "minitest/autorun"
 require "minitest/rails"
-
-# Add `gem "minitest/rails/capybara"` to the test group of your Gemfile
-# and uncomment the following if you want Capybara feature tests
-# require "minitest/rails/capybara"
-
-# Uncomment if you want awesome colorful output
 require "minitest/pride"
+require "capybara/rails"
+require "webmock/minitest"
+require "mocha/setup"
+require "blueprints"
+require "database_cleaner"
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  fixtures :all
+DatabaseCleaner.strategy = :deletion
 
-  # Add more helper methods to be used by all tests here...
+class MiniTest::Spec
+  # Add methods to be used by all specs here
+
+  before do
+    DatabaseCleaner.start
+  end
+
+  after do
+    DatabaseCleaner.clean
+  end
 end
 
-def build_event(attributes=nil)
-  attributes = attributes || {}
-  Event.new(party_event_attributes.merge(attributes))
+VCR.configure do |c|
+  c.cassette_library_dir = "test/fixtures"
+  c.hook_into :webmock
 end
 
-def create_event(attributes=nil)
-  event = build_event(attributes)
-  event.save
-  event
+class AcceptanceTest < MiniTest::Spec
+  include Capybara::RSpecMatchers
+  include Capybara::DSL
 end
 
-def party_event_attributes
-  {
-    title: "Party!",
-    start_time: 24.hours.from_now,
-  }
+# Public: Load fixture file from fixtures directory.
+#
+# name - Filename without extension.
+# extension - File extension name, defaults to json.
+#
+# Returns a String.
+def fixture(name, extension="json")
+  File.read(Rails.root.join("test", "fixtures", "#{name}.#{extension}"))
+end
+
+# Public: Return a hash or array built from json fixture.
+#
+# name - Filename without extension.
+#
+# Returns a Hash or Array.
+def json_fixture(name)
+  YAML.load(fixture(name))
 end
