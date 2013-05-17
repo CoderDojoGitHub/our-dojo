@@ -1,3 +1,5 @@
+require Rails.root.join("test", "blueprints")
+
 # Add lessons.
 
 [
@@ -29,6 +31,6 @@
       }
     ]
   }
-].each {|attributes| Lesson.create(attributes) }
+].each {|attributes| Lesson.make!(attributes) }
 
 EventImporter.new(Lesson.all).import
