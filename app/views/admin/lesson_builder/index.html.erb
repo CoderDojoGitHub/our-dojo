@@ -4,15 +4,28 @@
     <form action="#" id="json-builder">
       <h3>Lesson Details</h3>
       <dl>
-        <dt><label for="title">Title</label></dt>
+        <dt>
+          <label for="title">Title</label>
+          <span class="required">(required)</span>
+        </dt>
         <dd><input type="text" name="title" class="input-field" /></dd>
       </dl>
       <dl>
-        <dt><label for="summary">Summary</label></dt>
+        <dt>
+          <label for="summary">Summary</label>
+          <span class="required">(required)</span>
+        </dt>
         <dd><textarea name="summary" class="input-field"></textarea></dd>
       </dl>
       <dl>
-        <dt><label for="image_url">Image Url</label></dt>
+        <dt>
+          <label for="image_url">Image Url</label>
+          <span class="example">
+            <a href="http://f.cl.ly/items/2X112M2P2e1N170B2e1g/CoderDojoSF_Particles.jpg" target="_blank">
+              http://f.cl.ly/items/2X112M2P2e1N170B2e1g/CoderDojoSF_Particles.jpg
+            </a>
+          </span>
+        </dt>
         <dd><input type="text" name="image_url" class="input-field" /></dd>
       </dl>
       <dl>
@@ -22,19 +35,34 @@
 
       <h3>Event Details</h3>
       <dl>
-        <dt><label for="location">Location</label></dt>
+        <dt>
+          <label for="location">Location</label>
+          <span class="required">(required)</span>
+          <span class="example">GitHub 548 4th St San Francisco CA 94107</span>
+        </dt>
         <dd><input type="text" name="location" class="input-field" /></dd>
       </dl>
       <dl>
-        <dt><label for="date">Date and Time</label></dt>
+        <dt>
+          <label for="date">Date and Time</label>
+          <span class="required">(required)</span>
+          <span class="example">Sat Feb 16 2013 12:00:00 GMT-0700 (PDT)</span>
+        </dt>
         <dd><input type="text" name="date" class="input-field" /></dd>
       </dl>
       <dl>
-        <dt><label for="length">Class Length</label></dt>
+        <dt>
+          <label for="length">Class Length in Hours</label>
+          <span class="required">(required)</span>
+          <span class="example">2</span>
+        </dt>
         <dd><input type="text" name="length" class="input-field" /></dd>
       </dl>
       <dl>
-        <dt><label for="teacher_github_username">Teacher GitHub Username</label></dt>
+        <dt>
+          <label for="teacher_github_username">Teacher GitHub Username</label>
+          <span class="required">(required)</span>
+        </dt>
         <dd><input type="text" name="teacher_github_username" class="input-field" /></dd>
       </dl>
     </form>
