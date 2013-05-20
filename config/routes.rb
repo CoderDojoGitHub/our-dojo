@@ -17,6 +17,9 @@ CoderdojoWebapp::Application.routes.draw do
     mount MailPreview => "mail_view"
   end
 
+  # Admin routes.
+  get "/admin", to: "admin/lesson_builder#index"
+
   # Default routes.
   root to: "home#index"
 end
