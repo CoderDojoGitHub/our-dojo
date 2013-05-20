@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20130505154215) do
     t.datetime "start_time",              :null => false
     t.datetime "end_time"
     t.string   "teacher_github_username", :null => false
-    t.string   "lesson_id",               :null => false
+    t.integer  "lesson_id",               :null => false
     t.string   "location",                :null => false
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
