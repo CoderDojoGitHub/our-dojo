@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoderDojo Admin</title>
+    <%= stylesheet_link_tag    "admin", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= javascript_include_tag "admin" %>
+  </body>
+</html>
