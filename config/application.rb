@@ -62,6 +62,9 @@ module CoderdojoWebapp
     # Do not load entire app on assets:precompile
     config.assets.initialize_on_precompile = false
 
+    # Add assets to precompile.
+    config.assets.precompile += %w( admin.css admin.js )
+
     # Configure to use minitest
     config.generators do |g|
       g.test_framework :mini_test, :spec => true, :fixture => false
