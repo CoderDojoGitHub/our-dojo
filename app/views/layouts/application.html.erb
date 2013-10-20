@@ -3,16 +3,19 @@
   <head>
     <title>CoderDojo - San Francisco</title>
     <%= stylesheet_link_tag    "styles", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic|Lato:700,900|Roboto:400,900,300' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <div class="center">
-          <h1><%= link_to "CoderDojo - San Francisco", root_path %></h1>
+  <body class="responsive">
+    <div class="container mxa block clearfix">
+      <header class="header full min-h500 block clearfix bg-cover bg-center center white">
+        <div class="center mt8">
+          <h1 class="f6 white"><%= link_to raw("#{content_tag("span", "CoderDojo", :class => "bold")} #{content_tag("span", "San Francisco", :class => "light")}"), root_path, :class=>"white" %></h1>
         </div>
-      </div>
+        <div class="grid center">
+        <p class="f3 light">Teaching the next generation to design and code</p>
+  </div>
+      </header>
 
       <%= yield %>
     </div>

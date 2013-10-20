@@ -36,11 +36,12 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
   display: block; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
   font-weight: 400; }
 
 h1, .h1 {
+	font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   line-height: 1.25; }
 
@@ -64,6 +65,7 @@ small, .small {
   .responsive .small, .responsive.small {
     font-size: 1rem; } }
 @media (min-width: 1024px) {
+	.container { width: 1024px;}
   .responsive .h1, .responsive.h1 {
     font-size: 6rem; }
   .responsive .h2, .responsive.h2 {
@@ -74,6 +76,10 @@ strong, .bold {
 
 .regular {
   font-weight: normal; }
+
+.light {
+	font-weight: 300; }
+}
 
 .caps {
   text-transform: uppercase;
@@ -135,6 +141,9 @@ strong, .bold {
 
 .mt4 {
   margin-top: 4rem; }
+
+.mt8 {
+  margin-top: 8rem; }
 
 .mr4 {
   margin-right: 4rem; }
@@ -223,3 +232,103 @@ strong, .bold {
 
 .fit {
   max-width: 100%; }
+
+
+/* ==========================================================================
+   CSS BROCCOLINI STYLE
+   ========================================================================== */
+
+
+a { text-decoration: none; }
+
+a:link    { color: #A0EC6F; }
+a:visited { color: #76D13C; }
+a:hover   { color: #A0EC6F; border-bottom: 2px solid #76D13C; }
+a:active  { color: #76D13C; }
+
+
+  /* Type Scale */
+
+.f1  { font-size: .875em; }
+.f2  { font-size: 1.125rem; }
+.f3  { font-size: 1.5rem; }
+.f4 { font-size: 2rem; }
+.f5 { font-size: 2.5rem; }
+.f6 { font-size: 3.4rem; }
+
+
+  /* Image sizes */
+
+.bg-center { background-position: center; background-repeat: no-repeat; }
+.bg-cover { background-size: cover; }
+.bg-contain { background-size: contain; }
+
+  /* Themes */
+
+.dark-gray     { color: #353230; }
+.bg-dark-gray  { background-color: #353230; }
+a.dark-gray:hover { color: #333; }
+.link          { color: #0cf; }
+.bg-link       { background-color: #0cf; }
+
+.mid-gray      { color: #666; }
+.bg-mid-gray   { background-color: #666; }
+a.mid-gray:hover { color: #888; }
+.light-gray    { color: #F9F9F9; }
+.bg-light-gray { background-color: #F9F9F9; }
+.white         { color: #fff; }
+a.white         { color: #fff; }
+a.white:hover  { color: #fff; }
+.bg-white      { background-color: #fff; }
+
+/*h1 a {color: #fff;}
+h1 a:visited {color: #fff;}
+h1 a:visited {color: #fff;}*/
+
+
+
+ /* Layout */
+
+.grid { display: inline-block; }
+/*.1third, .2thirds, .half { width: 100%; }*/
+
+.header { 
+		min-height: 400px; 
+		background-color: #eee;
+		background-image: url(/assets/coderdojo1.jpg)
+	}
+
+@media (min-width: 768px) {
+	.container { width: 100%; } 
+	.1third-2 { width: 45%; margin: 2%; }
+	.2thirds-2 { width: 45%; margin: 2%; }
+	.half-2 { width: 100%; margin: 2%; }
+}
+
+
+@media (min-width: 1024px) {
+	.container { width: 1024px;}
+	.one-third { width: 29%; margin: 2%; }
+	.two-thirds { width: 60%; margin: 2%; }
+	.half { width: 45%; margin: 2%; }
+	.full { width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
