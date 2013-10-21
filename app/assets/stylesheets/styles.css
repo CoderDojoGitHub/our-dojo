@@ -355,6 +355,7 @@ a.white:hover  { color: #fff; }
 		background-color: #eee;
 		background-image: url(/assets/coderdojo1.jpg)
 	}
+	.left { float: left; }
 	.container { width: 1024px;}
 	.one-third { width: 29%; margin: 2%; }
 	.two-thirds { width: 60%; margin: 2%; }
@@ -368,6 +369,7 @@ a.white:hover  { color: #fff; }
 		background-color: #eee;
 		background-image: url(/assets/coderdojo1.jpg)
 	}
+.left { float: left; }
 }
 
 
