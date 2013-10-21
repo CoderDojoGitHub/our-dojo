@@ -301,6 +301,8 @@ ul li {
 .bg-cover { background-size: cover; }
 .bg-contain { background-size: contain; }
 
+a:hover.no-bb { border-bottom: 0; }
+
   /* Themes */
 
 .dark-gray     { color: #353230; }
