@@ -8,12 +8,12 @@
 		<div class="grid half block py1 mxa">
 			<h2 class="px2 regular h3">Register for classes</h2>
         <p class="f2 px2">Sign up to our mailing list to keep up to date with planned classes.</p>
-        <p class="px2"><a href="#">Register</a></p>
+        <p class="px2 mt1"><a href="#">Register</a></p>
     </div>
     <div class="grid half block py1 mxa">
       <h2 class="px2 regular h3">Get involved</h2>
         <p class="f2 px2">If you are interested in being a mentor or teaching a class please get in touch.</p>
-        <p class="px2"><a href="#">Email us</a></p>
+        <p class="px2 mt1"><a href="#">Email us</a></p>
     </div>
 	</div>
 </section>
@@ -45,8 +45,10 @@
 	</div>
 </section>
 
-<section class="full block clearfix">
+<section>
 <%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
 </section>
 
+<section>
 <%= render partial: "shared/past_lessons" %>
+</section>
