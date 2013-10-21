@@ -45,37 +45,66 @@ h1, h2, h3 {
 	color: #555;
 }
 
-h1, .h1 {
+h1, .h1, h2, .h2 {
 	font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
+}
+
+h1, .h1 {
+  font-size: 3.4rem;
   line-height: 1.25; }
 
 h2, .h2 {
-	font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.25; }
+
+h3, .h3 {
+  font-size: 2rem;
+  line-height: 1.25; }
+
+h4, .h4 {
   font-size: 1.5rem;
   line-height: 1.25; }
 
-h3, h4, h5, h6, dl, ol, ul, p, .p {
+h5, h6, dl, ol, ul, p, .p {
   font-size: 1.125em; }
 
 small, .small {
   font-size: .875em; }
 
-@media (min-width: 768px) {
-  .responsive .h1, .responsive.h1 {
-    font-size: 4rem; }
-  .responsive .h2, .responsive.h2 {
-    font-size: 2rem; }
-  .responsive .p, .responsive.p {
+// mobile only - smaller than 640px
+@media (max-width: 640px) {
+  .responsive.h1, .responsive .h1 {
+    font-size: 4.4rem;
+  }
+  .responsive.h2, .responsive .h2 {
+    font-size: 3.5rem;
+  }
+  .responsive.h3, .responsive .h3 {
+    font-size: 3rem;
+  }
+  .responsive.h4, .responsive .h4 {
+    font-size: 2.5rem;
+  }
+ 	.responsive .p, .responsive.p {
     font-size: 1.25rem; }
   .responsive .small, .responsive.small {
-    font-size: 1rem; } }
-@media (min-width: 1024px) {
-	.container { width: 1024px;}
-  .responsive .h1, .responsive.h1 {
-    font-size: 6rem; }
-  .responsive .h2, .responsive.h2 {
-    font-size: 3rem; } }
+    font-size: 1rem; }
+}
+// 640 - 1024 picks up the default size
+@media (min-width: 1024px){
+  .responsive.h1, .responsive .h1 {
+    font-size: 5.4rem;
+  }
+  .responsive.h2, .responsive .h2 {
+    font-size: 4.5rem;
+  }
+  .responsive.h3, .responsive .h3 {
+    font-size: 4rem;
+  }
+  .responsive.h4, .responsive .h4 {
+    font-size: 3rem;
+  }
+}
 
 strong, .bold {
   font-weight: 700; }
@@ -258,41 +287,12 @@ ul li {
 
   /* Type Scale */
 
-.f1  { font-size: .875em; }
+/*.f1  { font-size: .875em; }
 .f2  { font-size: 1.125rem; }
 .f3  { font-size: 1.5rem; }
 .f4 { font-size: 2rem; }
 .f5 { font-size: 2.5rem; }
-.f6 { font-size: 3.4rem; }
-
-@media (min-width: 768px) {
-  .responsive .f6, .responsive.f6 {
-    font-size: 5rem; }
-  .responsive .f5, .responsive.f5 {
-    font-size: 3.5rem; }
- .responsive .f4, .responsive.f4 {
-    font-size: 3rem; }
- .responsive .f3, .responsive.f3 {
-    font-size: 2.5rem; }
- .responsive .f2, .responsive.f2 {
-    font-size: 2rem; }
- .responsive .f1, .responsive.f1 {
-    font-size: 1.25rem; } }
-
-@media (min-width: 1024px) {
-  .responsive .f6, .responsive.f6 {
-    font-size: 3.4rem; }
-  .responsive .f5, .responsive.f5 {
-    font-size: 2.5rem; } }
-
- @media screen and (min-width: 1280px) {
- 	.f1  { font-size: .875em; }
-.f2  { font-size: 1.125rem; }
-.f3  { font-size: 1.5rem; }
-.f4 { font-size: 2rem; }
-.f5 { font-size: 2.5rem; }
-.f6 { font-size: 3.4rem; }
- }
+.f6 { font-size: 3.4rem; }*/
 
 
   /* Image sizes */
