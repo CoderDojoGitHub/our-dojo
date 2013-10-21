@@ -280,8 +280,8 @@ strong, .bold {
 
 a { text-decoration: none; }
 
-a:link    { color: #898989; font-weight: 400; }
-a:visited { color: #999; }
+a:link    { color: #76D13C; font-weight: 400; }
+a:visited { color: #67BB32; }
 a:hover   { border-bottom: 2px solid #76D13C; }
 a:active  { color: #76D13C; }
 
