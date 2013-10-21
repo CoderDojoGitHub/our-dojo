@@ -51,11 +51,11 @@ h1, .h1, h2, .h2 {
 
 h1, .h1 {
   font-size: 3.4rem;
-  line-height: 1.25; }
+  line-height: 3.25rem; }
 
 h2, .h2 {
   font-size: 2.5rem;
-  line-height: 1.25; }
+  line-height: 2.5rem; }
 
 h3, .h3 {
   font-size: 2rem;
@@ -63,18 +63,19 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: 1.5rem;
-  line-height: 1.25; }
+  line-height: 1.5; }
 
 h5, h6, dl, ol, ul, p, .p {
-  font-size: 1.125em; }
+  font-size: 1.125rem; }
 
 small, .small {
-  font-size: .875em; }
+  font-size: .875rem; }
 
 // mobile only - smaller than 640px
 @media (max-width: 640px) {
   .responsive.h1, .responsive .h1 {
     font-size: 4.4rem;
+    margin-bottom: 10px;
   }
   .responsive.h2, .responsive .h2 {
     font-size: 3.5rem;
@@ -306,7 +307,7 @@ ul li {
 
 a:hover.no-bb { border-bottom: 0; }
 
-.mark { width: 60px; margin-bottom: 4px; }
+.mark { width: 60px; }
 
   /* Themes */
 
@@ -338,21 +339,29 @@ a.white:hover  { color: #fff; }
 .left { float: none; }
 
 .header { 
-		min-height: 600px; 
+		min-height: 500px; 
 		background-color: #eee;
 		background-image: url(/assets/coderdojo1.jpg)
 	}
 
+.px4 { padding-left: 1rem; padding-right: 1rem; }
+
+.container { width: 100%; } 
+.one-third { width: 92%; margin-right: 4%; margin-left: 4% }
+.two-thirds { width: 92%; margin-right: 4%; margin-left: 4% }
+.half { width: 92%; margin-right: 4%; margin-left: 4% }
+
 @media (min-width: 768px) {
 .header { 
-		min-height: 600px; 
+		min-height: 400px; 
 		background-color: #eee;
 		background-image: url(/assets/coderdojo1.jpg)
 	}
 	.container { width: 100%; } 
-	.1third-2 { width: 45%; margin-right: 2%; }
-	.2thirds-2 { width: 45%; margin: 2%; }
-	.half-2 { width: 100%; margin: 2%; }
+	.one-third { width: 45%; margin-right: 2%; }
+	.two-thirds { width: 45%; margin: 2%; }
+	.half { width: 100%; margin: 2%; }
+	.px4 { padding-left: 1rem; padding-right: 1rem; }
 }
 
 
@@ -368,6 +377,7 @@ a.white:hover  { color: #fff; }
 	.two-thirds { width: 60%; margin: 2%; }
 	.half { width: 45%; margin: 2%; }
 	.full { width: 100%; }
+	.px4-2 { padding-left: 4rem; padding-right: 4rem; }
 }
 
 @media screen and (min-width: 1280px) {
@@ -377,6 +387,7 @@ a.white:hover  { color: #fff; }
 		background-image: url(/assets/coderdojo1.jpg)
 	}
 .left { float: left; }
+.px4-2 { padding-left: 4rem; padding-right: 4rem; }
 }
 
 
