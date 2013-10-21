@@ -177,9 +177,6 @@ strong, .bold {
 .mt4 {
   margin-top: 4rem; }
 
-.mt8 {
-  margin-top: 8rem; }
-
 .mr4 {
   margin-right: 4rem; }
 
@@ -188,6 +185,12 @@ strong, .bold {
 
 .ml4 {
   margin-left: 4rem; }
+
+.mt5 {
+	margin-top: 5rem; }
+
+.mt8 {
+  margin-top: 8rem; }
 
 .mxa {
   margin-right: auto;
@@ -295,13 +298,15 @@ ul li {
 .f6 { font-size: 3.4rem; }*/
 
 
-  /* Image sizes */
+  /* Image styles */
 
 .bg-center { background-position: center; background-repeat: no-repeat; }
 .bg-cover { background-size: cover; }
 .bg-contain { background-size: contain; }
 
 a:hover.no-bb { border-bottom: 0; }
+
+.mark { width: 60px; margin-bottom: 4px; }
 
   /* Themes */
 
