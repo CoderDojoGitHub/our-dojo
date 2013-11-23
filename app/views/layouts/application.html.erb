@@ -2,19 +2,32 @@
 <html>
   <head>
     <title>CoderDojo - San Francisco</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    "styles", :media => "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic|Lato:700,900|Roboto:400,900,300' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
-    <div class="container">
-      <div class="organization-blurb row">
-        <div class="small-12 large-12 columns">
-          <h1><%= link_to "CoderDojo - San Francisco", root_path %></h1>
+  <body class="responsive">
+    <div class="container mxa block clearfix">
+      <header class="header full min-h500 block clearfix bg-cover bg-center center white">
+        <div class="center mxa block clearfix">
+          <img class="mark px1 mt5 mb1" src="/assets/coderdojosf-mark.svg">
         </div>
-      </div>
+        <div class="center px1">
+          <h1 class="h1 white"><%= link_to raw("#{content_tag("span", "CoderDojo", :class => "bold")} #{content_tag("span", "San Francisco", :class => "light")}"), root_path, :class=>"white no-bb" %></h1>
+        </div>
+        <div class="grid center">
+        <p class="h4 mt1 light">Teaching the next generation to design and code</p>
+  </div>
+      </header>
 
       <%= yield %>
     </div>
+
+  <footer class="full bg-light-gray block clearfix py1">
+    <div class="container mxa">
+      <p class="p two-thirds">If you would like more information about the CoderDojo organization, or to find one in your area, head over to <a href="http://www.coderdojo.com">http://www.coderdojo.com</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>

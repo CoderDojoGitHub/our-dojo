@@ -1,11 +1,53 @@
-<div class="organization-blurb row">
-  <div class="small-12 large-12 columns">
-    <p>
-      CoderDojo is a free coding class, held every other Saturday at the GitHub San Francisco office, for kids ages 6–18 years old. We teach all kinds of topics like building websites, video games, chat apps, drawing apps, and many others. Sessions last about two hours and have a short lunch break in the middle. If you would like more information about the CoderDojo organization, or to find one in your area, head over to <a href="http://www.coderdojo.com">http://www.coderdojo.com</a>.
-    </p>
-  </div>
-</div>
+<section class="grid full block clearfix">
+	<div class="px4 px4-2 py4 center block clearfix mxa">
+		<p class="h4 regular">CoderDojo is a free coding class covering everything from basic HTML & CSS, to JavaScript, game development, and web programming. Our Dojo welcomes anyone ages 6–16 years old.</p>
+	</div>
+</section>
 
+<section class="bt-light-gray">
 <%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
+</section>
 
+<section class="full block clearfix mt2 py2">
+	<h2 class="h2 regular mb1 center">Class time and location</h2>
+	<p class="center px1">Classes last about 3 hours and are held on Saturday's at the <a href="https://github.com/">GitHub</a> San Francisco office.</p>
+
+	<div class="left two-thirds block mxa py1">
+		<iframe width="100%" height="420" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2nd+street+and+brannan+st&amp;aq=&amp;sll=37.763658,-122.437477&amp;sspn=0.169904,0.308647&amp;ie=UTF8&amp;hq=&amp;hnear=Brannan+St+%26+2nd+St,+San+Francisco,+California+94107&amp;t=m&amp;z=14&amp;ll=37.78185,-122.392099&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=2nd+street+and+brannan+st&amp;aq=&amp;sll=37.763658,-122.437477&amp;sspn=0.169904,0.308647&amp;ie=UTF8&amp;hq=&amp;hnear=Brannan+St+%26+2nd+St,+San+Francisco,+California+94107&amp;t=m&amp;z=14&amp;ll=37.78185,-122.392099" style="text-align:left">View Larger Map</a></small>
+	</div>
+	<div class="left one-third block mxa py1">
+		<h3 class="h4 regular">Time</h3>
+		<p class="mb1">Saturday's, 10am-1pm</p>
+
+	<h3 class="h4 regular">Location</h3>
+	<p class="mb1">548 4th Street,<br /> 
+	San Francisco, CA 94122</p>
+
+	<h3 class="h4 regular">What to bring</h3>
+	<ul>
+		<li>Your ticket</li>
+		<li>A packed lunch</li>
+		<li>A laptop with Chrome and a text editor installed on it</li>
+		<li>A parent! (Very important). If you are 13 or under, your parent must stay with you during the session</li>
+	</ul>
+	</div>
+</section>
+
+<section class="grid py2 full block clearfix bt-light-gray bb-light-gray">
+	<div class="full block mxa clearfix">
+		<div class="grid half block py1 mxa">
+			<h2 class="regular h3">Register for updates</h2>
+        <p class="f2 mr3">Sign up to our mailing list to keep up to date with planned classes.</p>
+        <p class="mt1"><a href="#">Register</a></p>
+    </div>
+    <div class="grid half block py1 mxa">
+      <h2 class="regular h3">Get involved</h2>
+        <p class="f2 mr3">If you are interested in being a mentor or teaching a class please get in touch.</p>
+        <p class="mt1"><a href="#">Email us</a></p>
+    </div>
+	</div>
+</section>
+
+<section>
 <%= render partial: "shared/past_lessons" %>
+</section>
