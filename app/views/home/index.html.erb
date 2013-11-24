@@ -20,7 +20,7 @@
 		<p class="mb1">Saturday's, 10am-1pm</p>
 
 	<h3 class="h4 regular">Location</h3>
-	<p class="mb1">88 Colin P Kelly Jr St,<br /> 
+	<p class="mb1">88 Colin P Kelly Jr St,<br />
 	San Francisco, CA 94107</p>
 
 	<h3 class="h4 regular">What to bring</h3>
@@ -38,8 +38,7 @@
 		<div class="grid half block py1 mxa">
 			<h2 class="regular h3">Register for updates</h2>
         <p class="f2 mr3">Sign up to our mailing list to keep up to date with planned classes.</p>
-        <%= form_tag '/newsletter/subscribe', method: 'post', remote: true, id: 'newsletter', class: 'newsletter-form mt1' do %>
-          <%= hidden_field_tag 'list_id', @list_id %>
+        <%= form_tag '/newsletters/announcements', method: 'post', remote: true, id: 'newsletter', class: 'newsletter-form mt1' do %>
           <%= email_field_tag 'email', nil, placeholder: 'Email address', class: 'js-newsletter-input' %>
           <%= submit_tag 'Register', class: 'btn js-newsletter-submit' %>
           <p class="mt1 small mid-gray hide js-newsletter-result">&nbsp;</p>
