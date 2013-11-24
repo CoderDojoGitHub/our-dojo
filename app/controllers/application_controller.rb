@@ -1,5 +1,9 @@
+require 'mailchimp'
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  before_filter :setup_mcapi
 
   # Public: The signed in user. This is available in views and helpers.
   #
@@ -42,5 +46,12 @@ class ApplicationController < ActionController::Base
       session[:user_return_to] = request.path if request.path
       redirect_to "/auth/githubteammember"
     end
+  end
+
+  private 
+
+  # Internal: Creates a new instance of the Mailchimp API
+  def setup_mcapi
+    @mc = Mailchimp::API.new(ENV["MAILCHIMP_API_KEY"])
   end
 end

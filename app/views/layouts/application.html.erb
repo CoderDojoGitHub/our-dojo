@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>CoderDojo - San Francisco</title>
-    <%= stylesheet_link_tag    "styles", :media => "all" %>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic|Lato:700,900|Roboto:400,900,300' rel='stylesheet' type='text/css'>
-    <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic|Lato:700,900|Roboto:400,900,300' rel='stylesheet' type='text/css'>
   </head>
   <body class="responsive">
     <div class="container mxa block clearfix">

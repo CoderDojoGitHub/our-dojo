@@ -12,6 +12,7 @@ gem "httparty"
 gem "simple_uuid"
 gem "mail_view"
 gem "pg"
+gem "mailchimp-api"
 
 group :assets do
   gem "coffee-rails"

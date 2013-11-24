@@ -39,14 +39,14 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
   font-weight: 300; 
-	color: #444; }
+  color: #444; }
 
 h1, h2, h3 {
-	color: #555;
+  color: #555;
 }
 
 h1, .h1, h2, .h2 {
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1, .h1 {
@@ -86,7 +86,7 @@ small, .small {
   .responsive.h4, .responsive .h4 {
     font-size: 2.5rem;
   }
- 	.responsive .p, .responsive.p {
+  .responsive .p, .responsive.p {
     font-size: 1.25rem; }
   .responsive .small, .responsive.small {
     font-size: 1rem; }
@@ -114,7 +114,7 @@ strong, .bold {
   font-weight: normal; }
 
 .light {
-	font-weight: 300; }
+  font-weight: 300; }
 }
 
 .caps {
@@ -188,7 +188,7 @@ strong, .bold {
   margin-left: 4rem; }
 
 .mt5 {
-	margin-top: 5rem; }
+  margin-top: 5rem; }
 
 .mt8 {
   margin-top: 8rem; }
@@ -286,7 +286,7 @@ a:hover   { border-bottom: 2px solid #76D13C; }
 a:active  { color: #76D13C; }
 
 ul li {
-	margin-left: -20px;
+  margin-left: -20px;
 }
 
   /* Image styles */
@@ -329,10 +329,10 @@ a.white:hover  { color: #fff; }
 .left { float: none; }
 
 .header { 
-		min-height: 500px; 
-		background-color: #eee;
-		background-image: url(/assets/coderdojo1.jpg)
-	}
+    min-height: 500px; 
+    background-color: #eee;
+    background-image: url(/assets/coderdojo1.jpg)
+  }
 
 .px4 { padding-left: 1rem; padding-right: 1rem; }
 
@@ -343,39 +343,39 @@ a.white:hover  { color: #fff; }
 
 @media (min-width: 768px) {
 .header { 
-		min-height: 400px; 
-		background-color: #eee;
-		background-image: url(/assets/coderdojo1.jpg)
-	}
-	.container { width: 100%; } 
-	.one-third { width: 45%; margin-right: 2%; }
-	.two-thirds { width: 45%; margin: 2%; }
-	.half { width: 100%; margin: 2%; }
-	.px4 { padding-left: 1rem; padding-right: 1rem; }
+    min-height: 400px; 
+    background-color: #eee;
+    background-image: url(/assets/coderdojo1.jpg)
+  }
+  .container { width: 100%; } 
+  .one-third { width: 45%; margin-right: 2%; }
+  .two-thirds { width: 45%; margin: 2%; }
+  .half { width: 100%; margin: 2%; }
+  .px4 { padding-left: 1rem; padding-right: 1rem; }
 }
 
 
 @media (min-width: 1024px) {
 .header { 
-		min-height: 400px; 
-		background-color: #eee;
-		background-image: url(/assets/coderdojo1.jpg)
-	}
-	.left { float: left; }
-	.container { width: 1024px;}
-	.one-third { width: 29%; margin: 2%; }
-	.two-thirds { width: 60%; margin: 2%; }
-	.half { width: 45%; margin: 2%; }
-	.full { width: 100%; }
-	.px4-2 { padding-left: 4rem; padding-right: 4rem; }
+    min-height: 400px; 
+    background-color: #eee;
+    background-image: url(/assets/coderdojo1.jpg)
+  }
+  .left { float: left; }
+  .container { width: 1024px;}
+  .one-third { width: 29%; margin: 2%; }
+  .two-thirds { width: 60%; margin: 2%; }
+  .half { width: 45%; margin: 2%; }
+  .full { width: 100%; }
+  .px4-2 { padding-left: 4rem; padding-right: 4rem; }
 }
 
 @media screen and (min-width: 1280px) {
 .header { 
-		min-height: 400px; 
-		background-color: #eee;
-		background-image: url(/assets/coderdojo1.jpg)
-	}
+    min-height: 400px; 
+    background-color: #eee;
+    background-image: url(/assets/coderdojo1.jpg)
+  }
 .left { float: left; }
 .px4-2 { padding-left: 4rem; padding-right: 4rem; }
 }

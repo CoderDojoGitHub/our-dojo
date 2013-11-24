@@ -1,0 +1,25 @@
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  border: none;
+  background: #f1f1f1;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+}
+
+.btn {
+  border: none;
+  color: white;
+  background: #76D13C;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.block {
+  vertical-align: top;
+}
