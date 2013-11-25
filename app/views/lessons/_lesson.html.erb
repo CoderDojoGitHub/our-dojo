@@ -10,7 +10,9 @@
       <% if lesson.upcoming_event.present? %>
         <div class="date"><%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></div>
       <% end %>
-      <%= image_tag lesson.image_url, :class=>"no-bb full" %>
+      <% if lesson.image_url.present? %>
+        <%= image_tag lesson.image_url, :class=>"no-bb full" %>
+      <% end %>
     </a>
   </div>
   <div class="left two-thirds block clearfix">
