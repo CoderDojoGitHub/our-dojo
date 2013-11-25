@@ -1,9 +1,9 @@
 class NewslettersController < ApplicationController
   def announcements
     if error_message = EmailList.announcements.subscribe(params[:email])
-      render :text => error_message, :status => 400
+      render :text => error_message, :status => :unprocessable_entity
     else
-      render :json => { :email => email }
+      render :json => { :email => params[:email] }
     end
   end
 end
