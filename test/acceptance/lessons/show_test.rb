@@ -6,7 +6,7 @@ class LessonsShowTest < AcceptanceTest
 
     visit "/lessons/#{lesson.id}"
 
-    must_have_content "CoderDojo - San Francisco"
+    must_have_content "CoderDojo San Francisco"
     must_have_content "Data Types"
   end
 
