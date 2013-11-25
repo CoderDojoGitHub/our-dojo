@@ -13,7 +13,7 @@ CoderdojoWebapp::Application.routes.draw do
   get  "/confirm/:id",    to: "registrations#confirm",  as: :confirm
 
   # Mailing List routes
-  post "/newsletter/subscribe", to: "home#subscribe"
+  post "/newsletters/announcements", to: "newsletters#announcements"
 
   # Preview emails routes.
   if Rails.env.development?
