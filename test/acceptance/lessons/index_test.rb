@@ -9,7 +9,7 @@ class LessonsIndexTest < AcceptanceTest
   it "renders list of lessons" do
     visit "/lessons"
 
-    must_have_content "CoderDojo - San Francisco"
+    must_have_content "CoderDojo San Francisco"
     must_have_content "Data Types"
     must_have_content "First Program"
   end
