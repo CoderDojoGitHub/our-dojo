@@ -91,21 +91,6 @@ small, .small {
   .responsive .small, .responsive.small {
     font-size: 1rem; }
 }
-// 640 - 1024 picks up the default size
-@media (min-width: 1024px){
-  .responsive.h1, .responsive .h1 {
-    font-size: 5.4rem;
-  }
-  .responsive.h2, .responsive .h2 {
-    font-size: 4.5rem;
-  }
-  .responsive.h3, .responsive .h3 {
-    font-size: 4rem;
-  }
-  .responsive.h4, .responsive .h4 {
-    font-size: 3rem;
-  }
-}
 
 strong, .bold {
   font-weight: 700; }
