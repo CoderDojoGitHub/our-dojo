@@ -38,7 +38,7 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 body {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
-  font-weight: 300; 
+  font-weight: 300;
   color: #444; }
 
 h1, h2, h3 {
@@ -115,7 +115,6 @@ strong, .bold {
 
 .light {
   font-weight: 300; }
-}
 
 .caps {
   text-transform: uppercase;
@@ -328,26 +327,26 @@ a.white:hover  { color: #fff; }
 
 .left { float: none; }
 
-.header { 
-    min-height: 500px; 
+.header {
+    min-height: 500px;
     background-color: #eee;
     background-image: url(/assets/coderdojo1.jpg)
   }
 
 .px4 { padding-left: 1rem; padding-right: 1rem; }
 
-.container { width: 100%; } 
+.container { width: 100%; }
 .one-third { width: 92%; margin-right: 4%; margin-left: 4% }
 .two-thirds { width: 92%; margin-right: 4%; margin-left: 4% }
 .half { width: 92%; margin-right: 4%; margin-left: 4% }
 
 @media (min-width: 768px) {
-.header { 
-    min-height: 400px; 
+.header {
+    min-height: 400px;
     background-color: #eee;
     background-image: url(/assets/coderdojo1.jpg)
   }
-  .container { width: 100%; } 
+  .container { width: 100%; }
   .one-third { width: 45%; margin-right: 2%; }
   .two-thirds { width: 45%; margin: 2%; }
   .half { width: 100%; margin: 2%; }
@@ -356,8 +355,8 @@ a.white:hover  { color: #fff; }
 
 
 @media (min-width: 1024px) {
-.header { 
-    min-height: 400px; 
+.header {
+    min-height: 400px;
     background-color: #eee;
     background-image: url(/assets/coderdojo1.jpg)
   }
@@ -371,8 +370,8 @@ a.white:hover  { color: #fff; }
 }
 
 @media screen and (min-width: 1280px) {
-.header { 
-    min-height: 400px; 
+.header {
+    min-height: 400px;
     background-color: #eee;
     background-image: url(/assets/coderdojo1.jpg)
   }
