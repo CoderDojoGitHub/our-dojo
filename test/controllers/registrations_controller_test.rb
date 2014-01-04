@@ -34,7 +34,7 @@ describe RegistrationsController do
       it "redirects to lesson and flashes notice" do
         post_to_register
         assert_equal 302, response.status
-        assert_equal "http://test.host/lessons/#{@event.id}", response.headers["Location"]
+        assert_equal "http://test.host/lessons/#{@event.id}#registration", response.headers["Location"]
         assert_equal "Please check your email to confirm your registration.",
                      session["flash"][:notice]
       end
@@ -47,8 +47,8 @@ describe RegistrationsController do
              {id: event.id, number_of_students: 1}
 
         assert_equal 302, response.status
-        assert_equal "http://test.host/lessons/#{event.id}", response.headers["Location"]
-        assert_equal "Registration failed.", session["flash"][:error]
+        assert_equal "http://test.host/lessons/#{event.id}#registration", response.headers["Location"]
+        assert_equal "Registration failed because email can't be blank", session["flash"][:error]
       end
     end
   end
@@ -76,7 +76,7 @@ describe RegistrationsController do
       it "redirects to lesson and flashes notice" do
         get_to_confirm
         assert_equal 302, response.status
-        assert_equal "http://test.host/lessons/#{@event.id}", response.headers["Location"]
+        assert_equal "http://test.host/lessons/#{@event.id}#registration", response.headers["Location"]
         assert_equal "You registration is confirmed!",
                      session["flash"][:notice]
       end
@@ -88,7 +88,7 @@ describe RegistrationsController do
         get_to_confirm
 
         assert_equal 302, response.status
-        assert_equal "http://test.host/lessons/#{@event.id}", response.headers["Location"]
+        assert_equal "http://test.host/lessons/#{@event.id}#registration", response.headers["Location"]
         assert_equal "We were unable to register you for this class.",
                      session["flash"][:error]
       end

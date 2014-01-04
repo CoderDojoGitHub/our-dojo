@@ -19,7 +19,7 @@ class LessonsShowTest < AcceptanceTest
         assert_equal 0, EventSubscriber.count
         visit "/lessons/#{event.lesson.id}"
 
-        must_have_content "Notify me when registration opens"
+        must_have_content "Enter your email address to be notified when class registration opens up."
         fill_in :email, with: "jonmagic@gmail.com"
         click_button "Notify me"
 
@@ -39,7 +39,8 @@ class LessonsShowTest < AcceptanceTest
           assert_equal 0, TemporaryRegistration.count
           visit "/lessons/#{event.lesson.id}"
 
-          must_have_content "Register for event"
+          must_have_content "Event Registration"
+          fill_in :number_of_students, with: "1"
           fill_in :email, with: "jonmagic@gmail.com"
           click_button "Register"
 
@@ -55,8 +56,8 @@ class LessonsShowTest < AcceptanceTest
         Registration.make!(event: event, number_of_students: 20)
 
         visit "/lessons/#{event.lesson.id}"
-        must_have_content "Registration has closed"
-        must_have_content "The class is full."
+        must_have_content "Registration Closed"
+        must_have_content "Subscribe to our newsletter to receive announcements about future classes."
       end
     end
   end
