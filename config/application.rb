@@ -27,7 +27,15 @@ module CoderdojoWebapp
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    config.time_zone = ENV["TZ"]
+    if ENV["TZ"]
+      config.time_zone = ENV["TZ"]
+    else
+      puts "\n=====================\n\n"
+      puts "Whoops! You need to uncomment TZ and set it to the appropriate timezone of your Dojo."
+      puts "For more information about possible timezones, run: rake time:zones:all."
+      puts "\n=====================\n\n"
+      exit 1
+    end
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
