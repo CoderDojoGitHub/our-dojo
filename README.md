@@ -28,7 +28,9 @@ Make sure you are using Ruby 1.9.3. Then you can clone the repository and run sc
 script/bootstrap
 ```
 
-Now set GITHUB_ORGANIZATION in .env to the GitHub organization the app should look at for lesson repositories. Make sure to uncomment GITHUB_ORGANIZATION as well.
+Now set GITHUB_ORGANIZATION in .env to the name of the GitHub organization the app should look at for lesson repositories. Make sure to uncomment GITHUB_ORGANIZATION and TZ as well.
+
+For more information about which timezone may be appropriate for you, run `rake time:zones:all`.
 
 ```
 =======

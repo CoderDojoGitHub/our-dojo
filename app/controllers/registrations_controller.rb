@@ -20,10 +20,10 @@ class RegistrationsController < ApplicationController
 
       flash[:notice] = "Please check your email to confirm your registration."
     else
-      flash[:error] = "Registration failed."
+      flash[:error] = "Registration failed because #{temporary_registration.errors.messages.map {|k, v| "#{k.to_s.gsub("_", " ")} #{v.first}" }.join(", ")}"
     end
 
-    redirect_to lesson_path(event.lesson)
+    redirect_to lesson_path(event.lesson, :anchor => "registration")
   end
 
   # Public: Confirm registration for an event.
@@ -47,6 +47,6 @@ class RegistrationsController < ApplicationController
       flash[:error] = "We were unable to register you for this class."
     end
 
-    redirect_to lesson_path(temporary_registration.event.lesson)
+    redirect_to lesson_path(temporary_registration.event.lesson, :anchor => "registration")
   end
 end

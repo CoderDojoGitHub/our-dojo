@@ -16,6 +16,6 @@ class SubscriptionsController < ApplicationController
       flash[:error] = "We were unable to subscribe #{params[:email]} for this event."
     end
 
-    redirect_to lesson_path(event.lesson)
+    redirect_to lesson_path(event.lesson, :anchor => "registration")
   end
 end
