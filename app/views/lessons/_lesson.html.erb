@@ -7,9 +7,6 @@
 
   <div class="left one-third block clearfix">
     <a href="<%= lesson_path(lesson) %>" class="cover-art no-bb">
-      <% if lesson.upcoming_event.present? %>
-        <div class="date"><%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></div>
-      <% end %>
       <% if lesson.image_url.present? %>
         <%= image_tag lesson.image_url, :class=>"no-bb full" %>
       <% end %>
@@ -17,6 +14,7 @@
   </div>
   <div class="left two-thirds block clearfix">
     <% if lesson.upcoming_event.present? %>
+      <p><strong>Date:</strong> <%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></p>
       <p><strong>Time:</strong> <%= lesson.upcoming_event.start_time.strftime("%l:%M%p") %> - <%= lesson.upcoming_event.end_time.strftime("%l:%M%p") %>
       <p><strong>Location:</strong> <a href="http://maps.google.com/maps?client=safari&rls=en&oe=UTF-8&um=1&ie=UTF-8&q=GitHub+548+4th+St+San+Francisco+CA+94107&fb=1&gl=us&hq=GitHub&hnear=0x8085807f61c2ffaf:0xdff3c67eda3111b,548+4th+St,+San+Francisco,+CA+94107&cid=0,0,5518987758852468533&sa=X&ei=9D9zUeSFA8ObiQLCpID4AQ&ved=0CIcBEPwSMAA">GitHub 548 4th St San Francisco CA 94107</a></p>
       <p><strong>Teacher:</strong> <%= link_to lesson.upcoming_event.teacher_github_username, "https://github.com/#{lesson.upcoming_event.teacher_github_username}" %></p>
