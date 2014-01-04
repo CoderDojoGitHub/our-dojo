@@ -59,7 +59,9 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 2rem;
-  line-height: 1.25; }
+  line-height: 1.25;
+  margin-top: 1rem;
+}
 
 h4, .h4 {
   font-size: 1.5rem;
@@ -316,8 +318,12 @@ a.white         { color: #fff; }
 a.white:hover  { color: #fff; }
 .bg-white      { background-color: #fff; }
 
+.bg-notice-green { background-color: #76D13C;}
+.bg-error-red { background-color: #FFCECE;}
+
 .bb-light-gray { border-bottom: 1px solid #eee; }
 .bt-light-gray { border-top: 1px solid #eee; }
+
 
 
  /* Layout */
@@ -379,19 +385,6 @@ a.white:hover  { color: #fff; }
 .px4-2 { padding-left: 4rem; padding-right: 4rem; }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.rc1 { border-radius: 1rem; }
+.rc2 { border-radius: 2rem; }
+.rc3 { border-radius: 3rem; }
