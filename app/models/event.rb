@@ -103,4 +103,9 @@ class Event < ActiveRecord::Base
 
     total_students < DefaultClassSize
   end
+
+  # Public: Display name for active admin.
+  def display_name
+    "#{lesson.title} - #{start_time.strftime("%A, %B %-d")}"
+  end
 end
