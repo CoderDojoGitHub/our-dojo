@@ -29,7 +29,7 @@ module CoderdojoWebapp
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     if ENV["TZ"]
       config.time_zone = ENV["TZ"]
-    else
+    elsif Rails.env.test? || Rails.env.development?
       puts "\n=====================\n\n"
       puts "Whoops! You need to uncomment TZ and set it to the appropriate timezone of your Dojo."
       puts "For more information about possible timezones, run: rake time:zones:all."
@@ -40,6 +40,7 @@ module CoderdojoWebapp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.i18n.enforce_available_locales = false
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -65,7 +66,7 @@ module CoderdojoWebapp
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.assets.version = '1.1'
 
     # Do not load entire app on assets:precompile
     config.assets.initialize_on_precompile = false

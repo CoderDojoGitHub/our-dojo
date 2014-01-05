@@ -30,7 +30,7 @@
 </section>
 
 <section class="mb2">
-  <% if @lesson.upcoming_event.present? %>
+  <% if @event.present? %>
     <h2 class="h2 regular half">Upcoming Event</h2>
   <% end %>
   <%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>

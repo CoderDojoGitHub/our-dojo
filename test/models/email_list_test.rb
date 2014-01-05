@@ -7,7 +7,7 @@ describe EmailList do
 
   describe ".announcements" do
     it "creates instance with ANNOUNCEMENTS_LIST_ID" do
-      EmailList.expects(:new).with("ANNOUNCEMENTS_LIST_ID")
+      EmailList.expects(:new).with("1234")
       EmailList.announcements
     end
   end
