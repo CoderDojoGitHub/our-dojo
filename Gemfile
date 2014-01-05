@@ -23,12 +23,12 @@ group :assets do
 end
 
 group :development, :test do
-  gem "sqlite3"
+  gem "minitest-rails"
   gem "pry"
+  gem "sqlite3"
 end
 
 group :test do
-  gem "minitest-rails"
   gem "guard-minitest"
   gem "minitest-capybara"
   gem "machinist"
