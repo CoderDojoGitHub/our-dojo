@@ -11,6 +11,7 @@ require "blueprints"
 require "database_cleaner"
 
 DatabaseCleaner.strategy = :deletion
+ActiveRecord::Base.logger.level = 1
 
 class MiniTest::Spec
   # Add methods to be used by all specs here
