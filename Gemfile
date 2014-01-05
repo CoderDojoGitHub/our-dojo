@@ -13,6 +13,7 @@ gem "simple_uuid"
 gem "mail_view"
 gem "pg"
 gem "mailchimp-api"
+gem "rails_12factor"
 
 group :assets do
   gem "coffee-rails"
