@@ -5,7 +5,6 @@ ruby "1.9.3"
 gem "rails", "3.2.16"
 gem "jquery-rails"
 gem "jquery-ui-rails"
-gem "dotenv"
 gem "omniauth-github-team-member"
 gem "state_machine"
 gem "httparty"
@@ -23,6 +22,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem "dotenv-rails"
   gem "minitest-rails"
   gem "pry"
   gem "sqlite3"
