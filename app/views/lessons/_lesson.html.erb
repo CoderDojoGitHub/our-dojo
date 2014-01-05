@@ -11,6 +11,7 @@
       <%= link_to lesson.title, lesson_path(lesson) %>
     </h3>
     <p class="summary"><%= lesson.summary %></p>
+    <p><%= link_to "View lesson on GitHub", "https://github.com/#{ENV["GITHUB_ORGANIZATION"]}/#{lesson.repository}" %></p>
     <% if lesson.upcoming_event.present? %>
       <p class="mt1"><strong>Date:</strong> <%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></p>
       <p><strong>Time:</strong> <%= lesson.upcoming_event.start_time.strftime("%l:%M%p") %> - <%= lesson.upcoming_event.end_time.strftime("%l:%M%p") %>
