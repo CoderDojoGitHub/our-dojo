@@ -10,7 +10,7 @@ require Rails.root.join("test", "blueprints")
     author_github_username: "mikefowler",
     events_attributes: [
       {
-        "location" => "GitHub 548 4th St San Francisco CA 94107",
+        "location" => "GitHub 88 Colin P Kelly Jr St San Francisco CA 94107",
         "date" => 1.week.from_now.to_s,
         "length_in_hours" => 2,
         "teacher_github_username" => "mikefowler"
@@ -24,7 +24,7 @@ require Rails.root.join("test", "blueprints")
     author_github_username: "broccolini",
     events_attributes: [
       {
-        "location" => "GitHub 548 4th St San Francisco CA 94107",
+        "location" => "GitHub 88 Colin P Kelly Jr St San Francisco CA 94107",
         "date" => 1.week.ago.to_s,
         "length_in_hours" => 2,
         "teacher_github_username" => "broccolini"
@@ -34,11 +34,11 @@ require Rails.root.join("test", "blueprints")
   {
     title: "Web Development",
     summary: "We will learn how to tell a story using HTML and CSS.",
-    repository: "data-types",
+    repository: "web-development",
     author_github_username: "jonmagic",
     events_attributes: [
       {
-        "location" => "GitHub 548 4th St San Francisco CA 94107",
+        "location" => "GitHub 88 Colin P Kelly Jr St San Francisco CA 94107",
         "date" => 2.week.from_now.to_s,
         "length_in_hours" => 2,
         "teacher_github_username" => "jonmagic"
