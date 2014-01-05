@@ -65,13 +65,13 @@ module CoderdojoWebapp
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.assets.version = '1.1'
 
     # Do not load entire app on assets:precompile
     config.assets.initialize_on_precompile = false
 
     # Add assets to precompile.
-    config.assets.precompile += %w( styles.css admin.css admin.js )
+    config.assets.precompile += %w( application.css admin.css admin.js )
 
     # Configure to use minitest
     config.generators do |g|
