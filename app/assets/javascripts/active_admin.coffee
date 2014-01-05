@@ -1,3 +1,5 @@
+//= require active_admin/base
+
 # Initial data structure.
 lessonFile = {
   title: null,

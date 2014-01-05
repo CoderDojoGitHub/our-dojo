@@ -1,4 +1,8 @@
 CoderdojoWebapp::Application.routes.draw do
+
+  # Active admin sets up its own routes.
+  ActiveAdmin.routes(self)
+
   # Authentication routes.
   match "/auth/githubteammember/callback"   => "sessions#create"
   match "/logout"                           => "sessions#logout"
@@ -19,9 +23,6 @@ CoderdojoWebapp::Application.routes.draw do
   if Rails.env.development?
     mount MailPreview => "mail_view"
   end
-
-  # Admin routes.
-  get "/admin", to: "admin/lesson_builder#index"
 
   # Default routes.
   root to: "home#index"
