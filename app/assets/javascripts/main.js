@@ -8,11 +8,11 @@ $(function () {
   $newsletter.on('ajax:success', function (xhr, response) {
     $newsletterInput.val('');
     $newsletterSubmit.blur();
-    $newsletterResponse.text("Great, we've got " + response.email + " on our list!").animate({ opacity: 1 }, 500);
+    $newsletterResponse.show().text("Great, we've got " + response.email + " on our list!").animate({ opacity: 1 }, 500);
 
     setTimeout(function () {
       $newsletterResponse.animate({ opacity: 0 }, 500, function () {
-        $newsletterResponse.html('&nbsp;');
+        $newsletterResponse.html('&nbsp;').hide();
       });
     }, 5000);
   });
