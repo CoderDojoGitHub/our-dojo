@@ -28,6 +28,16 @@ describe Event do
     end
   end
 
+  describe "#class_size" do
+    it "uses default class size if class_size is nil" do
+      assert_equal Event::DefaultClassSize, Event.new.class_size
+    end
+
+    it "uses class_size when set" do
+      assert_equal 30, Event.new(:class_size => 30).class_size
+    end
+  end
+
   describe "#upcoming" do
     it "returns nil if there is no upcoming event" do
       assert_nil Event.upcoming

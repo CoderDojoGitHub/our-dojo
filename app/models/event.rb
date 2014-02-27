@@ -36,6 +36,15 @@ class Event < ActiveRecord::Base
   end
   attr_accessible :end_time
 
+  # Public: Returns class_size or DefaultClassSize.
+  # column :class_size
+  #
+  # Returns an Integer
+  def class_size
+    read_attribute(:class_size) || DefaultClassSize
+  end
+  attr_accessible :class_size
+
   # Public: Default end_time based on start_time and DefaultEventLengthInHours.
   #
   # Returns a Time or NilClass.
@@ -107,7 +116,7 @@ class Event < ActiveRecord::Base
     total_students = registrations.
       inject(0) {|total, registration| total + registration.number_of_students }
 
-    total_students < DefaultClassSize
+    total_students < class_size
   end
 
   # Public: Display name for active admin.
