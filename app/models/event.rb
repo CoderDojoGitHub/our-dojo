@@ -27,9 +27,22 @@ class Event < ActiveRecord::Base
   validates :start_time, presence: true
   attr_accessible :start_time
 
-  # Public: The end time for the event.
+  # Public: Returns end_time or start_time + DefaultEventLengthInHours.
   # column :end_time
+  #
+  # Returns a Time.
+  def end_time
+    read_attribute(:end_time) || default_end_time
+  end
   attr_accessible :end_time
+
+  # Public: Default end_time based on start_time and DefaultEventLengthInHours.
+  #
+  # Returns a Time or NilClass.
+  def default_end_time
+    return if start_time.blank?
+    start_time + DefaultEventLengthInHours.hours
+  end
 
   # Public: The GitHub username of the event teacher.
   # column :teacher_github_username
@@ -47,13 +60,6 @@ class Event < ActiveRecord::Base
   # Returns an Array.
   def subscribers_to_notify
     event_subscribers.where(sent_at: nil)
-  end
-
-  # Public: Returns end_time or start_time + DefaultEventLengthInHours.
-  #
-  # Returns a Time.
-  def end_time
-    read_attribute(:end_time) || start_time + DefaultEventLengthInHours.hours
   end
 
   # Public: Upcoming event if one exists.

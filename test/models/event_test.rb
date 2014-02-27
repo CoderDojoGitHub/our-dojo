@@ -16,6 +16,16 @@ describe Event do
       start_time = Time.now
       assert_equal start_time + Event::DefaultEventLengthInHours.hours, Event.new(start_time: start_time).end_time
     end
+
+    it "returns nil when when start_time and end_time are nil" do
+      assert_nil Event.new.end_time
+    end
+
+    it "returns end_time if end_time is set" do
+      end_time = 10.hours.ago
+
+      assert_equal end_time, Event.new(:end_time => end_time).end_time
+    end
   end
 
   describe "#upcoming" do
