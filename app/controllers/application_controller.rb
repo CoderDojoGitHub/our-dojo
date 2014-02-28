@@ -2,6 +2,7 @@ require 'mailchimp'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper :all
 
   # Public: The signed in user. This is available in views and helpers.
   #
