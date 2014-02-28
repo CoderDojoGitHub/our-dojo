@@ -15,7 +15,7 @@
 
         <%= form_tag subscribe_to_event_path(@lesson.upcoming_event) do %>
           <div class="grid mt1">
-            <%= email_field_tag :email, nil, placeholder: "Email address" %>
+            <%= email_field_tag :email, nil, placeholder: "Email address", class: "mb1" %>
             <%= submit_tag "Notify me", class: "btn" %>
           </div>
         <% end %>
@@ -25,8 +25,8 @@
 
         <%= form_tag register_path do %>
           <div class="grid mt1">
-            <%= text_field_tag :number_of_students, nil, placeholder: "Number of students" %>
-            <%= email_field_tag :email, nil, placeholder: "Email address" %>
+            <%= text_field_tag :number_of_students, nil, placeholder: "Number of students", class: "mb1" %>
+            <%= email_field_tag :email, nil, placeholder: "Email address", class: "mb1" %>
             <%= submit_tag "Register", class: "btn" %>
           </div>
         <% end %>
