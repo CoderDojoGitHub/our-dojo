@@ -18,6 +18,7 @@ gem "rails_12factor"
 group :assets do
   gem "coffee-rails"
   gem "sass-rails"
+  gem "neat"
   gem "compass-rails"
   gem "uglifier"
 end

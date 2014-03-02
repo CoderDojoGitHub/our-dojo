@@ -8,27 +8,23 @@
     <%= csrf_meta_tags %>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic|Lato:700,900|Roboto:400,900,300' rel='stylesheet' type='text/css'>
   </head>
-  <body class="responsive">
-    <div class="container mxa block clearfix">
-      <header class="header full min-h500 block clearfix bg-cover bg-center center white">
-        <div class="center mxa block clearfix">
-          <img class="mark px1 mt5 mb1" src="/assets/coderdojosf-mark.svg">
-        </div>
-        <div class="center px1">
-          <h1 class="h1 white"><%= link_to raw("#{content_tag("span", "CoderDojo", :class => "bold")} #{content_tag("span", "San Francisco", :class => "light")}"), root_path, :class=>"white no-bb" %></h1>
-        </div>
-        <div class="grid center">
-        <p class="h4 mt1 light">Teaching the next generation to design and code</p>
-  </div>
-      </header>
-
+  <body class="page <% if @page_class %>page--<%= @page_class %><% end %>">
+    
+    <header role="banner" class="masthead container">
+      <img src="/assets/coderdojosf-mark.svg" class="masthead__logomark" alt="CoderDojoSF Logo">
+      <h1 class="masthead__title"><%= link_to raw("CoderDojo <span>San Francisco</span>"), root_path %></h1>
+      <h2 class="masthead__subtitle">Teaching the next generation to design and code</h2>
+    </header>
+  
+    <main role="main" class="main container">
       <%= yield %>
-    </div>
+    </main>
 
-  <footer class="full bg-light-gray block clearfix py1">
-    <div class="container mxa">
-      <p class="p two-thirds">If you would like more information about the CoderDojo organization, or to find one in your area, head over to <a href="http://www.coderdojo.com">http://www.coderdojo.com</a>.</p>
-    </div>
-  </footer>
+    <footer role="contentinfo" class="footer">
+      <div class="container">
+        <p>If you would like more information about the CoderDojo organization, or to find one in your area, head over to <a href="http://www.coderdojo.com">http://www.coderdojo.com</a>. Hosted with <span class="footer__heart">❤</span> by Github.</p>
+      </div>
+    </footer>
+
 </body>
 </html>

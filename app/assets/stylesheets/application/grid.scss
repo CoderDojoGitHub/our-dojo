@@ -1,0 +1,16 @@
+// ----------------------------------------------------------------------------
+// Configuration for Bourbon Neat
+// ----------------------------------------------------------------------------
+@import 'neat-helpers';
+
+$above-layout-s: new-breakpoint(min-width 20rem 2);
+$above-layout-m: new-breakpoint(min-width 30rem 4);
+$above-layout-l: new-breakpoint(min-width 50rem 6);
+$above-layout-xl: new-breakpoint(min-width 75rem 12);
+
+$below-layout-m: new-breakpoint(max-width 30rem 2);
+$below-layout-l: new-breakpoint(max-width 50rem 4);
+$below-layout-xl: new-breakpoint(max-width 75rem 6);
+
+$grid-columns: 6;
+$max-width: 1000px;

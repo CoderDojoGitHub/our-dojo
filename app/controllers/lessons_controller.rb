@@ -4,6 +4,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @show_registration = true
     @lesson = Lesson.find(params[:id])
   end
 end

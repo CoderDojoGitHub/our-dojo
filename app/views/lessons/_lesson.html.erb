@@ -1,22 +1,63 @@
-<div class="full clearfix block">
-  <div class="left one-third block clearfix">
-    <a href="<%= lesson_path(lesson) %>" class="cover-art no-bb">
-      <% if lesson.image_url.present? %>
-        <%= image_tag lesson.image_url, :class=>"no-bb full" %>
-      <% end %>
-    </a>
-  </div>
-  <div class="left two-thirds block clearfix">
-    <h3 class="h3">
-      <%= link_to lesson.title, lesson_path(lesson) %>
-    </h3>
-    <p class="summary"><%= lesson.summary %></p>
-    <p><%= link_to "View lesson on GitHub", "https://github.com/#{ENV["GITHUB_ORGANIZATION"]}/#{lesson.repository}" %></p>
-    <% if lesson.upcoming_event.present? %>
-      <p class="mt1"><strong>Date:</strong> <%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></p>
-      <p><strong>Time:</strong> <%= lesson.upcoming_event.start_time.strftime("%l:%M%p") %> - <%= lesson.upcoming_event.end_time.strftime("%l:%M%p") %>
-      <p><strong>Location:</strong> <a href="https://maps.google.com/maps?client=safari&q=88+Colin+P+Kelly+Jr+St+San+Francisco,+CA+94107&ie=UTF-8&hq=&hnear=0x80858077fe6ae953:0x1cf829f1248fb8f4,88+Colin+P+Kelly+Jr+St,+San+Francisco,+CA+94107&gl=us&ei=A5LHUrnaB8vqoATK9IHgAQ&ved=0CCwQ8gEwAA">88 Colin P Kelly Jr St, San Francisco, CA 94107</a></p>
-      <p><strong>Teacher:</strong> <%= link_to lesson.upcoming_event.teacher_github_username, "https://github.com/#{lesson.upcoming_event.teacher_github_username}" %></p>
+<article class="lesson">
+  
+  <% if lesson.image_url.present? %>
+  <div class="lesson__artwork"><%= link_to image_tag(lesson.image_url), lesson %></div>
+  <% end %>
+  
+  <div class="lesson__overview">
+    
+    <% unless @hide_title %>
+      <h1 class="lesson__title"><%= link_to lesson.title, lesson_path(lesson) %></h1>
     <% end %>
+    
+    <p class="lesson__summary"><%= lesson.summary %></p>
+    
+    <p><%= link_to "View lesson on GitHub »", "https://github.com/#{ENV["GITHUB_ORGANIZATION"]}/#{lesson.repository}" %></p>
+    
+    <% if lesson.upcoming_event.present? %>
+    <ul class="lesson__details">
+      <li><strong>Date:</strong> <%= lesson.upcoming_event.start_time.strftime("%A, %B %-d") %></li>
+      <li><strong>Time:</strong> <%= lesson.upcoming_event.start_time.strftime("%l:%M%p") %> - <%= lesson.upcoming_event.end_time.strftime("%l:%M%p") %></li>
+      <li><strong>Location:</strong> <a href="https://maps.google.com/maps?client=safari&q=88+Colin+P+Kelly+Jr+St+San+Francisco,+CA+94107&ie=UTF-8&hq=&hnear=0x80858077fe6ae953:0x1cf829f1248fb8f4,88+Colin+P+Kelly+Jr+St,+San+Francisco,+CA+94107&gl=us&ei=A5LHUrnaB8vqoATK9IHgAQ&ved=0CCwQ8gEwAA" target="_blank">88 Colin P Kelly Jr St, San Francisco, CA »</a></li>
+      <li><strong>Teacher:</strong> <%= link_to lesson.upcoming_event.teacher_github_username, "https://github.com/#{lesson.upcoming_event.teacher_github_username}" %></li>
+    </ul>
+    <% end %>
+
   </div>
-</div>
+  
+  <% if @show_registration && @lesson.upcoming_event.present? %>
+    <div class="lesson__registration">
+      <% if @lesson.upcoming_event.registration_date_still_in_the_future? %>
+        <h2>Registration Notification</h2>
+        <p>Enter your email address to be notified when class registration opens up.</p>
+
+        <%= form_tag subscribe_to_event_path(@lesson.upcoming_event) do %>
+          <%= email_field_tag :email, nil, placeholder: "Email address" %>
+          <%= submit_tag "Notify me", class: "btn btn--primary" %>
+        <% end %>
+      <% elsif @lesson.upcoming_event.open_for_registration? %>
+        <h2>Event Registration</h2>
+        <p>Register for the event by entering the number of students and your email address.</p>
+
+        <%= form_tag register_path do %>
+          <%= text_field_tag :number_of_students, nil, placeholder: "Number of students", type: 'number' %>
+          <%= email_field_tag :email, nil, placeholder: "Email address" %>
+          <%= submit_tag "Register", class: "btn btn--primary" %>
+        <% end %>
+      <% else %>
+        <h2>Registration Closed</h2>
+
+        <p>Subscribe to our <a href="/#newsletter">newsletter</a> to receive announcements about future classes.</p>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:error] %>
+    <p class="error"><%= flash[:error] %></p>
+  <% end %>
+
+</article>
