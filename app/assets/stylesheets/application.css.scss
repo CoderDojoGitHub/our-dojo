@@ -111,10 +111,12 @@ input, textarea {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="number"] {
   border: none;
   background: darken($color-light-gray, 5%);
   transition: background 0.25s ease;
+  @include px-to-rem(border-radius, 3px);
   @include px-to-rem(padding, 5px 10px);
   
   &:focus {
@@ -123,7 +125,11 @@ input[type="email"] {
   }
 }
 
-
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 // ----------------------------------------------------------------------------
 // Layout
@@ -275,20 +281,10 @@ input[type="email"] {
   }
 
   @include media($above-layout-m) {
-    
-    @include row;
-
-    input[type="email"] {
-      @include px-to-rem(border-radius, 3px 0 0 3px);
-      @include span-columns(2);
-      @include omega;
-    }
-    
+    input[type="email"],
     input[type="submit"] {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      @include span-columns(1);
-      @include omega;
+      display: inline-block;
+      width: auto;
     }
   }
 
@@ -377,9 +373,28 @@ input[type="email"] {
 .lesson__registration {
   clear: both;
   @include padding-leader;
-  @include media($above-layout-m) {
-    @include row;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
   }
+
+  input[type="text"],
+  input[type="email"] {
+    @include trailer(0.5);
+  }
+  
+  @include media($above-layout-m) {
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"] {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
 }
 
 // ----------------------------------------------------------------------------
