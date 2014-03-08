@@ -1,0 +1,491 @@
+// ----------------------------------------------------------------------------
+// Frameworks
+// ----------------------------------------------------------------------------
+
+@import 'bourbon';
+@import 'neat';
+
+// ----------------------------------------------------------------------------
+// Imports
+// ----------------------------------------------------------------------------
+
+@import 'application/normalize';
+@import 'application/rhythm';
+@import 'application/grid';
+
+// ----------------------------------------------------------------------------
+// Configuration
+// ----------------------------------------------------------------------------
+
+$color-darker-gray: #353230;
+$color-dark-gray: #555;
+$color-mid-gray: #aaa;
+$color-light-gray: #f9f9f9;
+$color-green: #76D13C;
+$color-red: #FFCECE;
+
+$base-font-size: 16px;
+$base-line-height: 22px;
+
+// ----------------------------------------------------------------------------
+// Global
+// ----------------------------------------------------------------------------
+
+@include establish-baseline;
+
+html {
+  @include media($below-layout-m) {
+    @include set-font-size(14px);
+  }
+}
+
+body {
+  @extend %font-source;
+  font-weight: 300;
+  color: $color-darker-gray;
+  @include set-font-size(18px);
+  @include px-to-rem(padding, 0 20px);
+}
+
+a {
+  text-decoration: none;
+  color: $color-green;
+  font-weight: normal;
+  transition-property: border, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  border-bottom: 2px solid transparent;
+
+  &:visited { color: darken($color-green, 10%); }
+  &:hover { border-color: $color-green; }
+  &:active { color: $color-green; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %font-roboto;
+  margin-top: 0;
+  color: $color-dark-gray;
+}
+
+h1 {
+  @include set-font-size(36px);
+}
+
+h2 {
+  @include set-font-size(24px);
+}
+
+h3 {
+  @include set-font-size(22px);
+}
+
+h4 {
+  @include set-font-size(20px);
+}
+
+h5 {
+  @include set-font-size(18px);
+}
+
+h6 {
+  @include set-font-size(16px);
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+  @include media($above-layout-l) {
+    list-style-position: outside;
+  }
+}
+
+li {
+  @include set-leading(1.2);
+}
+
+input, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  border: none;
+  background: darken($color-light-gray, 5%);
+  transition: background 0.25s ease;
+  @include px-to-rem(border-radius, 3px);
+  @include px-to-rem(padding, 5px 10px);
+  
+  &:focus {
+    outline: none;
+    background: darken($color-light-gray, 8%);
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// ----------------------------------------------------------------------------
+// Layout
+// ----------------------------------------------------------------------------
+
+.container {
+  @include outer-container;
+}
+
+.main {
+
+  > h1, > h2 {
+    &:first-child {
+      @include leader(2);
+      @include trailer(2);
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Masthead
+// ----------------------------------------------------------------------------
+
+.masthead {
+  text-align: center;
+  background: #eee url(/assets/coderdojo1.jpg) center center no-repeat;
+  background-size: cover;
+  @include px-to-rem(padding, 40px 20px);
+  
+  @include media($above-layout-m) {
+    @include px-to-rem(min-height, 400px);
+  }
+
+  @include media($below-layout-l) {
+    @include px-to-rem(margin-left, -20px);
+    @include px-to-rem(margin-right, -20px);
+  }
+}
+
+.masthead__logomark {
+  @include px-to-rem(max-width, 60px);
+  @include trailer(0.5);
+
+  @include media($above-layout-m) {
+    @include leader(3);
+  }
+}
+
+.masthead__title {
+  margin: 0;
+  @include media($above-layout-l) {
+    @include set-font-size(54px);
+  }
+
+  a {
+    color: white;
+    border: none;
+  }
+
+  span { font-weight: 300; }
+}
+
+.masthead__subtitle {
+  @extend %font-source;
+  color: white;
+  font-weight: 300;
+  margin: 0;
+  @include leader;
+  @include set-font-size(18px);
+
+  @include media($above-layout-m) {
+    margin: 0;
+    @include set-font-size(24px);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Home
+// ----------------------------------------------------------------------------
+
+.home__heading {
+  @extend %font-source;
+  margin: 0;
+  text-align: center;
+  @include set-font-size(20px, 1.2);
+
+  @include media($above-layout-m) {
+    @include set-font-size(24px, 1.5);
+    @include px-to-rem(padding, 60px);
+  }
+}
+
+.home__overview {
+  @extend %section;
+  text-align: center;
+  @include row;
+
+  h1 { @include trailer(0.5); }
+}
+
+.home__map {
+  text-align: left;
+  @include padding-leader;
+
+  @include media($above-layout-l) {
+    @include span-columns(4);
+  }
+}
+
+.home__class-info {
+  text-align: left;
+  @include set-leading(1.1);
+  @include padding-leader;
+
+  h2 { @include trailer(0); }
+  p { @include leader(0); }
+
+  @include media($above-layout-l) {
+    @include span-columns(2);
+    @include omega;
+  }
+}
+
+.home__upcoming {
+  @extend %section;
+  @include row;
+
+  .lesson { @include trailer(0); }
+}
+
+.home__contact {
+  @extend %section;
+  @include row;
+}
+
+.home__newsletter {
+  @include trailer;
+
+  label { @extend %screen-reader-text; }
+  
+  input[type="email"] {
+    @include trailer(0.5);
+  }
+
+  input[type="email"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+  }
+
+  @include media($above-layout-m) {
+    input[type="email"],
+    input[type="submit"] {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  @include media($above-layout-l) {
+    @include span-columns(3);
+  }
+  
+}
+
+.home__get-involved {
+  @include media($above-layout-l) {
+    @include span-columns(3);
+    @include omega;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Lessons
+// ----------------------------------------------------------------------------
+
+.lesson {
+  @include row;
+  @include leader;
+  @include trailer;
+}
+
+.lesson-list {
+  .lesson {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include padding-trailer;
+    @include trailer;
+
+    &:last-child { border-bottom: none; }
+  }
+}
+
+.lesson__artwork {
+  @include trailer;
+  
+  a {
+    border: none;
+  }
+
+  img {
+    max-width: 100%;
+    dislay: block;
+  }
+  
+  @include media($above-layout-m) {
+    @include span-columns(2);
+  }
+
+  @include media($above-layout-l) {
+    @include span-columns(2);
+  }
+  
+}
+
+.lesson__overview {
+  @include media($above-layout-m) {
+    @include span-columns(2);
+    @include omega;
+  }
+  @include media($above-layout-l) {
+    @include span-columns(4);
+    @include omega;
+  }
+}
+
+.lesson__title {
+  @include trailer(0.5);
+}
+
+.lesson__summary {
+  @include leader(0);
+}
+
+.lesson__details {
+  list-style: none;
+
+  li {
+    @include trailer(0.5);
+  }
+}
+
+.lesson__registration {
+  clear: both;
+  @include padding-leader;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    @include trailer(0.5);
+  }
+  
+  @include media($above-layout-m) {
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"] {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+}
+
+// ----------------------------------------------------------------------------
+// Asides
+// ----------------------------------------------------------------------------
+
+.past-lessons {
+  @extend %section;
+  @include row;
+}
+
+// ----------------------------------------------------------------------------
+// Footer
+// ----------------------------------------------------------------------------
+
+.footer {
+  background: $color-light-gray;
+  @include padding-leader;
+  @include padding-trailer;
+  @include px-to-rem(padding-left, 20px);
+  @include px-to-rem(padding-right, 20px);
+  @include set-leading(1.2);
+  @include px-to-rem(margin, 0 -20px);
+  
+  p { max-width: 40rem; }
+}
+
+.footer__heart {
+  color: $color-mid-gray;
+}
+
+// ----------------------------------------------------------------------------
+// Buttons
+// ----------------------------------------------------------------------------
+
+.btn {
+  background: $color-mid-gray;
+  border: none;
+  color: white;
+  overflow: hidden;
+  transition: background 0.25s ease;
+  @include px-to-rem(border-radius, 3px);
+  @include px-to-rem(padding, 5px 10px);
+
+  &:hover { background: darken($color-mid-gray, 10%); }
+}
+
+.btn--primary {
+  background: $color-green;
+
+  &:hover { background: darken($color-green, 5%); }
+}
+
+// ----------------------------------------------------------------------------
+// Helpers
+// ----------------------------------------------------------------------------
+
+.notice {
+  clear: both;
+  background: $color-green;
+  @include px-to-rem(padding, 10px);
+}
+
+.error {
+  clear: both;
+  background: $color-red;
+  @include px-to-rem(padding, 10px);
+}
+
+// ----------------------------------------------------------------------------
+// Placeholders
+// ----------------------------------------------------------------------------
+
+%section {
+  @include padding-leader(2);
+  @include padding-trailer(2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+%font-roboto {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+%font-source {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+}
+
+%screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

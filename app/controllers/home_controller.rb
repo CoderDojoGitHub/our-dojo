@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @page_class = "home"
     @lesson = if @event = Event.upcoming
       @event.lesson
     end

@@ -26,6 +26,7 @@ class Registrar
   #
   # Returns a Registration or NilClass.
   def self.confirm_registration(temporary_registration)
+    return unless temporary_registration.present?
     return unless temporary_registration.event.space_available?
 
     registration = Registration.

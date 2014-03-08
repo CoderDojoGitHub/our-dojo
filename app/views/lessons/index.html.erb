@@ -1,11 +1,9 @@
 <% title "Lessons" %>
 
-<div class="full block clearfix mb2">
-  <div class="two-thirds">
-    <h2 class="h2 regular mt3">Lessons</h2>
-  </div>
-  <div class="container mt1">
-    <% @lessons.each do |lesson| %>
-      <%= render partial: "lesson", object: lesson %>
-    <% end %>
+<h1>Lessons</h1>
+
+<div class="lesson-list">
+  <% @lessons.each do |lesson| %>
+    <%= render partial: "lesson", object: lesson %>
+  <% end %>
 </div>
