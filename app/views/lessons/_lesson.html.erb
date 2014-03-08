@@ -40,7 +40,7 @@
         <h2>Event Registration</h2>
         <p>Register for the event by entering the number of students and your email address.</p>
 
-        <%= form_tag register_path do %>
+        <%= form_tag register_path(@lesson.upcoming_event.id) do %>
           <%= text_field_tag :number_of_students, nil, placeholder: "Number of students", type: 'number' %>
           <%= email_field_tag :email, nil, placeholder: "Email address" %>
           <%= submit_tag "Register", class: "btn btn--primary" %>
