@@ -453,11 +453,13 @@ input[type="number"]::-webkit-inner-spin-button {
 // ----------------------------------------------------------------------------
 
 .notice {
+  clear: both;
   background: $color-green;
   @include px-to-rem(padding, 10px);
 }
 
 .error {
+  clear: both;
   background: $color-red;
   @include px-to-rem(padding, 10px);
 }

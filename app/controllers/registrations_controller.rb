@@ -34,19 +34,24 @@ class RegistrationsController < ApplicationController
   #
   # Redirects to Lesson.
   def confirm
-    temporary_registration =
+    if temporary_registration = \
       TemporaryRegistration.find_by_reference_token(params[:id])
 
-    registration = Registrar.confirm_registration(temporary_registration)
+      registration = Registrar.confirm_registration(temporary_registration)
 
-    if registration.present? && registration.persisted?
-      RegistrationMailer.confirmed(registration.id).deliver
+      if registration.present? && registration.persisted?
+        RegistrationMailer.confirmed(registration.id).deliver
 
-      flash[:notice] = "You registration is confirmed!"
+        flash[:notice] = "You registration is confirmed!"
+      else
+        flash[:error] = "We were unable to register you for this class."
+      end
+
+      redirect_to lesson_path(temporary_registration.event.lesson, :anchor => "registration")
     else
-      flash[:error] = "We were unable to register you for this class."
-    end
+      flash[:error] = "Temporary registration not found."
 
-    redirect_to lesson_path(temporary_registration.event.lesson, :anchor => "registration")
+      redirect_to root_path
+    end
   end
 end
