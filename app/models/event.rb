@@ -113,10 +113,15 @@ class Event < ActiveRecord::Base
   #
   # Returns a TrueClass or FalseClass.
   def space_available?
-    total_students = registrations.
-      inject(0) {|total, registration| total + registration.number_of_students }
-
     total_students < class_size
+  end
+
+  # Public: The number of already registered students.
+  #
+  # Returns an Integer.
+  def total_students
+    registrations.
+      inject(0) {|total, registration| total + registration.number_of_students }
   end
 
   # Public: Display name for active admin.
