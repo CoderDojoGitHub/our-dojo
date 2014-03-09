@@ -46,9 +46,10 @@
           <%= submit_tag "Register", class: "btn btn--primary" %>
         <% end %>
       <% else %>
-        <h2>Registration Closed</h2>
+        <h2>Registration is Full</h2>
 
         <p>Subscribe to our <a href="/#newsletter">newsletter</a> to receive announcements about future classes.</p>
+        <%= render partial: "shared/newsletter" %>
       <% end %>
     </div>
   <% end %>
