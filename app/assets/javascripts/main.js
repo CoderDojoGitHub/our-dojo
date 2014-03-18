@@ -1,9 +1,15 @@
 $(function () {
 
-  var $newsletter = $('#newsletter'),
+  var $newsletter = $('#newsletter-form'),
       $newsletterInput = $('.js-newsletter-input'),
       $newsletterSubmit = $('.js-newsletter-submit'),
       $newsletterResponse = $('.js-newsletter-result');
+
+  $newsletter.on('submit', function () {
+    if ($newsletterInput.val() === '') {
+      return false;
+    }
+  });
 
   $newsletter.on('ajax:success', function (xhr, response) {
     $newsletterInput.val('');
