@@ -28,12 +28,12 @@
   </div>
 </section>
 
-<section class="home__upcoming">
-  <% if @event.present? %>
+<% if @event.present? %>
+  <section class="home__upcoming">
     <h1>Upcoming Event</h1>
-  <% end %>
-  <%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
-</section>
+    <%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
+  </section>
+<% end %>
 
 <section class="home__contact">
   
