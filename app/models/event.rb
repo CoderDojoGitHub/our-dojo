@@ -71,11 +71,18 @@ class Event < ActiveRecord::Base
     event_subscribers.where(sent_at: nil)
   end
 
-  # Public: Upcoming event if one exists.
+  # Public: Upcoming events, if they exist
   #
-  # Returns an Event or NilClass.
-  def self.upcoming
-    where("start_time > ?", Time.now).order("start_time ASC").first
+  # count - the number of upcoming events to return
+  #
+  # Returns an array of up to `count` Events or NilClass.
+  def self.upcoming (count = 1)
+    events = where("start_time > ?", Time.now).order("start_time ASC")
+    if events.empty?
+      nil
+    else
+      events.take(count)
+    end
   end
 
   # Public: Is registration open for this event?

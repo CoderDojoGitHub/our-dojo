@@ -48,7 +48,7 @@ describe Event do
       event = Event.make!(start_time: 1.days.from_now)
       Event.make!(start_time: 2.day.from_now)
 
-      assert_equal event, Event.upcoming
+      assert_equal event, Event.upcoming.first
     end
   end
 

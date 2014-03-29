@@ -28,10 +28,12 @@
   </div>
 </section>
 
-<% if @event.present? %>
+<% if @upcoming_events.present? %>
+  <h1>Upcoming <%= "Event".pluralize(@upcoming_events.count) %></h1>
   <section class="home__upcoming">
-    <h1>Upcoming Event</h1>
-    <%= render partial: "lessons/lesson", object: @lesson if @lesson.present? %>
+    <% @upcoming_events.each { |event| %>
+      <%= render partial: "lessons/lesson", object: event.lesson if event.lesson.present? %>
+    <% } %>
   </section>
 <% end %>
 
