@@ -28,7 +28,7 @@
   </div>
 </section>
 
-<% if @upcoming_events.present? %>
+<% if @upcoming_events.any? %>
   <h1>Upcoming <%= "Event".pluralize(@upcoming_events.count) %></h1>
   <section class="home__upcoming">
     <% @upcoming_events.each { |event| %>

@@ -76,13 +76,8 @@ class Event < ActiveRecord::Base
   # count - the number of upcoming events to return
   #
   # Returns an array of up to `count` Events or NilClass.
-  def self.upcoming (count = 1)
-    events = where("start_time > ?", Time.now).order("start_time ASC")
-    if events.empty?
-      nil
-    else
-      events.take(count)
-    end
+  def self.upcoming(count = 1)
+    where("start_time > ?", Time.now).order("start_time ASC").first(count)
   end
 
   # Public: Is registration open for this event?
