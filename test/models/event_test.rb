@@ -39,8 +39,8 @@ describe Event do
   end
 
   describe "#upcoming" do
-    it "returns nil if there is no upcoming event" do
-      assert_nil Event.upcoming
+    it "returns an empty array if there is no upcoming event" do
+      assert_empty Event.upcoming
     end
 
     it "returns upcoming event if it exists" do
@@ -48,7 +48,7 @@ describe Event do
       event = Event.make!(start_time: 1.days.from_now)
       Event.make!(start_time: 2.day.from_now)
 
-      assert_equal event, Event.upcoming
+      assert_equal event, Event.upcoming.first
     end
   end
 
