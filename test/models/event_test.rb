@@ -39,8 +39,8 @@ describe Event do
   end
 
   describe "#upcoming" do
-    it "returns nil if there is no upcoming event" do
-      assert_nil Event.upcoming
+    it "returns an empty array if there is no upcoming event" do
+      assert_empty Event.upcoming
     end
 
     it "returns upcoming event if it exists" do
