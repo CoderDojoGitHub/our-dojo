@@ -423,6 +423,7 @@ input[type="number"]::-webkit-inner-spin-button {
 // ----------------------------------------------------------------------------
 
 .footer {
+  text-align: center;
   background: $color-light-gray;
   @include padding-leader;
   @include padding-trailer;
@@ -430,8 +431,6 @@ input[type="number"]::-webkit-inner-spin-button {
   @include px-to-rem(padding-right, 20px);
   @include set-leading(1.2);
   @include px-to-rem(margin, 0 -20px);
-
-  p { max-width: 40rem; }
 }
 
 .footer__heart {
