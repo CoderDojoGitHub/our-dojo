@@ -7,13 +7,13 @@ require Rails.root.join("test", "blueprints")
     title: "Data Types",
     summary: "We will learn about String, Array, and Hash.",
     repository: "data-types",
-    author_github_username: "mikefowler",
+    author_github_username: "sijbrandij",
     events_attributes: [
       {
         "location" => "GitHub 88 Colin P Kelly Jr St San Francisco CA 94107",
         "date" => 1.week.from_now.to_s,
         "length_in_hours" => 2,
-        "teacher_github_username" => "mikefowler"
+        "teacher_github_username" => "sijbrandij"
       }
     ]
   },
@@ -21,13 +21,13 @@ require Rails.root.join("test", "blueprints")
     title: "First Program",
     summary: "We will learn how to write our first program.",
     repository: "first-program",
-    author_github_username: "broccolini",
+    author_github_username: "sijbrandij",
     events_attributes: [
       {
         "location" => "GitHub 88 Colin P Kelly Jr St San Francisco CA 94107",
         "date" => 1.week.ago.to_s,
         "length_in_hours" => 2,
-        "teacher_github_username" => "broccolini"
+        "teacher_github_username" => "sijbrandij"
       }
     ]
   },
@@ -35,13 +35,13 @@ require Rails.root.join("test", "blueprints")
     title: "Web Development",
     summary: "We will learn how to tell a story using HTML and CSS.",
     repository: "web-development",
-    author_github_username: "jonmagic",
+    author_github_username: "sijbrandij",
     events_attributes: [
       {
         "location" => "GitHub 88 Colin P Kelly Jr St San Francisco CA 94107",
         "date" => 2.week.from_now.to_s,
         "length_in_hours" => 2,
-        "teacher_github_username" => "jonmagic"
+        "teacher_github_username" => "sijbrandij"
       }
     ]
   }

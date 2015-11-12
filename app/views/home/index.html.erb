@@ -35,4 +35,4 @@
   </section>
 <% end %>
 
-<%= render partial: "shared/past_lessons" %>
+<%= render partial: "shared/past_lessons" if Lesson.count > 2 %>

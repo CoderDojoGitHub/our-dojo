@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "1.9.3"
 
-gem "rails", "3.2.16"
+gem "rails", "3.2.21"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "omniauth-github-team-member"
@@ -16,11 +16,11 @@ gem "activeadmin"
 gem "rails_12factor"
 
 group :assets do
-  gem "coffee-rails"
-  gem "sass-rails"
+  gem "coffee-rails", '~> 3.2.2'
+  gem "sass-rails", '~> 3.2.6'
   gem "neat"
   gem "compass-rails"
-  gem "uglifier"
+  gem "uglifier", '>= 1.0.3'
 end
 
 group :development, :test do
