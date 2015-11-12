@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   DefaultEventLengthInHours = 2
 
   # Public: Number of days before the event that registration opens.
-  DaysToOpenRegistrationBeforeEvent = 7
+  DaysToOpenRegistrationBeforeEvent = 30
 
   # Public: The number of students per class.
   DefaultClassSize = 20
@@ -20,12 +20,12 @@ class Event < ActiveRecord::Base
   # Public: Location of the event.
   # column :location
   validates :location, presence: true
-  attr_accessible :location
+  # attr_accessible :location
 
   # Public: The start time for the event.
   # column :start_time
   validates :start_time, presence: true
-  attr_accessible :start_time
+  # attr_accessible :start_time
 
   # Public: Returns end_time or start_time + DefaultEventLengthInHours.
   # column :end_time
@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
   def end_time
     read_attribute(:end_time) || default_end_time
   end
-  attr_accessible :end_time
+  # attr_accessible :end_time
 
   # Public: Returns class_size or DefaultClassSize.
   # column :class_size
@@ -43,7 +43,7 @@ class Event < ActiveRecord::Base
   def class_size
     read_attribute(:class_size) || DefaultClassSize
   end
-  attr_accessible :class_size
+  # attr_accessible :class_size
 
   # Public: Default end_time based on start_time and DefaultEventLengthInHours.
   #
@@ -56,7 +56,7 @@ class Event < ActiveRecord::Base
   # Public: The GitHub username of the event teacher.
   # column :teacher_github_username
   validates :teacher_github_username, presence: true
-  attr_accessible :teacher_github_username
+  # attr_accessible :teacher_github_username
 
   # Public: Registrations for this event.
   has_many :registrations

@@ -4,9 +4,9 @@ CoderdojoWebapp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   # Authentication routes.
-  match "/auth/githubteammember/callback"   => "sessions#create"
-  match "/logout"                           => "sessions#logout"
-  match "/auth/failure"                     => "sessions#failure"
+  match "/auth/githubteammember/callback", to: "sessions#create", via: :all
+  match "/logout", to: "sessions#logout", via: :all
+  match "/auth/failure", to: "sessions#failure", via: :all
 
   # Resource routes.
   resources :lessons, only: [:index, :show]
