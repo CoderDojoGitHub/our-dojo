@@ -281,16 +281,6 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-.farewell {
-  width: 60%;
-  margin: 20px auto 100px;
-  text-align: left;
-}
-
-#class-info {
-  text-align: center;
-}
-
 // ----------------------------------------------------------------------------
 // Lessons
 // ----------------------------------------------------------------------------
@@ -431,6 +421,8 @@ input[type="number"]::-webkit-inner-spin-button {
   @include px-to-rem(padding-right, 20px);
   @include set-leading(1.2);
   @include px-to-rem(margin, 0 -20px);
+
+  p { max-width: 40rem; }
 }
 
 .footer__heart {

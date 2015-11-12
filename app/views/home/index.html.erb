@@ -1,30 +1,38 @@
+<h2 class="home__heading">CoderDojo is a free coding class covering everything from basic HTML & CSS, to JavaScript, game development, and web programming. Our Dojo welcomes anyone ages 6–16 years old.</h2>
+
 <section class="home__overview">
 
-  <div class="farewell">
-    <h1 id="class-info">&lt;3, CoderDojo SF</h1>
+  <h1 id="class-info">Class time and location</h1>
 
-    <p>We’re sad to say that CoderDojoSF will no longer be offering coding
-    classes. We’ve had a ton of fun teaching kids all sorts of code lessons for
-    the last two years. We’d like to thank all of the students that have come to
-    learn with us and all of the mentors that have taken the time to help
-    teach.</p>
+  <p>Classes last about 3 hours and are held on Saturdays at the <a href="https://github.com/">GitHub</a> San Francisco office.</p>
 
-    <p>If you would like to continue learning, the <a
-    href="http://coderdojosv.com/">Silicon Valley CoderDojo</a> is still very
-    active. Some of our mentors have also expressed interest in starting
-    mentorship projects of their own. We will announce more details about these
-    opportunities when they are available. There are also some great online
-    resources like <a href="https://diy.org/">DIY.org</a>,
-    <a href="http://www.codecademy.com/">CodeAcademy</a>,
-    <a href="http://www.codecademy.com/">Khan Academy</a>
-    to help you continue exploring.</p>
-
-    <p>While we’ll no longer be creating new classes, our past lessons will
-    continue to live <a href="https://github.com/CoderDojoSF">on GitHub</a>. If
-    you are a potential new Dojo in San Francisco that would like to take over
-    CoderDojoSF’s social properties, domain, etc, please email <a
-    href="mailto:cameron@github.com">cameron@github.com</a>.</p>
-
+  <div class="home__map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.331634670643!2d-122.3912479!3d37.78226709999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858077fe6ae953%3A0x1cf829f1248fb8f4!2s88+Colin+P+Kelly+Jr+St!5e0!3m2!1sen!2sus!4v1393912025943" width="100%" height="420" frameborder="0" style="border:0"></iframe>
   </div>
+
+  <div class="home__class-info">
+    <h2>Time</h2>
+    <p>Saturdays, 10am—1pm</p>
+    <h2>Location</h2>
+    <p>88 Colin P Kelly Jr St<br>San Francisco, CA 94107</p>
+
+    <h2>What to bring</h2>
+    <ul>
+      <li>Your ticket</li>
+      <li>A packed lunch</li>
+      <li>A laptop with Chrome and a text editor installed on it</li>
+      <li>A parent! (Very important). If you are 13 or under, your parent must stay with you during the session</li>
+    </ul>
+  </div>
+</section>
+
+<% if @upcoming_events.any? %>
+  <h1>Upcoming <%= "Event".pluralize(@upcoming_events.count) %></h1>
+  <section class="home__upcoming">
+    <% @upcoming_events.each { |event| %>
+      <%= render partial: "lessons/lesson", object: event.lesson if event.lesson.present? %>
+    <% } %>
+  </section>
+<% end %>
 
 <%= render partial: "shared/past_lessons" %>
