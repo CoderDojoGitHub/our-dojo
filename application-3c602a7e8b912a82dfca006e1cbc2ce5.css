@@ -704,3 +704,13 @@ body, .masthead__subtitle, .home__heading {
   top: -9999px;
   left: -9999px
 }
+.button {
+  padding: 8px 12px;
+  background-color: #76d13c;
+  color: #fff !important;
+  border-radius: 3px;
+  display: inline-block;
+}
+.centered {
+  text-align: center;
+}
