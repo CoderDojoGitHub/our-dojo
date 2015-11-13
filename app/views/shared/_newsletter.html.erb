@@ -1,6 +1,0 @@
-<%= form_tag "/newsletters/announcements", method: "post", remote: true, id: "newsletter-form", class: 'newsletter' do %>
-  <%= label_tag "email", "Email" %>
-  <%= email_field_tag "email", nil, placeholder: "Email address", class: "js-newsletter-input" %>
-  <%= submit_tag "Register", class: "btn btn--primary js-newsletter-submit" %>
-  <p class="js-newsletter-result">&nbsp;</p>
-<% end %>

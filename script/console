@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = "--production" -o "$1" = "p" -o "$1" = "-p" ]
-then
-  heroku run console --app coderdojosf
-else
-  rails console
-fi
