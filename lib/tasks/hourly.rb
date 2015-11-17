@@ -1,7 +1,9 @@
 namespace :registration do
   desc "Send event notifications to subscribers."
   task send_notifications: :environment do
-    if event = Event.upcoming
+    events = Event.upcoming
+    
+    events.each do |event|
       if event.open_for_registration?
         Rails.logger.info "REGISTRATION: Preparing to send open registration emails for event_id #{event.id}."
         event_notifier = EventNotifier.new(event)
@@ -13,9 +15,9 @@ namespace :registration do
       else
         Rails.logger.info "REGISTRATION: Registration for event_id #{event.id} is not yet open."
       end
-    else
-      Rails.logger.info "REGISTRATION: There are no upcoming events."
     end
+
+    Rails.logger.info "REGISTRATION: There are no upcoming events." unless events.any?
   end
 end
 
