@@ -54,7 +54,7 @@ module CoderdojoWebapp
     config.assets.version = '1.1'
 
     # Do not load entire app on assets:precompile
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
 
     # Add assets to precompile.
     config.assets.precompile += %w( active_admin.css active_admin.js )
