@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :github_id, :github_identifier, :email
+  # attr_accessible :name, :github_id, :github_identifier, :email
 
   def self.find_for_github_oauth(access_token)
     return false unless access_token.credentials.team_member?

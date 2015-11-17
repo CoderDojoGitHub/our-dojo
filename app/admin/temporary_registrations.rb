@@ -10,7 +10,7 @@ ActiveAdmin.register TemporaryRegistration do
     actions
   end
 
-  action_item :only => :show do
+  action_item(:show) do
     link_to 'Confirm Registration', confirm_path(temporary_registration.reference_token)
   end
 end

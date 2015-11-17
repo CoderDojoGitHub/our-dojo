@@ -15,9 +15,9 @@
 /tmp
 
 config/database.yml
+config/local_env.yml
 .env
 
-bin
 vendor/gems
 vendor/bundle
 

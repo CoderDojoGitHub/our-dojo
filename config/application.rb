@@ -27,20 +27,11 @@ module CoderdojoWebapp
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    if ENV["TZ"]
-      config.time_zone = ENV["TZ"]
-    elsif Rails.env.test? || Rails.env.development?
-      puts "\n=====================\n\n"
-      puts "Whoops! You need to uncomment TZ and set it to the appropriate timezone of your Dojo."
-      puts "For more information about possible timezones, run: rake time:zones:all."
-      puts "\n=====================\n\n"
-      exit 1
-    end
-
+    config.time_zone = 'Pacific Time (US & Canada)'
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.i18n.enforce_available_locales = false
+    # config.i18n.enforce_available_locales = false
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -56,12 +47,6 @@ module CoderdojoWebapp
     # like if you have constraints or database-specific column types
     # config.active_record.schema_format = :sql
 
-    # Enforce whitelist mode for mass assignment.
-    # This will create an empty whitelist of attributes available for mass-assignment for all models
-    # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
-    # parameters by using an attr_accessible or attr_protected declaration.
-    config.active_record.whitelist_attributes = true
-
     # Enable the asset pipeline
     config.assets.enabled = true
 
@@ -69,7 +54,7 @@ module CoderdojoWebapp
     config.assets.version = '1.1'
 
     # Do not load entire app on assets:precompile
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
 
     # Add assets to precompile.
     config.assets.precompile += %w( active_admin.css active_admin.js )
