@@ -300,7 +300,7 @@ DEPENDENCIES
   omniauth-github-team-member
   pg
   pry
-  rails (~> 4.0)
+  rails (= 4.2.5)
   rails_12factor
   sass-rails
   simple_uuid
