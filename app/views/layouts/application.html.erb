@@ -11,7 +11,7 @@
   <body class="page <% if @page_class %>page--<%= @page_class %><% end %>">
 
     <header role="banner" class="masthead container">
-      <img src="/assets/coderdojosf-mark.svg" class="masthead__logomark" alt="CoderDojoSF Logo">
+      <%= image_tag "coderdojosf-mark.svg", :class => "masthead__logomark", :alt => "CoderDojoSF Logo" %>
       <h1 class="masthead__title"><%= link_to raw("CoderDojo <span>San Francisco</span>"), root_path %></h1>
       <h2 class="masthead__subtitle">Teaching the next generation to design and code</h2>
     </header>
